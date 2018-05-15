@@ -19,7 +19,9 @@ export default {
   mode: 'development',
   context: rootDir,
   entry: {
-    home: [ path.join(rootDir, 'src/js/home.js') ]
+    home: [ path.join(rootDir, 'src/js/home.js') ],
+    // 'contact-us': [ path.join(rootDir, 'src/js/contact-us.js') ],
+    'coming-soon': [ path.join(rootDir, 'src/js/coming-soon.js') ]
   },
   output: {
     path: path.join(rootDir, 'public/assets'),
@@ -46,6 +48,13 @@ export default {
       template: path.join(rootDir, 'src/views/pages/about-us'),
       filename: path.join(rootDir, 'public/about-us.html'),
       chunks: [ 'about-us' ],
+      minify: htmlMinifyOptions
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(rootDir, 'src/views/pages/coming-soon'),
+      filename: path.join(rootDir, 'public/coming-soon.html'),
+      chunks: [ 'coming-soon' ],
       minify: htmlMinifyOptions
     }),
     new ExtractTextPlugin('css/[name].[hash:5].css')

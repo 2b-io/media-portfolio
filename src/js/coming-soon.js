@@ -1,5 +1,7 @@
 import 'stylus/coming-soon.styl'
 
+const deadline_date = 'September 1, 2018 17:00:00'
+
 function getTimeRemaining(endtime) {
   var t = Date.parse(endtime) - Date.parse(new Date());
   var seconds = Math.floor((t / 1000) % 60);
@@ -7,11 +9,11 @@ function getTimeRemaining(endtime) {
   var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
   var days = Math.floor(t / (1000 * 60 * 60 * 24));
   return {
-    'total': t,
-    'days': days,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
+    total: t,
+    days: days,
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds
   };
 }
 
@@ -37,5 +39,5 @@ function initializeClock(id, endtime) {
   var timeinterval = setInterval(updateClock, 1000);
 }
 
-var deadline = new Date("June 5, 2018 15:37:25");
-initializeClock('clockdiv', deadline);
+var deadline = new Date(deadline_date);
+initializeClock('clock', deadline);

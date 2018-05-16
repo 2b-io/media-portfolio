@@ -7,7 +7,7 @@ const urls = {
 }
 
 const assets = {
-  logo_img: require('img/logo/logo_ntq.png')
+  logo_img: require('img/logo/logo_ntq.svg')
 }
 
 const context = {

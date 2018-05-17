@@ -17,6 +17,13 @@ function getTimeRemaining(endtime) {
   };
 }
 
+function setInnerHTML(element, value) {
+  if (element.innerHTML !== value) {
+    console.log(`set ${value}`)
+    element.innerHTML = value
+  }
+}
+
 function initializeClock(id, endtime) {
   var clock = document.getElementById(id);
   var daysSpan = clock.querySelector('.days');
@@ -26,10 +33,11 @@ function initializeClock(id, endtime) {
 
   function updateClock() {
     var t = getTimeRemaining(endtime);
-    daysSpan.innerHTML = t.days;
-    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+    setInnerHTML(daysSpan, t.days.toString());
+    setInnerHTML(hoursSpan, ('0' + t.hours).slice(-2));
+    setInnerHTML(minutesSpan, ('0' + t.minutes).slice(-2));
+    setInnerHTML(secondsSpan, ('0' + t.seconds).slice(-2));
+
     if (t.total <= 0) {
       clearInterval(timeinterval);
     }

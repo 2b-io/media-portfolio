@@ -1,0 +1,66 @@
+@require './space-mono'
+
+meyer-reset()
+box-sizing-reset()
+normalize()
+
+$white = #ffffff
+$blue = #5381E4
+
+html, body
+  font-family: 'Space Mono'
+  min-width: 200px
+
+body
+  background: url('~img/bg/bg_coming.png') repeat
+
+.header
+  height: 300px
+  display: flex
+
+  .logo
+    margin: auto
+    text-align: center
+
+    .logo-img
+      width: 200px
+      padding-top: 10px
+
+    .logo-text
+      padding-top: 20px
+      font-weight: 100
+      font-size: 40px
+
+.content-clock
+  text-align: center
+  background: $blue
+  font-family: sans-serif
+  font-weight: 100%
+  height: 60%
+  display: flex
+  margin-top: 20px
+
+  .clock
+    font-family: sans-serif
+    color: $white
+    display: inline-block
+    font-weight: 100%
+    text-align: center
+    font-size: 30px
+    margin: auto
+    padding: 40px 0 40px 0
+
+    .time-box
+      padding: 20px 30px
+      border-radius: 3px
+      display: inline-block
+
+      .time
+        padding: 15px
+        border-radius: 3px
+        display: inline-block
+        font-size: 60px
+
+    .small-text
+      padding: 5px 0 0 0
+      font-size: 16px

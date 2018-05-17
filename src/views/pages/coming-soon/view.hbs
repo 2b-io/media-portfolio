@@ -1,0 +1,30 @@
+{{#> layouts/default}}
+  {{#*inline "content-body"}}
+  <div class="header">
+    <div class="logo">
+      <img class="logo-img" src="{{assets.logo_img}}" alt="NTQ Solution">
+      <h2 class="logo-text">We are coming soon</h2>
+    </div>
+  </div>
+  <div class="content-clock">
+    <div id="clock" class="clock">
+      <div class="time-box">
+        <span class="time days"></span> <br/>
+        <div class="time-box small-text">days</div>
+      </div>
+      <div class="time-box">
+        <span class="time hours"></span> <br/>
+        <div class="time-box small-text">hrs</div>
+      </div>
+      <div class="time-box">
+        <span class="time minutes"></span> <br/>
+        <div class="time-box small-text">min</div>
+      </div>
+      <div class="time-box">
+        <span class="time seconds"></span> <br/>
+        <div class="time-box small-text">sec</div>
+      </div>
+    </div>
+  </div>
+  {{/inline}}
+{{/ layouts/default}}

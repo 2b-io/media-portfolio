@@ -5,8 +5,377 @@ box-sizing-reset()
 normalize()
 
 html, body
-  font-family: 'Space Mono'
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
+  overflow-x: hidden
+  height: 100%
+  min-width: 200px
 
-.img
-  background-image: url('~img/dragging.png')
-  size: 100px 100px
+a
+  text-decoration: none
+  font-weight: bold
+
+.container
+  display: flex
+  height: auto
+  background: #fff
+
+  .container-center
+    max-width: 1300px
+    margin: auto
+
+    .header-top
+      height: 120px
+      display: flex
+      position: relative
+
+      .header-logo
+        padding-top: 30px
+        padding-left: 10px
+        width: 150px
+        height: 150px
+        float: left
+
+        .logo
+          width: 130px
+          height: 100px
+
+      .header-menu
+        max-width: 1000px
+        height: 150px
+        margin: auto
+        display: flex
+        float: left
+
+        .menu
+          padding-top:30px
+          margin-left: 20px
+          display: flex
+          margin: auto
+
+          .top-menu
+            display: inline
+
+            .menu-item
+              padding-left:80px
+              float: left
+
+              .menu-item-a
+                height: 30px
+                color: black
+                display: block
+
+                &:hover
+                  color: blue
+                  height: 30px
+                  border-bottom: 1px solid blue
+
+              @media screen and (max-width: 1200px)
+                padding-right:40px
+
+              @media screen and (max-width: 840px)
+                padding-right:20px
+
+    .header-bottom
+      padding: 70px 0 0 10px
+      height: 60%
+
+      .header-text, .lean-more
+        color: #fff
+        font-weight: bold
+        text-transform: uppercase
+
+      .header-text
+        padding-top 10px
+        margin-top: 20px
+        letter-spacing: 1px
+        text-shadow: 4px 4px 2px black
+        font-size: 60px
+        line-height: 80px
+        text-overflow: ellipsis
+
+        margin: left
+
+        @media screen and (max-width: 1200px)
+          font-size: 40px
+          line-height: 50px
+
+        @media screen and (max-width: 600px)
+          font-size: 25px
+          line-height: 35px
+
+      .lean-more
+        margin-top: 20px
+        background: #00b4f4
+        border-radius: 2000px
+        font-size: 24px
+        text-align: center
+        line-height: 50px
+        width: 250px
+        height: 50px
+        display: block
+
+        &:hover
+          background: #00b4
+
+.container-full-screen
+  height: 100%
+  background: url('~img/bg/bg_home_header.png') no-repeat center center
+  background-size: cover
+
+  .container-center
+    height: 100%
+
+.container
+  .feature
+    text-align: center
+
+    .container-center-box
+      display: inline-block
+
+      .feature-info
+        width: 320px
+        height: 400px
+        display: inline-block
+
+        .feature-box-img-wraper
+          width: 320px
+          height: 220px
+          display: flex
+
+          .feature-box-img
+            margin: auto
+            height: 100px
+            width: 100px
+
+        .feature-info-box
+          text-align: center
+          width: 320px
+          height: 220px
+
+          .feature-info-box-title
+            font-weight: bold
+            width: 320px
+            height: 20px
+
+          .feature-info-box-label
+            padding: 10px 10px 10px 10px
+            width: 320px
+            height: 120px
+
+    .what-new-title
+      margin: auto
+      font-weight: bold
+      text-transform: uppercase
+      font-size: 25px
+      height: 80px
+      line-height: 80px
+
+      @media screen and (max-width: 420px)
+        font-size: 19px
+
+    .what-new-image-wraper
+      margin: auto
+      text-align: center
+      display: inline-block
+
+      .what-new-image-box
+        height: 220px
+        display: inline-block
+
+        @media screen and (max-width: 900px)
+            display: block
+
+        .what-new-image
+          padding: 0px 50px 0 50px
+          height: 70px
+
+        .what-new-image-title
+          padding-top: 20px
+          height: 80px
+          line-height: 80px
+          font-weight: bold
+
+      .trusted-wraper
+        height: 100px
+        display: inline
+
+
+.maps
+  background: #EEEEEE
+  height: auto
+  display: block
+  padding-bottom: 40px
+
+  .container-center
+    text-align: center
+
+    .maps-label
+      display: flex
+      height: 100px
+
+      .maps-p
+        font-size: 19px
+        line-height: 25px
+        margin: auto
+
+    .maps-background-wraper
+      background: url('~img/bg/bg_home_maps.jpg') no-repeat center
+      background-size: contain
+      margin: auto
+      max-width: 1200px
+      height: 50vh
+
+    .maps-footer
+      margin: auto
+      max-width: 1000px
+      height: 100px
+      display: flex
+
+      .maps-footer-text
+        margin: auto
+        width: 250px
+        height: 100px
+        display: flex
+
+        .maps-footer-p
+          margin: auto
+          height: 70px
+
+          .maps-span-value
+            font-size: 25px
+            font-weight: bold
+
+          .maps-span-small
+            margin-top: 10px
+            font-size: 17px
+            font-weight: normal
+
+.subscribe
+  background: #EEEEEE
+  height: auto
+  display: flex
+  text-align: center
+
+  .subscribe-wraper
+    margin: auto
+    display: flex
+    width: 1000px
+    height: 150px
+    background: url('~img/bg/bg_home_subscribe.png') no-repeat right center
+    background-size: 140px 100px
+
+    .subscribe-text
+      margin: auto
+      display: inline-block
+
+      p
+        font-size: 40px
+        color: #AED2F2
+        display: inline
+        padding-right: 40px
+        font-style: italic
+        letter-spacing: 1.5px
+
+      input
+        border: 1px solid #999
+        border-radius: 5px
+        font-style: italic
+        font-size: 16px
+        background: #fff
+        cursor: pointer
+
+      input[type=email]
+        height: 20px
+        padding: 14px 20px
+
+      input[type=submit]
+        height: 27px
+        color: #999
+
+        // box-shadow: 1px 1px 1px 1px #999
+
+.footer
+  background: #000
+  height: auto
+  display: flex
+
+  .container-footer-center
+    padding-top: 30px
+    padding-bottom: 30px
+    display: flex
+    max-width: 1300px
+    margin: auto
+    // text-align: center
+
+    .footer-wraper
+      text-align: center
+      margin: auto
+      max-width: 1400px
+      display: flex
+      flex-wrap: wrap
+      padding-left: 10px
+      padding-right: 10px
+
+      .bottom-container
+        display: flex
+        color: #fff
+        flex-wrap: wrap
+        align-items: center
+        flex-grow: 1
+        justify-content: center
+
+
+      .bottom-logo
+        width: 150px
+
+        .bottom-logo-img
+          width: 130px
+          height: 100px
+
+      .bottom-menu-wraper-box
+        padding-top: 20px
+        padding-bottom: 20px
+
+        .bottom-menu-box
+          height: 50px
+
+        .bottom-menu
+          display: flex
+          flex-wrap: wrap
+          align-items: center
+          flex-grow: 1
+          justify-content: center
+
+
+          .bottom-menu-item
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            flex-grow: 1
+            justify-content: center
+            padding-left: 10px
+            padding-right: 10px
+
+            .bottom-menu-item-a
+              font-size: 15px
+              height: 30px
+              line-height: 30px
+              color: #fff
+
+      .bottom-icon
+        border: 1px solid red
+        .bottom-icon-box
+          height: 20px
+
+.footer-license
+  display: inline
+  text-align: center
+
+  .footer-license-p
+    width: 50%
+    height: 50px
+    float: left
+    line-height: 50px
+    font-size: 15px
+    color: #fff
+    background-color: #0064B2

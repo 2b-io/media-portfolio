@@ -1,9 +1,165 @@
 {{#> layouts/default}}
   {{#*inline "content-body"}}
-    {{> partials/header.hbs}}
-    <div class="img"></div>
-    <img src="{{img}}">
-    <a href="/about-us">About Us</a>
-    <a href="/coming-soon">Coming Soon</a>
+    <div class="container container-full-screen">
+      <div class='container-center'>
+        <div class="header-top">
+          <div class="header-logo">
+            <img class="logo" src="{{assets.logo_white}}" alt="NTQ Solution">
+          </div>
+          {{> partials/menu.hbs}}
+        </div>
+        <div class="header-bottom">
+          <p class="header-text">
+            {{{labels.header.text}}}
+          </p>
+            <a class="lean-more" href="/" target="_blank">{{labels.header.link_title}}</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="feature container-center">
+        <div class="container-center-box">
+          <div class="feature-info">
+            <div class="feature-box-img-wraper">
+              <img class="feature-box-img" src={{assets.feature_icon.feature_icon_icon1}} alt="optimized">
+            </div>
+            <div class="feature-info-box">
+              <p class="feature-info-box-title">{{labels.feature.totally_optimized.title}}</p>
+              <p class="feature-info-box-label">{{labels.feature.totally_optimized.text}}</p>
+              <a href="#" target="_blank">{{labels.feature.totally_optimized.footer_text}}</a>
+            </div>
+          </div>
+          <div class="feature-info">
+            <div class="feature-box-img-wraper">
+              <img class="feature-box-img" src={{assets.feature_icon.feature_icon_icon2}} alt="features">
+            </div>
+            <div class="feature-info-box">
+              <p class="feature-info-box-title">{{labels.feature.powerful_features.title}}</p>
+              <p class="feature-info-box-label">{{labels.feature.powerful_features.text}}</p>
+              <a href="#" target="_blank">{{labels.feature.powerful_features.footer_text}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="container-center-box">
+          <div class="feature-info">
+            <div class="feature-box-img-wraper">
+              <img class="feature-box-img" src={{assets.feature_icon.feature_icon_icon3}} alt="network">
+            </div>
+            <div class="feature-info-box">
+              <p class="feature-info-box-title">{{labels.feature.global_network.title}}</p>
+              <p class="feature-info-box-label">{{labels.feature.global_network.text}}</p>
+              <a href="#" target="_blank">{{labels.feature.global_network.footer_text}}</a>
+            </div>
+          </div>
+          <div class="feature-info">
+            <div class="feature-box-img-wraper">
+              <img class="feature-box-img" src={{assets.feature_icon.feature_icon_icon4}} alt="saved">
+            </div>
+            <div class="feature-info-box">
+              <p class="feature-info-box-title">{{labels.feature.totally_saved.title}}</p>
+              <p class="feature-info-box-label">{{labels.feature.totally_saved.text}}</p>
+              <a href="#" target="_blank">{{labels.feature.totally_saved.footer_text}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="maps container">
+      <div class="container-center">
+        <div class="maps-label">
+          <p class="maps-p">{{{labels.maps.label}}}</p>
+        </div>
+        <div class="maps-background-wraper">
+        </div>
+        <div class="maps-footer">
+          <div class="maps-footer-text">
+            <p class="maps-footer-p">
+              <span class="maps-span-value">{{{labels.maps.data.value}}}</span><br/><br/>
+              <span class="maps-span-small">{{labels.maps.data.text}}<span>
+            </p>
+          </div>
+          <div class="maps-footer-text">
+            <p class="maps-footer-p">
+              <span class="maps-span-value">{{{labels.maps.ratio.value}}}</span><br/><br/>
+              <span class="maps-span-small">{{labels.maps.ratio.text}}<span>
+            </p>
+          </div>
+          <div class="maps-footer-text">
+            <p class="maps-footer-p">
+              <span class="maps-span-value">{{{labels.maps.cost.value}}}</span><br/><br/>
+              <span class="maps-span-small">{{labels.maps.cost.text}}<span>
+            </p>
+          </div>
+          <div class="maps-footer-text">
+            <p class="maps-footer-p">
+              <span class="maps-span-value">{{{labels.maps.zones.value}}}</span><br/><br/>
+              <span class="maps-span-small">{{labels.maps.zones.text}}<span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="feature container-center">
+        <div class="what-new-title">
+          <p>{{labels.what_new.title}}</p>
+        </div>
+        <div class="what-new-image-wraper">
+          <div class="what-new-image-box">
+            <img class="what-new-image" src={{assets.system_icon.image_optimization}} alt="image-optimization">
+            <p class="what-new-image-title">{{labels.what_new.image_optimization}}</p>
+          </div>
+          <div class="what-new-image-box">
+            <img class="what-new-image" src={{assets.system_icon.image_size}} alt="image-optimization">
+            <p class="what-new-image-title">{{labels.what_new.image_size}}</p>
+          </div>
+          <div class="what-new-image-box">
+            <img class="what-new-image" src={{assets.system_icon.image_animated}} alt="image-optimization">
+            <p class="what-new-image-title">
+              {{labels.what_new.image_animated}}
+            </p>
+          </div>
+        </div>
+
+        {{!-- <div class="trusted-wraper"></div>
+        <div class="bottom-menu-wraper"></div>
+        <div class="copy-right-wraper"></div> --}}
+      </div>
+    </div>
+    <div class="container subscribe">
+      <div class="subscribe-wraper">
+        <div class="subscribe-text">
+          <p>Subscribe Now</p>
+          <input type="email" name="email" id="email" value="" placeholder="Enter your email" required />
+          <input type="submit" value="Subscribe">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="feature container-center">
+        <div class="what-new-title">
+          <p>Trusted By</p>
+        </div>
+{{!--         <div>
+          <input class="btn_left" type="button" id="btn_left">
+        </div> --}}
+        <div class="what-new-image-wraper">
+          <div class="trusted-wraper what-new-image-box">
+            <img class="what-new-image" src={{assets.trusted.logo1}} alt="image-optimization">
+          </div>
+          <div class="trusted-wraper what-new-image-box">
+            <img class="what-new-image" src={{assets.trusted.logo2}} alt="image-optimization">
+          </div>
+          <div class="trusted-wraper what-new-image-box">
+            <img class="what-new-image" src={{assets.trusted.logo3}} alt="image-optimization">
+          </div>
+          <div class="trusted-wraper what-new-image-box">
+            <img class="what-new-image" src={{assets.trusted.logo4}} alt="image-optimization">
+          </div>
+        </div>
+      </div>
+    </div>
+    {{> partials/footer.hbs}}
+
   {{/inline}}
 {{/ layouts/default}}

@@ -15,18 +15,17 @@ a
   font-weight: bold
 
 .container
-  display: flex
   height: auto
-  background: #fff
+  background: transparent
 
   .container-center
-    max-width: 1300px
+    border: 1px red solid
+    max-width: 1150px
     margin: auto
 
     .header-top
       height: 120px
       display: flex
-      position: relative
 
       .header-logo
         padding-top: 30px
@@ -44,7 +43,7 @@ a
         height: 150px
         margin: auto
         display: flex
-        float: left
+        // float: left
 
         .menu
           padding-top:30px
@@ -65,7 +64,7 @@ a
                 display: block
 
                 &:hover
-                  color: blue
+                  color: #0066b3
                   height: 30px
                   border-bottom: 1px solid blue
 
@@ -88,7 +87,7 @@ a
         padding-top 10px
         margin-top: 20px
         letter-spacing: 1px
-        text-shadow: 4px 4px 2px black
+        text-shadow: 0px 0px 2px black
         font-size: 60px
         line-height: 80px
         text-overflow: ellipsis
@@ -115,7 +114,7 @@ a
         display: block
 
         &:hover
-          background: #00b4
+          background: #4ba6dd
 
 .container-full-screen
   height: 100%
@@ -128,18 +127,28 @@ a
 .container
   .feature
     text-align: center
+    display: flex
+    flex-wrap: wrap
+    flex-grow: 1
+    align-items: center
+    justify-content: center
 
     .container-center-box
-      display: inline-block
+      display: flex
+      flex-wrap: wrap
+      flex-grow: 1
 
       .feature-info
-        width: 320px
-        height: 400px
-        display: inline-block
+        height: 360px
+        flex-grow: 1
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
 
         .feature-box-img-wraper
-          width: 320px
-          height: 220px
+          width: 260px
+          height: 180px
           display: flex
 
           .feature-box-img
@@ -148,46 +157,49 @@ a
             width: 100px
 
         .feature-info-box
-          text-align: center
-          width: 320px
-          height: 220px
+          width: 260px
+          height: 180px
 
           .feature-info-box-title
             font-weight: bold
-            width: 320px
             height: 20px
 
           .feature-info-box-label
-            padding: 10px 10px 10px 10px
-            width: 320px
-            height: 120px
+            height: 100px
+            font-size: 13px
+            padding-left: 5px
+            padding-right: 5px
+
+    .what-new
+      flex-grow: 1
+      flex-wrap: wrap
 
     .what-new-title
       margin: auto
       font-weight: bold
       text-transform: uppercase
       font-size: 25px
-      height: 80px
-      line-height: 80px
+      height: 120px
+      line-height: 120px
 
       @media screen and (max-width: 420px)
         font-size: 19px
+        height: 80px
+        line-height: 80px
 
     .what-new-image-wraper
-      margin: auto
-      text-align: center
-      display: inline-block
+      display: flex
+      flex-wrap: wrap
+      flex-grow: 1
 
       .what-new-image-box
-        height: 220px
-        display: inline-block
-
-        @media screen and (max-width: 900px)
-            display: block
+        // height: 220px
+        flex-grow: 1
+        padding-bottom: 40px
 
         .what-new-image
+          width: 300px
           padding: 0px 50px 0 50px
-          height: 70px
 
         .what-new-image-title
           padding-top: 20px
@@ -202,9 +214,8 @@ a
 
 .maps
   background: #EEEEEE
-  height: auto
-  display: block
   padding-bottom: 40px
+  display: block
 
   .container-center
     text-align: center
@@ -222,12 +233,12 @@ a
       background: url('~img/bg/bg_home_maps.jpg') no-repeat center
       background-size: contain
       margin: auto
-      max-width: 1200px
+      // max-width: 1200px
       height: 50vh
 
     .maps-footer
       margin: auto
-      max-width: 1000px
+      // max-width: 1000px
       height: 100px
       display: flex
 
@@ -259,10 +270,10 @@ a
   .subscribe-wraper
     margin: auto
     display: flex
-    width: 1000px
+    width: 1300px
     height: 150px
-    background: url('~img/bg/bg_home_subscribe.png') no-repeat right center
-    background-size: 140px 100px
+    background: url('~img/bg/bg_home_subscribe.png') no-repeat right 100px center
+    background-size: 180px 100px
 
     .subscribe-text
       margin: auto
@@ -292,25 +303,26 @@ a
         height: 27px
         color: #999
 
+        &:hover
+          color: #0066b3
+
         // box-shadow: 1px 1px 1px 1px #999
 
 .footer
   background: #000
   height: auto
-  display: flex
+  // display: flex
 
   .container-footer-center
     padding-top: 30px
     padding-bottom: 30px
     display: flex
-    max-width: 1300px
     margin: auto
-    // text-align: center
 
     .footer-wraper
       text-align: center
       margin: auto
-      max-width: 1400px
+      max-width: 1300px
       display: flex
       flex-wrap: wrap
       padding-left: 10px
@@ -323,6 +335,8 @@ a
         align-items: center
         flex-grow: 1
         justify-content: center
+        padding-top: 20px
+        padding-bottom: 20px
 
 
       .bottom-logo
@@ -333,11 +347,8 @@ a
           height: 100px
 
       .bottom-menu-wraper-box
-        padding-top: 20px
-        padding-bottom: 20px
-
         .bottom-menu-box
-          height: 50px
+          height: 30px
 
         .bottom-menu
           display: flex
@@ -357,15 +368,29 @@ a
             padding-right: 10px
 
             .bottom-menu-item-a
-              font-size: 15px
+              // font-size: 18px
               height: 30px
               line-height: 30px
               color: #fff
 
+              &:hover
+                color: #0066b3
+
       .bottom-icon
-        border: 1px solid red
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        flex-grow: 1
+        justify-content: center
+
         .bottom-icon-box
           height: 20px
+          height: 30px
+          line-height: 30px
+
+          img
+            padding-left: 20px
+            padding-right: 20px
 
 .footer-license
   display: inline

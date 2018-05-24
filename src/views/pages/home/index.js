@@ -60,10 +60,10 @@ const urls = {
 const assets = {
   logo_white: require('img/logo/logo_white.png'),
   feature_icon: {
-    feature_icon_icon1: require('img/icon/icon1.png'),
-    feature_icon_icon2: require('img/icon/icon2.png'),
-    feature_icon_icon3: require('img/icon/icon3.png'),
-    feature_icon_icon4: require('img/icon/icon4.png'),
+    icon1: require('img/icon/icon1.png'),
+    icon2: require('img/icon/icon2.png'),
+    icon3: require('img/icon/icon3.png'),
+    icon4: require('img/icon/icon4.png'),
   },
   system_icon: {
     image_optimization: require('img/icon/icon5.png'),
@@ -75,7 +75,13 @@ const assets = {
     logo2: require('img/logo/logo5.jpg'),
     logo3: require('img/logo/logo9.jpg'),
     logo4: require('img/logo/logo12.jpg'),
-  }
+  },
+  footer_icon: {
+    facebook: require('img/icon/facebook.png'),
+    twitter: require('img/icon/twitter.png'),
+    skype: require('img/icon/skype.png'),
+    youtube: require('img/icon/youtube.png'),
+  },
 }
 
 const context = {

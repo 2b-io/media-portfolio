@@ -19,60 +19,132 @@ a
   background: transparent
 
   .container-center
-    border: 1px red solid
     max-width: 1150px
     margin: auto
 
     .header-top
-      height: 120px
+      height: 150px
       display: flex
+      align-items: center
+      justify-content: center
 
-      .header-logo
-        padding-top: 30px
-        padding-left: 10px
+      .header-item
+        // height: 150px
+
+      .header-logo-wraper
         width: 150px
-        height: 150px
-        float: left
+        display: flex
+        // padding-top: 30px
+        align-items: flex-start
+        justify-content: center
 
-        .logo
-          width: 130px
-          height: 100px
+        .header-logo
+          width: 120px
 
       .header-menu
-        max-width: 1000px
-        height: 150px
-        margin: auto
+        flex-grow: 1
         display: flex
-        // float: left
+        flex-wrap: nowrap
+        align-items: center
+        justify-content: flex-end
 
         .menu
-          padding-top:30px
-          margin-left: 20px
+          flex-grow: 1
           display: flex
-          margin: auto
+          // align-items: center
+          // justify-content: center
+          height: 50px
 
           .top-menu
-            display: inline
+            flex-grow: 1
+            display: flex
+            flex-wrap: nowrap
+            align-items: center
+            justify-content: center
+            text-align: center
 
             .menu-item
-              padding-left:80px
-              float: left
+              flex-shrink: 2
+              flex-grow: 1
+              display: flex
+              align-items: center
+              justify-content: center
 
               .menu-item-a
-                height: 30px
+                flex-grow: 1
+                line-height: 50px
+                height: 50px
                 color: black
-                display: block
+
+                @media screen and (max-width: 768px)
+                  font-size: 15px
+                  line-height: 20px
+                  height: 20px
 
                 &:hover
                   color: #0066b3
-                  height: 30px
+                  // height: 20px
                   border-bottom: 1px solid blue
 
-              @media screen and (max-width: 1200px)
-                padding-right:40px
+              .menu-item-bigger
+                flex-shrink: 1
 
-              @media screen and (max-width: 840px)
-                padding-right:20px
+
+          @media screen and (max-width: 768px)
+            display: none
+
+        .menu-mobile
+          width: 200px
+          display: flex
+          justify-content: flex-end
+          align-items: flex-end
+          // background-color: #0063AF
+
+          .menu-mobile-box
+            max-width: 400px
+            display: flex
+            justify-content: flex-end
+            align-items: flex-end
+            flex-direction: column
+            padding-top: 70px
+            padding-bottom: 10px
+            padding-right: 30px
+
+            .menu-mobile
+              flex-grow: 1
+              display: flex
+              visibility:hidden
+              flex-direction: column
+
+              // &:hover
+              //   background-color: none
+
+              .menu-item
+                line-height: 30px
+
+                .menu-item-a
+                  color: #fff
+
+                  &:hover
+                    border-bottom: 1px solid #fff
+
+            .menu-mobile-checkbox
+              margin-top: 50px
+              margin-bottom: 30px
+              width: 50px
+              height: 50px
+              background-color: #fff
+
+              // &:checked ~ .menu-mobile
+              //   background-color: red
+
+              &:checked ~ .menu-mobile
+                visibility: visible
+
+          @media screen and (min-width: 768px)
+            display: none
+
+
 
     .header-bottom
       padding: 70px 0 0 10px
@@ -98,7 +170,7 @@ a
           font-size: 40px
           line-height: 50px
 
-        @media screen and (max-width: 600px)
+        @media screen and (max-width: 768px)
           font-size: 25px
           line-height: 35px
 
@@ -182,7 +254,7 @@ a
       height: 120px
       line-height: 120px
 
-      @media screen and (max-width: 420px)
+      @media screen and (max-width: 480px)
         font-size: 19px
         height: 80px
         line-height: 80px
@@ -207,10 +279,78 @@ a
           line-height: 80px
           font-weight: bold
 
-      .trusted-wraper
-        height: 100px
-        display: inline
+  .trusted
+    display: flex
+    flex-direction: column
+    padding-bottom: 40px
 
+    .trusted-item
+      flex-grow: 1
+      display: flex
+      justify-content: center
+      align-items: center
+
+      .trusted-title-p
+        font-size: 30px
+        font-weight: bold
+        text-transform: uppercase
+
+    .trusted-title
+      height: 120px
+
+    .trusted-box
+      height: 100px
+      display: flex
+      // flex-wrap: nowrap
+      flex-direction: rows
+      justify-content: center
+      align-items: center
+
+      .trusted-box-item
+        flex-grow: 1
+        display: flex
+        flex-wrap: nowrap
+        flex-direction: rows
+        justify-content: center
+        align-items: center
+
+      .trusted-box-images
+        overflow-x: hidden
+
+
+        .trusted-image-wraper
+          display: flex
+          justify-content: center
+          align-items: center
+          flex-grow: 1
+
+          .trusted-image
+            flex-grow: 1
+            padding: 0 10px 0 10px
+
+      .trusted-button
+        width: 100px
+        height: 100px
+
+        .trusted-button-item
+          width: 50px
+          height: 50px
+          border: none
+          background-size: cover
+          outline: none
+
+          &:hover
+            transform: scale(1.2)
+
+          &:active
+            translateY(4px)
+            background-color: #EEEEEE
+
+        .btn_left
+          background: url('~img/icon/previous.png') no-repeat center
+
+        .btn_right
+          background: url('~img/icon/next.png') no-repeat center
 
 .maps
   background: #EEEEEE
@@ -265,53 +405,66 @@ a
   background: #EEEEEE
   height: auto
   display: flex
-  text-align: center
 
   .subscribe-wraper
-    margin: auto
     display: flex
-    width: 1300px
-    height: 150px
+    flex-direction: rows
+    align-items: center
+    justify-content: center
+    flex-grow: 1
+    flex-wrap: wrap
     background: url('~img/bg/bg_home_subscribe.png') no-repeat right 100px center
     background-size: 180px 100px
 
-    .subscribe-text
-      margin: auto
-      display: inline-block
+    .subscribe-wraper-item
+      padding: 0 10px 0 10px
+      height: 150px
+      display: flex
+      align-items: center
+      justify-content: space-around
 
-      p
+      @media screen and (max-width: 768px)
+        height: 80px
+
+    .subscribe-text
+
+      .subscribe-text-p
         font-size: 40px
-        color: #AED2F2
-        display: inline
-        padding-right: 40px
+        color: #0063AC
+        flex-grow: 1
+        // padding-left: 40px
         font-style: italic
         letter-spacing: 1.5px
 
-      input
+    .subscribe-input
+      flex-direction: rows
+
+      .subscribe-input-item
+        outline: none
+        flex-grow: 1
         border: 1px solid #999
         border-radius: 5px
         font-style: italic
         font-size: 16px
         background: #fff
         cursor: pointer
+        height: 35px
 
       input[type=email]
-        height: 20px
-        padding: 14px 20px
+        width: 250px
+
+        @media screen and (max-width: 480px)
+          width: 200px
 
       input[type=submit]
-        height: 27px
         color: #999
 
         &:hover
           color: #0066b3
 
-        // box-shadow: 1px 1px 1px 1px #999
-
 .footer
   background: #000
   height: auto
-  // display: flex
 
   .container-footer-center
     padding-top: 30px
@@ -352,7 +505,7 @@ a
 
         .bottom-menu
           display: flex
-          flex-wrap: wrap
+          flex-wrap: nowrap
           align-items: center
           flex-grow: 1
           justify-content: center
@@ -367,11 +520,23 @@ a
             padding-left: 10px
             padding-right: 10px
 
+            @media screen and (max-width: 480px)
+              padding-left: 4px
+              padding-right: 4px
+
             .bottom-menu-item-a
               // font-size: 18px
               height: 30px
               line-height: 30px
               color: #fff
+
+              @media screen and (max-width: 768px)
+                font-size: 15px
+                line-height: 20px
+
+              @media screen and (max-width: 480px)
+                font-size: 10px
+                line-height: 16px
 
               &:hover
                 color: #0066b3
@@ -388,7 +553,7 @@ a
           height: 30px
           line-height: 30px
 
-          img
+          .bottom-icon-img
             padding-left: 20px
             padding-right: 20px
 

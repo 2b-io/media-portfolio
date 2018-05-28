@@ -3,10 +3,13 @@
     <div class="container container-full-screen">
       <div class="container-center">
         <div class="header-top">
-          <div class="header-logo">
-            <img class="logo" src="{{assets.logo_white}}" alt="NTQ Solution">
+          <div class="header-item header-logo-wraper">
+            <img class="header-logo" src="{{assets.logo_white}}" alt="NTQ Solution">
           </div>
-          {{> partials/menu.hbs}}
+          <div class="header-item header-menu">
+            {{> partials/top-menu.hbs}}
+            {{> partials/top-menu-phone.hbs}}
+          </div>
         </div>
         <div class="header-bottom">
           <p class="header-text">
@@ -128,34 +131,47 @@
     </div>
     <div class="container subscribe">
       <div class="subscribe-wraper container-center">
-        <div class="subscribe-text">
-          <p>Subscribe Now</p>
-          <input type="email" name="email" id="email" value="" placeholder="Enter your email" required />
-          <input type="submit" value="Subscribe">
+        <div class="subscribe-wraper-item subscribe-text">
+          <p class="subscribe-text-p">Subscribe Now</p>
+        </div>
+        <div class="subscribe-wraper-item subscribe-input">
+          <input class="subscribe-input-item" type="email" name="email" id="email" value="" placeholder="Enter your email" required />
+          <input class="subscribe-input-item" type="submit" value="Subscribe">
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="feature container-center">
-        <div class="what-new-title">
-          <p>Trusted By</p>
+      <div class="trusted container-center">
+        <div class="trusted-item trusted-title">
+          <p class="trusted-title-p">Trusted By</p>
         </div>
-{{!--         <div>
-          <input class="btn_left" type="button" id="btn_left">
-        </div> --}}
-        <div class="what-new-image-wraper">
-          <div class="trusted-wraper what-new-image-box">
-            <img class="what-new-image" src={{assets.trusted.logo1}} alt="image-optimization">
+        <div class="trusted-item trusted-box">
+          <div class="trusted-box-item trusted-button">
+            <button class="trusted-button-item btn_left" id="btn_left">
           </div>
-          <div class="trusted-wraper what-new-image-box">
-            <img class="what-new-image" src={{assets.trusted.logo2}} alt="image-optimization">
+          <div class="trusted-box-item trusted-box-images">
+            <div class="trusted-image-wraper">
+              <img class="trusted-image" src={{assets.trusted.logo1}} alt="image-optimization">
+            </div>
+            <div class="trusted-image-wraper">
+              <img class="trusted-image" src={{assets.trusted.logo2}} alt="image-optimization">
+            </div>
+            <div class="trusted-image-wraper">
+              <img class="trusted-image" src={{assets.trusted.logo3}} alt="image-optimization">
+            </div>
+            <div class="trusted-image-wraper">
+              <img class="trusted-image" src={{assets.trusted.logo4}} alt="image-optimization">
+            </div>
+            <div class="trusted-image-wraper">
+              <img class="trusted-image" src={{assets.trusted.logo4}} alt="image-optimization">
+            </div>
+            <div class="trusted-image-wraper">
+              <img class="trusted-image" src={{assets.trusted.logo4}} alt="image-optimization">
+            </div>
           </div>
-          <div class="trusted-wraper what-new-image-box">
-            <img class="what-new-image" src={{assets.trusted.logo3}} alt="image-optimization">
-          </div>
-          <div class="trusted-wraper what-new-image-box">
-            <img class="what-new-image" src={{assets.trusted.logo4}} alt="image-optimization">
-          </div>
+          <div class="trusted-box-item trusted-button">
+              <button class="trusted-button-item btn_right" id="btn_right">
+            </div>
         </div>
       </div>
     </div>

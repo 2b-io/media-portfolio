@@ -1,0 +1,35 @@
+<div class="container footer">
+  <div class="container-center container-footer-center">
+    <div class="footer-wraper">
+      <div class="bottom-logo bottom-container">
+        <a href="#">
+          <img class="bottom-logo-img" src="{{assets.logo_white}}" alt="NTQ Solution">
+        </a>
+      </div>
+      <div class="bottom-menu-wraper-box bottom-container">
+        <div class="bottom-menu-box">
+          <ul class="bottom-menu">
+            {{#each urls.menu}}
+              <li class="bottom-menu-item">
+                <a class="bottom-menu-item-a" href="{{this.link}}">{{this.label}}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="bottom-icon bottom-container">
+        <div class="bottom-icon-box">
+          {{#each urls.social}}
+            <a href="{{this.link}}">
+              <img class="bottom-icon-img" src="{{this.icon}}">
+            </a>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer-license">
+  <p class="footer-license-p">copyright &copy; 2018</p>
+  <p class="footer-license-p">sale contact: (+84) 241 625 2145</p>
+</div>

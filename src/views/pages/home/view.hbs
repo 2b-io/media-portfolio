@@ -1,9 +1,149 @@
 {{#> layouts/default}}
   {{#*inline "content-body"}}
-    {{> partials/header.hbs}}
-    <div class="img"></div>
-    <img src="{{img}}">
-    <a href="/about-us">About Us</a>
-    <a href="/coming-soon">Coming Soon</a>
+    <div class="container container-full-screen">
+      <div class="container-center">
+        <div class="header-top">
+          <div class="header-item header-logo-wraper">
+            <a href="#">
+              <img class="header-logo" src="{{assets.logo_white}}" alt="NTQ Solution">
+            </a>
+          </div>
+          <div class="header-item header-menu">
+            {{> partials/top-menu.hbs}}
+            {{> partials/top-menu-phone.hbs}}
+          </div>
+        </div>
+        <div class="header-bottom">
+          <p class="header-text">
+            {{{labels.header.text}}}
+          </p>
+            <a class="lean-more" href="/" target="_blank">{{labels.header.link_title}}</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="feature container-center">
+        <div class="container-center-box">
+          <div class="feature-info">
+            <div class="feature-box-img-wraper">
+              <img class="feature-box-img" src={{assets.feature_icon.totally_optimized}} alt="optimized">
+            </div>
+            <div class="feature-info-box">
+              <p class="feature-info-box-title">{{labels.feature.totally_optimized.title}}</p>
+              <p class="feature-info-box-label">{{labels.feature.totally_optimized.text}}</p>
+              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.totally_optimized.footer_text}}</a>
+            </div>
+          </div>
+          <div class="feature-info">
+            <div class="feature-box-img-wraper">
+              <img class="feature-box-img" src={{assets.feature_icon.powerful_features}} alt="features">
+            </div>
+            <div class="feature-info-box">
+              <p class="feature-info-box-title">{{labels.feature.powerful_features.title}}</p>
+              <p class="feature-info-box-label">{{labels.feature.powerful_features.text}}</p>
+              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.powerful_features.footer_text}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="container-center-box">
+          <div class="feature-info">
+            <div class="feature-box-img-wraper">
+              <img class="feature-box-img" src={{assets.feature_icon.global_network}} alt="network">
+            </div>
+            <div class="feature-info-box">
+              <p class="feature-info-box-title">{{labels.feature.global_network.title}}</p>
+              <p class="feature-info-box-label">{{labels.feature.global_network.text}}</p>
+              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.global_network.footer_text}}</a>
+            </div>
+          </div>
+          <div class="feature-info">
+            <div class="feature-box-img-wraper">
+              <img class="feature-box-img" src={{assets.feature_icon.totally_saved}} alt="saved">
+            </div>
+            <div class="feature-info-box">
+              <p class="feature-info-box-title">{{labels.feature.totally_saved.title}}</p>
+              <p class="feature-info-box-label">{{labels.feature.totally_saved.text}}</p>
+              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.totally_saved.footer_text}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="maps container">
+      <div class="container-center">
+        <div class="maps-label">
+          <p class="maps-p">{{{labels.maps.label}}}</p>
+        </div>
+        <div class="maps-background-wraper">
+        </div>
+        <div class="maps-footer">
+          {{#each labels.maps.title}}
+            <div class="maps-footer-text">
+              <p class="maps-footer-p">
+                <span class="maps-span-value">{{{this.value}}}</span><br/><br/>
+                <span class="maps-span-small">{{this.text}}<span>
+              </p>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="feature container-center">
+        <div class="what-new what-new-title">
+          <p>{{labels.what_new.title}}</p>
+        </div>
+        <div class="what-new what-new-image-wraper">
+          <div class="what-new-image-box">
+            <img class="what-new-image" src={{assets.system_icon.image_optimization}} alt="image-optimization">
+            <p class="what-new-image-title">{{labels.what_new.image_optimization}}</p>
+          </div>
+          <div class="what-new-image-box">
+            <img class="what-new-image" src={{assets.system_icon.image_size}} alt="image-optimization">
+            <p class="what-new-image-title">{{labels.what_new.image_size}}</p>
+          </div>
+          <div class="what-new-image-box">
+            <img class="what-new-image" src={{assets.system_icon.image_animated}} alt="image-optimization">
+            <p class="what-new-image-title">
+              {{labels.what_new.image_animated}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container subscribe">
+      <div class="subscribe-wraper container-center">
+        <div class="subscribe-wraper-item subscribe-text">
+          <label class="subscribe-text-p">{{labels.subscribe.title}}</label>
+        </div>
+        <div class="subscribe-wraper-item subscribe-input">
+          <input class="subscribe-input-item subscribe-input-item-email" type="email" name="email" id="email" value="" placeholder="Enter your email" required/>
+          <input class="subscribe-input-item subscribe-input-item-submit" type="submit" value="Subscribe">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="trusted container-center">
+        <div class="trusted-item trusted-title">
+          <p class="trusted-title-p">{{assets.trusted.title}}</p>
+        </div>
+        <div class="trusted-item trusted-box">
+          <div class="trusted-box-item trusted-button">
+            <button class="trusted-button-item btn_left" id="btn_left">
+          </div>
+          <div class="trusted-box-item trusted-box-images">
+            <div class="trusted-image-wraper">
+              {{#each assets.trusted.logo}}
+                <img class="trusted-image" src={{this}} alt="image-optimization">
+              {{/each}}
+            </div>
+          </div>
+          <div class="trusted-box-item trusted-button">
+              <button class="trusted-button-item btn_right" id="btn_right">
+            </div>
+        </div>
+      </div>
+    </div>
+    {{> partials/footer.hbs}}
   {{/inline}}
 {{/ layouts/default}}

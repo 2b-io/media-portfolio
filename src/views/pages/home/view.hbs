@@ -4,7 +4,9 @@
       <div class="container-center">
         <div class="header-top">
           <div class="header-item header-logo-wraper">
-            <img class="header-logo" src="{{assets.logo_white}}" alt="NTQ Solution">
+            <a href="#">
+              <img class="header-logo" src="{{assets.logo_white}}" alt="NTQ Solution">
+            </a>
           </div>
           <div class="header-item header-menu">
             {{> partials/top-menu.hbs}}
@@ -24,44 +26,44 @@
         <div class="container-center-box">
           <div class="feature-info">
             <div class="feature-box-img-wraper">
-              <img class="feature-box-img" src={{assets.feature_icon.icon1}} alt="optimized">
+              <img class="feature-box-img" src={{assets.feature_icon.totally_optimized}} alt="optimized">
             </div>
             <div class="feature-info-box">
               <p class="feature-info-box-title">{{labels.feature.totally_optimized.title}}</p>
               <p class="feature-info-box-label">{{labels.feature.totally_optimized.text}}</p>
-              <a href="#" target="_blank">{{labels.feature.totally_optimized.footer_text}}</a>
+              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.totally_optimized.footer_text}}</a>
             </div>
           </div>
           <div class="feature-info">
             <div class="feature-box-img-wraper">
-              <img class="feature-box-img" src={{assets.feature_icon.icon2}} alt="features">
+              <img class="feature-box-img" src={{assets.feature_icon.powerful_features}} alt="features">
             </div>
             <div class="feature-info-box">
               <p class="feature-info-box-title">{{labels.feature.powerful_features.title}}</p>
               <p class="feature-info-box-label">{{labels.feature.powerful_features.text}}</p>
-              <a href="#" target="_blank">{{labels.feature.powerful_features.footer_text}}</a>
+              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.powerful_features.footer_text}}</a>
             </div>
           </div>
         </div>
         <div class="container-center-box">
           <div class="feature-info">
             <div class="feature-box-img-wraper">
-              <img class="feature-box-img" src={{assets.feature_icon.icon3}} alt="network">
+              <img class="feature-box-img" src={{assets.feature_icon.global_network}} alt="network">
             </div>
             <div class="feature-info-box">
               <p class="feature-info-box-title">{{labels.feature.global_network.title}}</p>
               <p class="feature-info-box-label">{{labels.feature.global_network.text}}</p>
-              <a href="#" target="_blank">{{labels.feature.global_network.footer_text}}</a>
+              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.global_network.footer_text}}</a>
             </div>
           </div>
           <div class="feature-info">
             <div class="feature-box-img-wraper">
-              <img class="feature-box-img" src={{assets.feature_icon.icon4}} alt="saved">
+              <img class="feature-box-img" src={{assets.feature_icon.totally_saved}} alt="saved">
             </div>
             <div class="feature-info-box">
               <p class="feature-info-box-title">{{labels.feature.totally_saved.title}}</p>
               <p class="feature-info-box-label">{{labels.feature.totally_saved.text}}</p>
-              <a href="#" target="_blank">{{labels.feature.totally_saved.footer_text}}</a>
+              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.totally_saved.footer_text}}</a>
             </div>
           </div>
         </div>
@@ -75,30 +77,14 @@
         <div class="maps-background-wraper">
         </div>
         <div class="maps-footer">
-          <div class="maps-footer-text">
-            <p class="maps-footer-p">
-              <span class="maps-span-value">{{{labels.maps.data.value}}}</span><br/><br/>
-              <span class="maps-span-small">{{labels.maps.data.text}}<span>
-            </p>
-          </div>
-          <div class="maps-footer-text">
-            <p class="maps-footer-p">
-              <span class="maps-span-value">{{{labels.maps.ratio.value}}}</span><br/><br/>
-              <span class="maps-span-small">{{labels.maps.ratio.text}}<span>
-            </p>
-          </div>
-          <div class="maps-footer-text">
-            <p class="maps-footer-p">
-              <span class="maps-span-value">{{{labels.maps.cost.value}}}</span><br/><br/>
-              <span class="maps-span-small">{{labels.maps.cost.text}}<span>
-            </p>
-          </div>
-          <div class="maps-footer-text">
-            <p class="maps-footer-p">
-              <span class="maps-span-value">{{{labels.maps.zones.value}}}</span><br/><br/>
-              <span class="maps-span-small">{{labels.maps.zones.text}}<span>
-            </p>
-          </div>
+          {{#each labels.maps.title}}
+            <div class="maps-footer-text">
+              <p class="maps-footer-p">
+                <span class="maps-span-value">{{{this.value}}}</span><br/><br/>
+                <span class="maps-span-small">{{this.text}}<span>
+              </p>
+            </div>
+          {{/each}}
         </div>
       </div>
     </div>
@@ -123,27 +109,23 @@
             </p>
           </div>
         </div>
-
-        {{!-- <div class="trusted-wraper"></div>
-        <div class="bottom-menu-wraper"></div>
-        <div class="copy-right-wraper"></div> --}}
       </div>
     </div>
     <div class="container subscribe">
       <div class="subscribe-wraper container-center">
         <div class="subscribe-wraper-item subscribe-text">
-          <p class="subscribe-text-p">Subscribe Now</p>
+          <label class="subscribe-text-p">{{labels.subscribe.title}}</label>
         </div>
         <div class="subscribe-wraper-item subscribe-input">
-          <input class="subscribe-input-item" type="email" name="email" id="email" value="" placeholder="Enter your email" required />
-          <input class="subscribe-input-item" type="submit" value="Subscribe">
+          <input class="subscribe-input-item subscribe-input-item-email" type="email" name="email" id="email" value="" placeholder="Enter your email" required/>
+          <input class="subscribe-input-item subscribe-input-item-submit" type="submit" value="Subscribe">
         </div>
       </div>
     </div>
     <div class="container">
       <div class="trusted container-center">
         <div class="trusted-item trusted-title">
-          <p class="trusted-title-p">Trusted By</p>
+          <p class="trusted-title-p">{{assets.trusted.title}}</p>
         </div>
         <div class="trusted-item trusted-box">
           <div class="trusted-box-item trusted-button">
@@ -151,22 +133,9 @@
           </div>
           <div class="trusted-box-item trusted-box-images">
             <div class="trusted-image-wraper">
-              <img class="trusted-image" src={{assets.trusted.logo1}} alt="image-optimization">
-            </div>
-            <div class="trusted-image-wraper">
-              <img class="trusted-image" src={{assets.trusted.logo2}} alt="image-optimization">
-            </div>
-            <div class="trusted-image-wraper">
-              <img class="trusted-image" src={{assets.trusted.logo3}} alt="image-optimization">
-            </div>
-            <div class="trusted-image-wraper">
-              <img class="trusted-image" src={{assets.trusted.logo4}} alt="image-optimization">
-            </div>
-            <div class="trusted-image-wraper">
-              <img class="trusted-image" src={{assets.trusted.logo4}} alt="image-optimization">
-            </div>
-            <div class="trusted-image-wraper">
-              <img class="trusted-image" src={{assets.trusted.logo4}} alt="image-optimization">
+              {{#each assets.trusted.logo}}
+                <img class="trusted-image" src={{this}} alt="image-optimization">
+              {{/each}}
             </div>
           </div>
           <div class="trusted-box-item trusted-button">
@@ -176,6 +145,5 @@
       </div>
     </div>
     {{> partials/footer.hbs}}
-
   {{/inline}}
 {{/ layouts/default}}

@@ -29,58 +29,100 @@ const labels = {
   },
   maps: {
     label: 'Speed up your <b>game, softwave delivery, advertisements, CMS, websites</b> and many more.',
-    data: {
-      value: '50',
-      text: 'Data centers'
-    },
-    ratio: {
-      value: '&gt;94%',
-      text: 'HIT ratio (avg)'
-    },
-    cost: {
-      value: '$50',
-      text: 'or less per TB'
-    },
-    zones: {
-      value: '50,454',
-      text: 'Deployed zones'
-    },
+    title: [
+      {
+        value: '50',
+        text: 'Data centers'
+      },
+      {
+        value: '&gt;94%',
+        text: 'HIT ratio (avg)'
+      },
+      {
+        value: '$50',
+        text: 'or less per TB'
+      },
+      {
+        value: '50,454',
+        text: 'Deployed zones'
+      },
+    ]
   },
   what_new: {
     title: 'what\'s new in our system?',
     image_optimization: 'image-optimization',
     image_size: 'properly size images',
     image_animated: 'animated gifs to html5 videos',
+  },
+  subscribe: {
+    title: 'Subscribe Now',
   }
 }
 
 const urls = {
+  menu: [
+    {
+      link: '#',
+      label: 'FEATURES'
+    },
+    {
+      link: '#',
+      label: 'PRICING'
+    },
+    {
+      link: 'about-us',
+      label: 'ABOUT'
+    },
+    {
+      link: 'contact-us',
+      label: 'CONTACT'
+    },
+    {
+      link:'#',
+      label:'KNOWLEDGE BASE'
+    },
+  ],
+  social: [
+    {
+      link: 'facebook',
+      icon: require('img/icon/facebook.png'),
+    },
+    {
+      link: '#',
+      icon: require('img/icon/twitter.png'),
+    },
+    {
+      link: '#',
+      icon: require('img/icon/skype.png'),
+    },
+    {
+      link: '#',
+      icon: require('img/icon/youtube.png'),
+    },
+  ],
 }
 
 const assets = {
   logo_white: require('img/logo/logo_white.png'),
   feature_icon: {
-    icon1: require('img/icon/icon1.png'),
-    icon2: require('img/icon/icon2.png'),
-    icon3: require('img/icon/icon3.png'),
-    icon4: require('img/icon/icon4.png'),
+    totally_optimized: require('img/icon/totally_optimized.png'),
+    powerful_features: require('img/icon/powerful_features.png'),
+    global_network: require('img/icon/global_network.png'),
+    totally_saved: require('img/icon/totally_saved.png'),
   },
   system_icon: {
-    image_optimization: require('img/icon/icon5.png'),
-    image_size: require('img/icon/icon6.png'),
-    image_animated: require('img/icon/icon7.png'),
+    image_optimization: require('img/icon/image_optimization.png'),
+    image_size: require('img/icon/image_size.png'),
+    image_animated: require('img/icon/image_animated.png'),
   },
   trusted: {
-    logo1: require('img/logo/logo2.jpg'),
-    logo2: require('img/logo/logo5.jpg'),
-    logo3: require('img/logo/logo9.jpg'),
-    logo4: require('img/logo/logo12.jpg'),
-  },
-  footer_icon: {
-    facebook: require('img/icon/facebook.png'),
-    twitter: require('img/icon/twitter.png'),
-    skype: require('img/icon/skype.png'),
-    youtube: require('img/icon/youtube.png'),
+    title: 'Trusted By',
+    logo: [
+      require('img/logo/nasdaq.jpg'),
+      require('img/logo/logmeln.jpg'),
+      require('img/logo/discord.jpg'),
+      require('img/logo/cisco.jpg'),
+    ]
   },
 }
 

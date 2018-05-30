@@ -2,43 +2,28 @@
   <div class="container-center container-footer-center">
     <div class="footer-wraper">
       <div class="bottom-logo bottom-container">
-        <img class="bottom-logo-img" src="{{assets.logo_white}}" alt="NTQ Solution">
+        <a href="#">
+          <img class="bottom-logo-img" src="{{assets.logo_white}}" alt="NTQ Solution">
+        </a>
       </div>
       <div class="bottom-menu-wraper-box bottom-container">
         <div class="bottom-menu-box">
           <ul class="bottom-menu">
-            <li class="bottom-menu-item">
-              <a class="bottom-menu-item-a" href="#">FEATURES</a>
-            </li>
-            <li class="bottom-menu-item">
-              <a class="bottom-menu-item-a" href="#">PRICING</a>
-            </li>
-            <li class="bottom-menu-item">
-              <a class="bottom-menu-item-a" href="#">ABOUT</a>
-            </li>
-            <li class="bottom-menu-item">
-              <a class="bottom-menu-item-a" href="#">CONTACT</a>
-            </li>
-            <li class="bottom-menu-item">
-              <a class="bottom-menu-item-a" href="#">KNOWLEDGE BASE</a>
-            </li>
+            {{#each urls.menu}}
+              <li class="bottom-menu-item">
+                <a class="bottom-menu-item-a" href="{{this.link}}">{{this.label}}</a>
+              </li>
+            {{/each}}
           </ul>
         </div>
       </div>
       <div class="bottom-icon bottom-container">
         <div class="bottom-icon-box">
-          <a href="#">
-            <img class="bottom-icon-img" src="{{assets.footer_icon.facebook}}">
-          </a>
-          <a href="#">
-            <img class="bottom-icon-img" src="{{assets.footer_icon.twitter}}">
-          </a>
-          <a href="#">
-            <img class="bottom-icon-img" src="{{assets.footer_icon.skype}}">
-          </a>
-          <a href="#">
-            <img class="bottom-icon-img" src="{{assets.footer_icon.youtube}}">
-          </a>
+          {{#each urls.social}}
+            <a href="{{this.link}}">
+              <img class="bottom-icon-img" src="{{this.icon}}">
+            </a>
+          {{/each}}
         </div>
       </div>
     </div>

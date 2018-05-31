@@ -4,13 +4,13 @@ meyer-reset()
 box-sizing-reset()
 normalize()
 
-media-mobile-w = 480px
-media-tablet-w = 768px
-container-max-w = 1200px
-color-blue = #0066b3
-color-blue-white = #4ba6dd
-color-gray = #999
-light-gray = #EEEEEE
+$media-mobile-w = 480px
+$media-tablet-w = 768px
+$container-max-w = 1200px
+$color-blue = #0066b3
+$color-blue-white = #4ba6dd
+$color-gray = #999
+$light-gray = #EEEEEE
 
 html, body
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
@@ -27,7 +27,7 @@ a
   background: transparent
 
   .container-center
-    max-width: container-max-w
+    max-width: $container-max-w
     margin: auto
 
     .header-top
@@ -41,13 +41,13 @@ a
       .header-logo-wraper
         align-items: flex-start
         justify-content: center
-        @media screen and (max-width: media-mobile-w)
+        @media screen and (max-width: $media-mobile-w)
           width: 100px
         .header-logo
           width: 120px
           padding-left: 10px
 
-          @media screen and (max-width: media-mobile-w)
+          @media screen and (max-width: $media-mobile-w)
             width: 100px
 
       .header-menu
@@ -82,19 +82,19 @@ a
                 height: 50px
                 color: black
 
-                @media screen and (max-width: media-tablet-w)
+                @media screen and (max-width: $media-tablet-w)
                   font-size: 15px
                   line-height: 20px
                   height: 20px
 
                 &:hover
-                  color: color-blue
-                  border-bottom: 1px solid color-blue
+                  color: $color-blue
+                  border-bottom: 1px solid $color-blue
 
               .menu-item-bigger
                 flex-shrink: 1
 
-          @media screen and (max-width: media-tablet-w)
+          @media screen and (max-width: $media-tablet-w)
             display: none
 
         .menu-mobile
@@ -106,10 +106,10 @@ a
           position: relative
           z-index: 1
 
-          @media screen and (min-width: media-tablet-w)
+          @media screen and (min-width: $media-tablet-w)
             display: none
 
-          @media screen and (max-width: media-mobile-w)
+          @media screen and (max-width: $media-mobile-w)
             width: 100%
 
           .menu-mobile-wraper
@@ -177,7 +177,7 @@ a
 
             &:checked ~ .menu-mobile-wraper
               visibility: visible
-              background-color: color-blue
+              background-color: $color-blue
 
             &:checked ~ .menu-mobile-hidden
               visibility: visible
@@ -205,13 +205,13 @@ a
           font-size: 40px
           line-height: 50px
 
-        @media screen and (max-width: media-tablet-w)
+        @media screen and (max-width: $media-tablet-w)
           font-size: 25px
           line-height: 35px
 
       .lean-more
         margin-top: 20px
-        background: color-blue
+        background: $color-blue
         border-radius: 2000px
         font-size: 24px
         text-align: center
@@ -220,21 +220,21 @@ a
         height: 50px
         display: block
         &:hover
-          background: color-blue-white
+          background: $color-blue-white
 
 .container-full-screen
   height: 100%
   background: url('~img/bg/bg_home_header.png') no-repeat center center
   background-size: cover
 
-  @media screen and (max-width: media-tablet-w)
+  @media screen and (max-width: $media-tablet-w)
     height: auto
 
 
   .container-center
     height: 100%
 
-    @media screen and (max-width: media-tablet-w)
+    @media screen and (max-width: $media-tablet-w)
       height: auto
       padding-bottom: 30px
 
@@ -288,7 +288,7 @@ a
             padding-bottom: 10px
 
             &:hover
-              border-bottom: 1px solid color-blue
+              border-bottom: 1px solid $color-blue
 
     .what-new
       flex-grow: 1
@@ -302,7 +302,7 @@ a
       height: 120px
       line-height: 120px
 
-      @media screen and (max-width: media-mobile-w)
+      @media screen and (max-width: $media-mobile-w)
         font-size: 19px
         height: 80px
         line-height: 80px
@@ -394,7 +394,7 @@ a
 
           &:active
             translateY(4px)
-            background-color: light-gray
+            background-color: $light-gray
 
         .btn_left
           background: url('~img/icon/previous.png') no-repeat center
@@ -403,7 +403,7 @@ a
           background: url('~img/icon/next.png') no-repeat center
 
 .maps
-  background: light-gray
+  background: $light-gray
   padding-bottom: 40px
   display: block
 
@@ -451,7 +451,7 @@ a
             font-weight: normal
 
 .subscribe
-  background: light-gray
+  background: $light-gray
   height: auto
   display: flex
 
@@ -465,7 +465,7 @@ a
     background: url('~img/bg/bg_home_subscribe.png') no-repeat right 100px center
     background-size: 180px 100px
 
-    @media screen and (max-width: media-tablet-w)
+    @media screen and (max-width: $media-tablet-w)
       flex-direction: column
 
     .subscribe-wraper-item
@@ -475,14 +475,14 @@ a
       align-items: center
       justify-content: space-around
 
-      @media screen and (max-width: media-tablet-w)
+      @media screen and (max-width: $media-tablet-w)
         height: 80px
 
     .subscribe-text
 
       .subscribe-text-p
         font-size: 40px
-        color: color-blue
+        color: $color-blue
         flex-grow: 1
         font-style: italic
         letter-spacing: 1.5px
@@ -493,7 +493,7 @@ a
       .subscribe-input-item
         outline: none
         flex-grow: 1
-        border: 1px solid color-gray
+        border: 1px solid $color-gray
         border-radius: 5px
         font-style: italic
         font-size: 16px
@@ -504,14 +504,14 @@ a
       .subscribe-input-item-email
         width: 250px
 
-        @media screen and (max-width: media-mobile-w)
+        @media screen and (max-width: $media-mobile-w)
           width: 200px
 
       .subscribe-input-item-submit
-        color: color-gray
+        color: $color-gray
 
         &:hover
-          color: color-blue
+          color: $color-blue
 
 .footer
   background: black
@@ -568,7 +568,7 @@ a
             padding-left: 10px
             padding-right: 10px
 
-            @media screen and (max-width: media-mobile-w)
+            @media screen and (max-width: $media-mobile-w)
               padding-left: 4px
               padding-right: 4px
 
@@ -576,16 +576,16 @@ a
               line-height: 30px
               color: #fff
 
-              @media screen and (max-width: media-tablet-w)
+              @media screen and (max-width: $media-tablet-w)
                 font-size: 15px
                 line-height: 20px
 
-              @media screen and (max-width: media-mobile-w)
+              @media screen and (max-width: $media-mobile-w)
                 font-size: 10px
                 line-height: 16px
 
               &:hover
-                color: color-blue
+                color: $color-blue
 
       .bottom-icon
         display: flex
@@ -606,11 +606,11 @@ a
   display: flex
   text-align: center
 
-  @media screen and (max-width: media-mobile-w)
+  @media screen and (max-width: $media-mobile-w)
     font-size: 8px
 
   .footer-license-p
-    max-width: container-max-w
+    max-width: $container-max-w
     display: flex
     lign-items: center
     flex-grow: 1
@@ -619,9 +619,9 @@ a
     line-height: 50px
     font-size: 15px
     color: #fff
-    background-color: color-blue
+    background-color: $color-blue
 
-    @media screen and (max-width: media-mobile-w)
+    @media screen and (max-width: $media-mobile-w)
       font-size: 10px
 
 /* Desktop support */

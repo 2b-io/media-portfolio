@@ -16,11 +16,11 @@ const htmlMinifyOptions = {
 }
 
 export default {
-  mode: 'production',
+  mode: 'development',
   context: rootDir,
   entry: {
     home: [ path.join(rootDir, 'src/js/home.js') ],
-    // 'contact-us': [ path.join(rootDir, 'src/js/contact-us.js') ],
+    'contact-us': [ path.join(rootDir, 'src/js/contact-us.js') ],
     'coming-soon': [ path.join(rootDir, 'src/js/coming-soon.js') ]
   },
   output: {
@@ -48,6 +48,13 @@ export default {
       template: path.join(rootDir, 'src/views/pages/home'),
       filename: path.join(rootDir, 'public/home.html'),
       chunks: [ 'home' ],
+      minify: htmlMinifyOptions
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(rootDir, 'src/views/pages/contact-us'),
+      filename: path.join(rootDir, 'public/contact-us.html'),
+      chunks: [ 'contact-us' ],
       minify: htmlMinifyOptions
     }),
     // new HtmlWebpackPlugin({

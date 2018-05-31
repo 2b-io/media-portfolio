@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 300 115" style="enable-background:new 0 0 300 115;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{clip-path:url(#SVGID_4_);}
+	.st2{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{font-family:'MavenPro-Bold';}
+	.st4{font-size:18px;}
+</style>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" y="0" width="86.5" height="90"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<path class="st0" d="M22.5,41.8c5.3,0,9.6-4.3,9.6-9.6c0-5.3-4.3-9.6-9.6-9.6s-9.6,4.3-9.6,9.6S17.2,41.8,22.5,41.8 M22.5,25.9
+			c3.4,0,6.2,2.8,6.2,6.2c0,3.4-2.8,6.2-6.2,6.2s-6.2-2.8-6.2-6.2C16.3,28.7,19.1,25.9,22.5,25.9"/>
+		<path class="st0" d="M0,0v69.2V90h86.5V69.2V0H0z M3.5,3.4h79.6v46.3L65.2,33.3c-0.3-0.3-0.8-0.5-1.2-0.5c-0.5,0-0.9,0.2-1.2,0.6
+			L45.8,52l-8.2-8.2c-0.6-0.6-1.7-0.7-2.4-0.1l-29,25.5H3.5V3.4z M83.1,86.5H3.5V72.7h79.6V86.5z M11.5,69.2l24.8-21.8l17.8,17.8
+			c0.7,0.7,1.8,0.7,2.4,0c0.7-0.7,0.7-1.8,0-2.4l-8.3-8.3L64.1,37l18.9,17.4v14.8H11.5z"/>
+	</g>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_3_" x="213.4" y="0" width="86.5" height="90"/>
+	</defs>
+	<clipPath id="SVGID_4_">
+		<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+	</clipPath>
+	<path class="st1" d="M235.9,41.8c5.3,0,9.6-4.3,9.6-9.6c0-5.3-4.3-9.6-9.6-9.6c-5.3,0-9.6,4.3-9.6,9.6S230.6,41.8,235.9,41.8
+		 M235.9,25.9c3.4,0,6.2,2.8,6.2,6.2c0,3.4-2.8,6.2-6.2,6.2c-3.4,0-6.2-2.8-6.2-6.2C229.7,28.7,232.5,25.9,235.9,25.9"/>
+	<path class="st1" d="M213.4,0v69.2V90h86.5V69.2V0H213.4z M216.9,3.4h79.6v46.3l-17.9-16.4c-0.3-0.3-0.8-0.5-1.2-0.5
+		c-0.5,0-0.9,0.2-1.2,0.6l-17,18.6l-8.2-8.2c-0.6-0.6-1.7-0.7-2.4-0.1l-29,25.5h-2.8V3.4z M296.5,86.5h-79.6V72.7h79.6V86.5z
+		 M224.9,69.2l24.8-21.8l17.8,17.8c0.7,0.7,1.8,0.7,2.4,0c0.7-0.7,0.7-1.8,0-2.4l-8.3-8.3L277.5,37l18.9,17.4v14.8H224.9z"/>
+</g>
+<g>
+	<line class="st2" x1="127.8" y1="44.8" x2="172.8" y2="44.8"/>
+	<polyline class="st2" points="162.4,37.4 172.8,44.8 162.5,52.5 	"/>
+</g>
+<text transform="matrix(1 0 0 1 30.315 109.833)" class="st3 st4">Mb</text>
+<text transform="matrix(1 0 0 1 245.2015 109.833)" class="st3 st4">Kb</text>
+</svg>

@@ -22,6 +22,8 @@ a
   text-decoration: none
   font-weight: bold
 
+
+
 .container
   height: auto
   background: transparent
@@ -83,7 +85,7 @@ a
                 color: black
 
                 @media screen and (max-width: $media-tablet-w)
-                  font-size: 15px
+                  font-size: 16px
                   line-height: 20px
                   height: 20px
 
@@ -224,7 +226,7 @@ a
 
 .container-full-screen
   height: 100%
-  background: url('~img/bg/bg_home_header.png') no-repeat center center
+  background: url('~img/bg/bg_home_header.jpg') no-repeat center center
   background-size: cover
 
   @media screen and (max-width: $media-tablet-w)
@@ -280,7 +282,7 @@ a
 
           .feature-info-box-label
             height: 100px
-            font-size: 13px
+            font-size: 16px
             padding-left: 5px
             padding-right: 5px
 
@@ -321,7 +323,8 @@ a
         align-items: center
 
         .what-new-image
-          // max-width: 300px
+          width: 320px
+          flex-grow: 1
           padding: 0px 50px 0 50px
 
         .what-new-image-title
@@ -421,7 +424,7 @@ a
         padding: 0 10px 0 10px
 
     .maps-background-wraper
-      background: url('~img/bg/bg_home_maps.jpg') no-repeat center
+      background: url('~img/bg/home_maps.svg') no-repeat center
       background-size: contain
       margin: auto
       height: 50vh
@@ -462,7 +465,7 @@ a
     justify-content: center
     flex-grow: 1
     flex-wrap: wrap
-    background: url('~img/bg/bg_home_subscribe.png') no-repeat right 100px center
+    background: url('~img/bg/home_subscribe.svg') no-repeat right 100px center
     background-size: 180px 100px
 
     @media screen and (max-width: $media-tablet-w)
@@ -513,116 +516,7 @@ a
         &:hover
           color: $color-blue
 
-.footer
-  background: black
-  height: auto
-
-  .container-footer-center
-    padding-top: 30px
-    padding-bottom: 30px
-    display: flex
-
-    .footer-wraper
-      text-align: center
-      flex-grow: 1
-      max-width: 1300px
-      display: flex
-      flex-wrap: wrap
-      padding-left: 10px
-      padding-right: 10px
-
-      .bottom-container
-        display: flex
-        color: white
-        flex-wrap: wrap
-        align-items: center
-        flex-grow: 1
-        justify-content: center
-        padding-top: 20px
-        padding-bottom: 20px
-
-      .bottom-logo
-        width: 150px
-
-        .bottom-logo-img
-          width: 130px
-          height: 100px
-
-      .bottom-menu-wraper-box
-        .bottom-menu-box
-          height: 30px
-
-        .bottom-menu
-          display: flex
-          flex-wrap: nowrap
-          align-items: center
-          justify-content: center
-          flex-grow: 1
-
-          .bottom-menu-item
-            flex-grow: 1
-            display: flex
-            flex-wrap: nowrap
-            align-items: center
-            justify-content: center
-            padding-left: 10px
-            padding-right: 10px
-
-            @media screen and (max-width: $media-mobile-w)
-              padding-left: 4px
-              padding-right: 4px
-
-            .bottom-menu-item-a
-              line-height: 30px
-              color: #fff
-
-              @media screen and (max-width: $media-tablet-w)
-                font-size: 15px
-                line-height: 20px
-
-              @media screen and (max-width: $media-mobile-w)
-                font-size: 10px
-                line-height: 16px
-
-              &:hover
-                color: $color-blue
-
-      .bottom-icon
-        display: flex
-        flex-wrap: wrap
-        align-items: center
-        flex-grow: 1
-        justify-content: center
-
-        .bottom-icon-box
-          height: 30px
-          line-height: 30px
-
-          .bottom-icon-img
-            padding-left: 20px
-            padding-right: 20px
-
-.footer-license
-  display: flex
-  text-align: center
-
-  @media screen and (max-width: $media-mobile-w)
-    font-size: 8px
-
-  .footer-license-p
-    max-width: $container-max-w
-    display: flex
-    lign-items: center
-    flex-grow: 1
-    justify-content: space-around
-    height: 50px
-    line-height: 50px
-    font-size: 15px
-    color: #fff
-    background-color: $color-blue
-
-    @media screen and (max-width: $media-mobile-w)
-      font-size: 10px
+@require './footer'
 
 /* Desktop support */
 // body.no-touch

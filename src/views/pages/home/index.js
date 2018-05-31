@@ -1,4 +1,7 @@
+import headerData from '../../layouts/header'
+
 import template from './view.hbs'
+
 
 const labels = {
   header: {
@@ -60,60 +63,39 @@ const labels = {
 }
 
 const urls = {
-  menu: [
-    {
-      link: '#',
-      label: 'FEATURES'
-    },
-    {
-      link: '#',
-      label: 'PRICING'
-    },
-    {
-      link: 'about-us',
-      label: 'ABOUT'
-    },
-    {
-      link: 'contact-us',
-      label: 'CONTACT'
-    },
-    {
-      link:'#',
-      label:'KNOWLEDGE BASE'
-    },
-  ],
+  menu: headerData.menu,
   social: [
     {
       link: 'facebook',
-      icon: require('img/icon/facebook.png'),
+      icon: require('img/icon/facebook.svg'),
     },
     {
       link: '#',
-      icon: require('img/icon/twitter.png'),
+      icon: require('img/icon/twitter.svg'),
     },
     {
       link: '#',
-      icon: require('img/icon/skype.png'),
+      icon: require('img/icon/skype.svg'),
     },
     {
       link: '#',
-      icon: require('img/icon/youtube.png'),
+      icon: require('img/icon/youtube.svg'),
     },
   ],
 }
 
 const assets = {
-  logo_white: require('img/logo/logo_white.png'),
+  logo_white: require('img/logo/logo_white.svg'),
   feature_icon: {
-    totally_optimized: require('img/icon/totally_optimized.png'),
-    powerful_features: require('img/icon/powerful_features.png'),
-    global_network: require('img/icon/global_network.png'),
-    totally_saved: require('img/icon/totally_saved.png'),
+    totally_optimized: require('img/icon/totally_optimized.svg'),
+    powerful_features: require('img/icon/powerful_features.svg'),
+    global_network: require('img/icon/global_network.svg'),
+    totally_saved: require('img/icon/totally_saved.svg'),
   },
   system_icon: {
-    image_optimization: require('img/icon/image_optimization.png'),
-    image_size: require('img/icon/image_size.png'),
-    image_animated: require('img/icon/image_animated.png'),
+    image_optimization: require('img/icon/image_optimization.svg'),
+    image_size: require('img/icon/image_size.svg'),
+    image_animated: require('img/icon/image_animated.svg'),
   },
   trusted: {
     title: 'Trusted By',

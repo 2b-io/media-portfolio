@@ -2,17 +2,7 @@
   {{#*inline "content-body"}}
     <div class="container container-full-screen">
       <div class="container-center">
-        <div class="header-top">
-          <div class="header-item header-logo-wraper">
-            <a href="/">
-              <img class="header-logo" src="{{assets.logo_white}}" alt="NTQ Solution">
-            </a>
-          </div>
-          <div class="header-item header-menu">
-            {{> partials/top-menu.hbs}}
-            {{> partials/top-menu-phone.hbs}}
-          </div>
-        </div>
+        {{> partials/header.hbs}}
         <div class="header-bottom">
           <p class="header-text">
             {{{labels.header.text}}}

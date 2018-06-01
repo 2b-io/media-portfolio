@@ -64,28 +64,12 @@ const labels = {
 
 const urls = {
   menu: headerData.menu,
-  social: [
-    {
-      link: 'facebook',
-      icon: require('img/icon/facebook.svg'),
-    },
-    {
-      link: '#',
-      icon: require('img/icon/twitter.svg'),
-    },
-    {
-      link: '#',
-      icon: require('img/icon/skype.svg'),
-    },
-    {
-      link: '#',
-      icon: require('img/icon/youtube.svg'),
-    },
-  ],
+  social: headerData.social
 }
 
 const assets = {
-  logo_white: require('img/logo/logo_white.svg'),
+  header_logo: require('img/logo/logo_white.svg'),
+  footer_logo: require('img/logo/logo_white.svg'),
   feature_icon: {
     totally_optimized: require('img/icon/totally_optimized.svg'),
     powerful_features: require('img/icon/powerful_features.svg'),

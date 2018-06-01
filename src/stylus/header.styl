@@ -1,0 +1,168 @@
+$media-mobile-w = 480px
+$media-tablet-w = 768px
+$container-max-w = 1200px
+$color-blue = #0066b3
+$color-blue-white = #4ba6dd
+$color-gray = #999
+$light-gray = #EEEEEE
+
+.container
+  height: auto
+  background: transparent
+
+  .container-center
+    max-width: $container-max-w
+    margin: auto
+
+    .header-top
+      display: flex
+      align-items: center
+      justify-content: center
+
+      .header-item
+        display: flex
+
+      .header-logo-wraper
+        align-items: flex-start
+        justify-content: center
+
+        @media screen and (max-width: $media-mobile-w)
+          width: 100px
+        .header-logo
+          width: 120px
+          padding-left: 10px
+
+          @media screen and (max-width: $media-mobile-w)
+            width: 100px
+
+      .header-menu
+        flex-grow: 1
+        flex-wrap: nowrap
+        align-items: center
+        justify-content: flex-end
+
+        .menu
+          flex-grow: 1
+          display: flex
+          height: 150px
+
+          .top-menu
+            flex-grow: 1
+            display: flex
+            flex-wrap: nowrap
+            align-items: center
+            justify-content: center
+            text-align: center
+
+            .menu-item
+              flex-shrink: 2
+              flex-grow: 1
+              display: flex
+              align-items: center
+              justify-content: center
+
+              .menu-item-a
+                flex-grow: 1
+                line-height: 50px
+                height: 50px
+                color: black
+
+                @media screen and (max-width: $media-tablet-w)
+                  font-size: 16px
+                  line-height: 20px
+                  height: 20px
+
+                &:hover
+                  color: $color-blue
+                  border-bottom: 1px solid $color-blue
+
+              .menu-item-bigger
+                flex-shrink: 1
+
+          @media screen and (max-width: $media-tablet-w)
+            display: none
+
+        .menu-mobile
+          width: 300px
+          height: 100px
+          display: flex
+          justify-content: flex-end
+          align-items: center
+          position: relative
+          z-index: 1
+
+          @media screen and (min-width: $media-tablet-w)
+            display: none
+
+          @media screen and (max-width: $media-mobile-w)
+            width: 100%
+
+          .menu-mobile-wraper
+            flex-grow: 1
+            visibility:hidden
+            position: absolute
+            top: 0
+            right: 0
+            width: 100%
+            height: 100vh
+            z-index: 2
+
+            .menu-mobile-wraper-ul
+              display: flex
+              flex-direction: column
+              justify-content: flex-end
+              align-items: flex-end
+              padding-top: 120px
+              padding-right: 30px
+
+              .menu-item
+                margin: 20px 0px 20px 0
+
+                .menu-item-a
+                  flex-grow: 1
+                  color: white
+
+                  &:hover
+                    border-bottom: 1px solid white
+
+          .menu-mobile-label
+            cursor: pointer
+            margin-right: 30px
+            z-index: 3
+
+            .toggle-button
+              width: 30px
+              height: 30px
+              background-image: url('~img/bg/toggle.svg')
+              background-position: center
+              background-repeat: no-repeat
+              background-size: cover
+
+          .menu-mobile-hidden
+            position: fixed
+            top 0
+            right 0
+            left: 0
+            bottom: 0
+            visibility: hidden
+
+          #menu-mobile-checkbox
+            width: 1px
+            height: px
+            top: 0
+            right: 0
+            visibility: hidden
+
+            &:checked ~ .menu-mobile-label
+              .toggle-button
+                background-image: url('~img/bg/toggle-checked.svg')
+                background-position: center
+                background-repeat: no-repeat
+                background-size: cover
+
+            &:checked ~ .menu-mobile-wraper
+              visibility: visible
+              background-color: $color-blue
+
+            &:checked ~ .menu-mobile-hidden
+              visibility: visible

@@ -20,5 +20,23 @@ export default {
       link:'#',
       label:'KNOWLEDGE BASE'
     },
-  ]
+  ],
+  social: [
+    {
+      link: 'facebook',
+      icon: require('img/icon/facebook.svg'),
+    },
+    {
+      link: '#',
+      icon: require('img/icon/twitter.svg'),
+    },
+    {
+      link: '#',
+      icon: require('img/icon/skype.svg'),
+    },
+    {
+      link: '#',
+      icon: require('img/icon/youtube.svg'),
+    },
+  ],
 }

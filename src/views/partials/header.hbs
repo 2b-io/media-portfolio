@@ -1,3 +1,12 @@
-<nav>
-  <h1>Header</h1>
-</nav>
+<div class="header-top">
+  <div class="header-item header-logo-wraper">
+    <a href="/">
+      <img class="header-logo" src="{{assets.header_logo}}" alt="NTQ Solution">
+    </a>
+  </div>
+  <div class="header-item header-menu">
+    {{> partials/top-menu.hbs}}
+    {{> partials/top-menu-phone.hbs}}
+  </div>
+</div>
+

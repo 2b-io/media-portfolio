@@ -1,0 +1,133 @@
+meyer-reset()
+box-sizing-reset()
+normalize()
+
+$media-mobile-w = 480px
+$media-tablet-w = 768px
+$container-max-w = 1200px
+$color-blue = #0066b3
+$color-blue-white = #4ba6dd
+$color-gray = #999
+$light-gray = #EEEEEE
+$white = #FFFFFF
+
+html, body
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
+  overflow-x: hidden
+  height: 100%
+  min-width: 200px
+
+a
+  text-decoration: none
+  font-weight: bold
+
+
+.container
+  height: auto
+  background: transparent
+
+  .container-center
+    border: 1px solid red
+    max-width: $container-max-w
+    margin: auto
+
+@require './header'
+
+.header-wraper
+  background-color: $light-gray
+
+.body-wraper
+  position: relative
+
+  .contact-img
+    max-width: 100%
+    height: auto
+    vertical-align:middle
+
+  .container-center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    flex-direction: column
+    text-align: center
+    width: 90%
+    padding-bottom: 15px
+    // .body-wraper-title
+
+.contact-container
+  background-color: $light-gray
+  .container-center
+    display: flex
+    flex-direction: rows
+    align-items: center
+    justify-content: center
+
+    @media screen and (max-width: $media-tablet-w)
+      flex-direction: column
+
+    .contact-wraper-item
+      padding: 10px
+
+      display: flex
+      height: auto
+      flex-direction: column
+      align-items: flex-start
+      justify-content: space-between
+      border: 1px solid red
+
+    .contact-wraper-form
+      max-width: 700px
+      height: 400px
+      flex-grow: 1
+      padding-bottom: 10px
+
+      .contact-form
+        display: flex
+        // width: 300px
+        // height: 200px
+        flex-direction: column
+
+
+        .contact-form-input
+          width: 400px
+          height: 35px
+          margin-bottom: 10px
+
+        .contact-form-submit
+          width: 90px
+
+        .contact-form-area
+          height: 100px
+          resize: none
+
+    .contact-maps
+      flex-grow: 1
+      display: flex
+      max-width: 500px
+      // align-items: center
+      justify-content: center
+      // flex-direction: column
+
+      .contact-maps-title
+        max-width: 300px
+        display: flex
+
+        // flex-wrap: wrap
+        align-items: flex-start
+        justify-content: center
+        flex-direction: column
+
+        .contact-maps-title-span
+          padding-bottom: 10px
+
+      #map-canvas
+        width: 200px
+        height: 200px
+        border: 1px solid black
+
+@require './footer'

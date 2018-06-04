@@ -8,6 +8,7 @@ const labels = {
     text: 'we speed up your site </br>across the globe',
     link_title: 'learn more'
   },
+  footer_text: headerData.footer_text,
   feature: {
     totally_optimized: {
       title: 'TOTALLY OPTIMIZED',

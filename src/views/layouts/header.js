@@ -1,4 +1,10 @@
 export default {
+  company_info: {
+    name: 'NTQ Solution',
+    address: '6th & 11th Floor, Sudico Building, Me Tri Street, Ha Noi, Viet Nam',
+    email: 'Email: sale@medianetwork-ntq.com',
+    phone: 'Phone: (+84) 241 625 2145'
+  },
   menu: [
     {
       link: '#',
@@ -39,4 +45,8 @@ export default {
       icon: require('img/icon/youtube.svg'),
     },
   ],
+  footer_text: {
+    copy: 'copyright &copy; 2018',
+    sale_contact: 'sale contact: (+84) 241 625 2145'
+  }
 }

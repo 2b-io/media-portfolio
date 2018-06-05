@@ -20,6 +20,7 @@ export default {
   context: rootDir,
   entry: {
     home: [ path.join(rootDir, 'src/js/home.js') ],
+    features: [ path.join(rootDir, 'src/js/features.js') ],
     'contact-us': [ path.join(rootDir, 'src/js/contact-us.js') ],
     'coming-soon': [ path.join(rootDir, 'src/js/coming-soon.js') ]
   },
@@ -55,6 +56,13 @@ export default {
       template: path.join(rootDir, 'src/views/pages/contact-us'),
       filename: path.join(rootDir, 'public/contact-us.html'),
       chunks: [ 'contact-us' ],
+      minify: htmlMinifyOptions
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(rootDir, 'src/views/pages/features'),
+      filename: path.join(rootDir, 'public/features.html'),
+      chunks: [ 'features' ],
       minify: htmlMinifyOptions
     }),
     // new HtmlWebpackPlugin({

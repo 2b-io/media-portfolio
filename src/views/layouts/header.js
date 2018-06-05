@@ -7,7 +7,7 @@ export default {
   },
   menu: [
     {
-      link: '#',
+      link: 'features',
       label: 'FEATURES'
     },
     {
@@ -48,5 +48,8 @@ export default {
   footer_text: {
     copy: 'copyright &copy; 2018',
     sale_contact: 'sale contact: (+84) 241 625 2145'
+  },
+  subscribe: {
+    title: 'Subscribe Now',
   }
 }

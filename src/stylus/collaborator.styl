@@ -1,0 +1,82 @@
+$media-mobile-w = 480px
+$media-tablet-w = 768px
+$container-max-w = 1200px
+$color-blue = #0066b3
+$color-blue-white = #4ba6dd
+$color-gray = #999
+$light-gray = #EEEEEE
+
+.container
+  .trusted
+    display: flex
+    flex-direction: column
+    padding-bottom: 40px
+
+    .trusted-item
+      flex-grow: 1
+      display: flex
+      justify-content: center
+      align-items: center
+
+      .trusted-title-p
+        font-size: 30px
+        font-weight: bold
+        text-transform: uppercase
+
+        @media screen and (max-width: $media-mobile-w)
+          font-size: 24px
+
+    .trusted-title
+      height: 120px
+
+    .trusted-box
+      height: 100px
+      display: flex
+      flex-direction: rows
+      justify-content: center
+      align-items: center
+
+      .trusted-box-item
+        flex-grow: 1
+        display: flex
+        flex-wrap: nowrap
+        flex-direction: rows
+        justify-content: center
+        align-items: center
+
+      .trusted-box-images
+        overflow-x: hidden
+
+        .trusted-image-wraper
+          display: flex
+          justify-content: center
+          align-items: center
+          flex-grow: 1
+
+          .trusted-image
+            flex-grow: 1
+            padding: 0 10px 0 10px
+
+      .trusted-button
+        width: 100px
+        height: 100px
+
+        .trusted-button-item
+          width: 50px
+          height: 50px
+          border: none
+          background-size: cover
+          outline: none
+
+          &:hover
+            transform: scale(1.2)
+
+          &:active
+            translateY(4px)
+            background-color: $light-gray
+
+        .btn_left
+          background: url('~img/icon/previous.png') no-repeat center
+
+        .btn_right
+          background: url('~img/icon/next.png') no-repeat center

@@ -58,9 +58,7 @@ const labels = {
     image_size: 'properly size images',
     image_animated: 'animated gifs to html5 videos',
   },
-  subscribe: {
-    title: 'Subscribe Now',
-  }
+  subscribe: headerData.subscribe,
 }
 
 const urls = {
@@ -82,7 +80,7 @@ const assets = {
     image_size: require('img/icon/image_size.svg'),
     image_animated: require('img/icon/image_animated.svg'),
   },
-  trusted: {
+  collaborator: {
     title: 'Trusted By',
     logo: [
       require('img/logo/nasdaq.jpg'),

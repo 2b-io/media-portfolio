@@ -36,13 +36,14 @@ a
 
 .body-wraper
   position: relative
-  display: flex
 
   .contact-img
-    max-width: 100%
+    width: 100%
     height: auto
-    flex-grow: 1
     vertical-align:middle
+
+    @media screen and (max-width: $media-mobile-w)
+      height: 144.77px
 
   .container-center
     position: absolute
@@ -73,6 +74,9 @@ a
       font-weight: bold
       text-shadow: 0 0 2px #000;
 
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 18px
+
 .contact-container
   background-color: $light-gray
   padding: 25px 0 25px 0
@@ -87,9 +91,6 @@ a
     .contact-wraper-item
       padding: 10px
       display: flex
-      flex-direction: column
-      align-items: flex-start
-      justify-content: space-between
 
       .contact-wraper-input
       .contact-wraper-map-box
@@ -103,7 +104,6 @@ a
     .contact-wraper-form
       flex-grow: 2
       flex-basis: 100%
-      display: flex
 
       .contact-wraper-input
         min-width: 300px

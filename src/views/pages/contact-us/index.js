@@ -35,7 +35,6 @@ const urls = {
 const assets = {
   header_logo: require('img/logo/logo_blue.svg'),
   footer_logo: require('img/logo/logo_white.svg'),
-  contact_img: require('img/bg/contact.jpg'),
 }
 
 const context = {

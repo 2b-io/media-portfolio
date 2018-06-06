@@ -4,6 +4,7 @@ $container-max-w = 1200px
 $color-blue = #0066b3
 $color-blue-white = #4ba6dd
 $color-gray = #999
+$color-gainsboro = #DEDEDE
 $light-gray = #EEEEEE
 $white = #FFFFFF
 
@@ -24,6 +25,7 @@ a
 .container
   height: auto
   background: transparent
+  min-width: 300px
 
   .container-center
     max-width: $container-max-w
@@ -91,7 +93,7 @@ a
 
   .container-center
     display: flex
-    flex-direction: rows
+    flex-direction: row
 
     @media screen and (max-width: $media-tablet-w)
       flex-direction: column
@@ -194,7 +196,7 @@ a
   .feature
     text-align: center
     display: flex
-    flex-direction: rows
+    flex-direction: row
     flex-wrap: nowrap
     flex-grow: 1
     align-items: stretch
@@ -251,40 +253,48 @@ a
     align-items: stretch
     justify-content: center
 
-    .advanced-feature-title
+    .advanced-feature-wraper
       text-align: center
       line-height: 20px
-      padding-bottom: 30px
-      padding-leaft: 10px
+      padding-bottom: 10px
+      padding-left: 10px
       padding-right: 10px
 
-      .advanced-feature-wraper
+      .advanced-feature-title
         text-transform:  uppercase
         font-weight: bold
+        font-size: 30px
+
+        @media screen and (max-width: $media-tablet-w)
+          font-size: 25px
 
     .advanced-feature-box
+      padding-top: 20px
 
       .advanced-feature-box-label
-        background-color: #DEDEDE
+        background-color: $color-gainsboro
         display: flex
-        justify-content: center
+        justify-content: flex-start
 
         .advanced-feature-box-label-item
           font-weight: bold
           flex: 1
-          max-width: 50%
           display: flex
           align-items: center
 
-          span
+          .advanced-feature-box-label-item-text
             padding-top: 5px
             padding-bottom: 5px
             padding-left: 10px
+            text-transform: capitalize
 
       .advanced-feature-box-list-item
         display: flex
         justify-content: center
         flex-wrap: wrap
+
+        @media screen and (max-width: $media-tablet-w)
+          flex-direction: column
 
         .advanced-feature-box-item
           flex: 1
@@ -294,7 +304,7 @@ a
           padding-left: 10px
           padding-right: 10px
           display: flex
-          align-items: center
+          align-items: flex-start
 
           .advanced-feature-box-icon
             width: 16px
@@ -305,6 +315,25 @@ a
           .advanced-feature-box-item-text
             flex: 1
             padding-left: 10px
+
+.container
+  .knowledge-wraper
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 130px
+
+    .knowledge-wraper-text
+      font-size: 30px
+      display: flex
+
+      @media screen and (max-width: $media-tablet-w)
+        flex-direction: column
+
+      @media screen and (max-width: $media-moblie-w)
+        padding-top: 20px
+        padding-bottom: 20px
+        font-size: 16px
 
 
 @require './collaborator'

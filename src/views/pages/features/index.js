@@ -46,27 +46,65 @@ const labels = {
     content: 'Boot your content with a Pull or Push Zone and deliver your assets super-fast on any device. Our edge servers &quot;pull&quot; the static, content form your server with a Pull Zone in order to cache it and serve it accelerated from our edge servers. A Push Zone is the right choice for you if you prefer to upload your assets to KeyCDN. The Zone configurations are globally applied within minutes.',
     features: [
       {
-        label_left: 'a1 asdas as dasd asd sad as sadas das dasd as dasd asd as dasd asd asd as dasd asdas d das das',
-        label_right: 'a2',
+        label: 'General Features',
         item: [
-          '1sad asdas asdas das das das dasd as das 1sad asdas asdas das das das dasd as das 1sad asdas asdas das das das dasd as das',
-          '2',
-          '1',
-          '1',
-          '2',
-          '1',
-          '2',
+          'HTTP/2',
+          'HPACK compression (Huffman Encoding)',
+          'GZip compression',
+          'Use your CNAMEs',
+          'Force downloads',
+          'Custom expire headers',
+          'Live tail on your logs',
+          'Raw log forwarding in real time',
+          'Custom rules',
+          'Byte-range requests for HTTP streaming',
+          'HLS and HTTP streaming support',
         ]
       },
       {
-        label_left: 'b1',
-        label_right: '',
+        label: 'Security features',
         item: [
-          '1',
-          '2',
+          'Hotlink protection (restriction of HTTP referrer)',
+          'Secure Token (secured URL)',
+          'Shared SSL (TLS)',
+          'Custom SSL (TLS)',
+          'Let&#39;s Encrypt SSL (TLS)',
+          'OCSP stapling',
+          'Block bad bots',
+          'DDoS protection',
+        ]
+      },
+      {
+        label: 'Security features',
+        item: [
+          'Instantly purge zone caches or single URLs',
+          'Origin shield',
+          'Overrider origin cache-control header',
+          'Overrider origin expore headers',
+          'Strip cookies',
+          'Enable canonical headers',
+          'Custom request HTTP header field (X-Pull)',
+          'Custom robots.txt',
+          'Cache Brotli compressed assets',
+          'Cache query strings',
+        ]
+      },
+      {
+        label: 'Push features',
+        item: [
+          'upload content to your FTP account',
+          'FTP subusers',
+          'Synchronize content with rsync',
+          'Enabled directory listing',
+          'Enabled directory index',
+          'optimized for large files',
         ]
       },
     ]
+  },
+  learn_more: {
+    label: 'Learn more in our',
+    link_label: 'Knowledge Base'
   },
 }
 

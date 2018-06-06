@@ -31,32 +31,36 @@
 
     <div class="container-feature container">
       <div class="advanced-feature container-center">
-        <p class="advanced-feature-title">
-         {{!--  <p> --}}
-            <span class="advanced-feature-wraper">{{labels.advanced_features.title}}</span> <br/><br/>
+        <p class="advanced-feature-wraper">
+            <span class="advanced-feature-title">{{labels.advanced_features.title}}</span> <br/><br/>
             <span>{{labels.advanced_features.detail}}</span> <br/><br/>
             <span>{{{labels.advanced_features.content}}}</span>
-          {{!-- </p> --}}
         </p>
         {{#each labels.advanced_features.features}}
           <div class="advanced-feature-box">
             <div class="advanced-feature-box-label">
               <div class="advanced-feature-box-label-item">
-                <span>{{this.label_left}}</span>
-              </div>
-              <div class="advanced-feature-box-label-item">
-                <span>{{this.label_right}}</span>
+                <span class="advanced-feature-box-label-item-text">{{this.label}}</span>
               </div>
             </div>
             <div class="advanced-feature-box-list-item">
               {{#each this.item}}
                 <div class="advanced-feature-box-item">
-                  <div class="advanced-feature-box-icon"></div><span class="advanced-feature-box-item-text">{{this}}</span>
+                  <div class="advanced-feature-box-icon"></div><span class="advanced-feature-box-item-text">{{{this}}}</span>
                 </div>
               {{/each}}
             </div>
           </div>
         {{/each}}
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="knowledge-wraper container-center">
+        <p class="knowledge-wraper-text">
+          <span>{{labels.learn_more.label}}&nbsp;</span>
+          <a href="#" class="knowledge-wraper-link">{{labels.learn_more.link_label}}</a>
+        </p>
       </div>
     </div>
 

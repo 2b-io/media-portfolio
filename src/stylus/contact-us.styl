@@ -133,6 +133,7 @@ a
             flex: 1
             resize: none
             padding-top: 15px
+            min-height: 100px
 
             @media screen and (max-width: $media-tablet-w)
               padding-top: 10.5px
@@ -159,6 +160,9 @@ a
       .contact-wraper-map-box
         align-self: stretch
 
+        @media screen and (max-width: $media-tablet-w)
+          flex-grow: 1
+
         .contact-wraper-map-title
           .company-address
             line-height: 20px
@@ -171,13 +175,13 @@ a
           min-width: 300px
           height: 200px
 
-      .addres-button-hidden
-        margin-top: 20px
-        width: 90px
-        height: 25px
-        visibility: hidden
+        .addres-button-hidden
+          margin-top: 20px
+          width: 90px
+          height: 25px
+          visibility: hidden
 
-        @media screen and (max-width: $media-tablet-w)
-          display: none
+          @media screen and (max-width: $media-tablet-w)
+            display: none
 
 @require './footer'

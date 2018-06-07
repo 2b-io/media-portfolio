@@ -1,5 +1,3 @@
-@require './space-mono'
-
 meyer-reset()
 box-sizing-reset()
 normalize()
@@ -11,6 +9,7 @@ $color-blue = #0066b3
 $color-blue-white = #4ba6dd
 $color-gray = #999
 $light-gray = #EEEEEE
+$white = #FFFFFF
 
 html, body
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
@@ -21,6 +20,14 @@ html, body
 a
   text-decoration: none
   font-weight: bold
+
+.container
+  height: auto
+  background: transparent
+
+  .container-center
+    max-width: $container-max-w
+    margin: auto
 
 @require './header'
 
@@ -65,7 +72,6 @@ a
         display: block
         &:hover
           background: $color-blue-white
-
 
 .container-full-screen
   height: 100%
@@ -169,83 +175,12 @@ a
           flex-grow: 1
           padding: 0px 50px 0 50px
 
-        .what-new-image-title
+        .what-new-image-detail
           padding-top: 20px
           height: 80px
           line-height: 80px
           font-weight: bold
           text-transform: uppercase
-
-  .trusted
-    display: flex
-    flex-direction: column
-    padding-bottom: 40px
-
-    .trusted-item
-      flex-grow: 1
-      display: flex
-      justify-content: center
-      align-items: center
-
-      .trusted-title-p
-        font-size: 30px
-        font-weight: bold
-        text-transform: uppercase
-
-    .trusted-title
-      height: 120px
-
-    .trusted-box
-      height: 100px
-      display: flex
-      flex-direction: rows
-      justify-content: center
-      align-items: center
-
-      .trusted-box-item
-        flex-grow: 1
-        display: flex
-        flex-wrap: nowrap
-        flex-direction: rows
-        justify-content: center
-        align-items: center
-
-      .trusted-box-images
-        overflow-x: hidden
-
-        .trusted-image-wraper
-          display: flex
-          justify-content: center
-          align-items: center
-          flex-grow: 1
-
-          .trusted-image
-            flex-grow: 1
-            padding: 0 10px 0 10px
-
-      .trusted-button
-        width: 100px
-        height: 100px
-
-        .trusted-button-item
-          width: 50px
-          height: 50px
-          border: none
-          background-size: cover
-          outline: none
-
-          &:hover
-            transform: scale(1.2)
-
-          &:active
-            translateY(4px)
-            background-color: $light-gray
-
-        .btn_left
-          background: url('~img/icon/previous.png') no-repeat center
-
-        .btn_right
-          background: url('~img/icon/next.png') no-repeat center
 
 .maps
   background: $light-gray
@@ -295,68 +230,9 @@ a
             font-size: 17px
             font-weight: normal
 
-.subscribe
-  background: $light-gray
-  height: auto
-  display: flex
+@require './collaborator'
 
-  .subscribe-wraper
-    display: flex
-    flex-direction: rows
-    align-items: center
-    justify-content: center
-    flex-grow: 1
-    flex-wrap: wrap
-    background: url('~img/bg/home_subscribe.svg') no-repeat right 100px center
-    background-size: 180px 100px
-
-    @media screen and (max-width: $media-tablet-w)
-      flex-direction: column
-
-    .subscribe-wraper-item
-      padding: 0 10px 0 10px
-      height: 150px
-      display: flex
-      align-items: center
-      justify-content: space-around
-
-      @media screen and (max-width: $media-tablet-w)
-        height: 80px
-
-    .subscribe-text
-
-      .subscribe-text-p
-        font-size: 40px
-        color: $color-blue
-        flex-grow: 1
-        font-style: italic
-        letter-spacing: 1.5px
-
-    .subscribe-input
-      flex-direction: rows
-
-      .subscribe-input-item
-        outline: none
-        flex-grow: 1
-        border: 1px solid $color-gray
-        border-radius: 5px
-        font-style: italic
-        font-size: 16px
-        background: white
-        cursor: pointer
-        height: 35px
-
-      .subscribe-input-item-email
-        width: 250px
-
-        @media screen and (max-width: $media-mobile-w)
-          width: 200px
-
-      .subscribe-input-item-submit
-        color: $color-gray
-
-        &:hover
-          color: $color-blue
+@require './subscribe'
 
 @require './footer'
 

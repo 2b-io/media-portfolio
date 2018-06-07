@@ -7,41 +7,43 @@
     </div>
 
     <div class="container body-wraper">
-      <img class="contact-img" src={{assets.contact_img}} alt="contact-img">
       <div class="container-center">
-        <h1 class="body-wraper-title">contact us</h1>
-        <p class="body-wraper-title" >Questions? Check our FAQ and Knowledge Base</p>
+        <h1 class="body-wraper-title body-wraper-title-size">{{labels.body_text.title}}</h1>
+        <p class="container-center-label">{{labels.body_text.label1}} <a href="" target="_blank" class="body-wraper-title">{{labels.body_text.faq}} </a>{{labels.body_text.label2}} <a href="" target="_blank" class="body-wraper-title">{{labels.body_text.knowledge_base}}</a></p>
       </div>
     </div>
-
     <div class="container contact-container">
       <div class="container-center">
         <div class="contact-wraper-item contact-wraper-form">
-          <p>Get In Touch</p>
-          <form class="contact-form" action="" method="post">
-            <input class="contact-form-input" type="text" name="title" placeholder="Title">
-            <input class="contact-form-input" type="text" name="name" placeholder="Name">
-            <input class="contact-form-input" type="email" name="email" placeholder="Email">
-            <input class="contact-form-input" type="text" name="company" placeholder="Company">
-            <textarea class="contact-form-input contact-form-area"  placeholder="Message"></textarea>
-            <input class="contact-form-input contact-form-submit" type="submit" name="submit" value="SEND">
-
-          </form>
-        </div>
-        <div class="contact-wraper-item contact-maps">
-          <div class="contact-maps-title">
-              <span class="contact-maps-title-span">Address</span>
-              <span class="contact-maps-title-span">NTQ Solution</span>
-              <span class="contact-maps-title-span">6th & 11th Floor, Sudico Building, Me Tri Street, Ha Noi, Viet Nam</span>
-              <span class="contact-maps-title-span">Email: sale@medianetwork-ntq.com</span>
-              <span class="contact-maps-title-span">Phone: (+84) 241 625 2145</span>
+          <div class="contact-wraper-input">
+            <p class="contact-header-text">{{labels.contact.label.form_text}}</p>
+            <form class="contact-form" action="" method="post" target="_blank">
+              <input class="contact-form-input" type="text" name="title" placeholder="{{labels.contact.placeholder_text.title}}">
+              <input class="contact-form-input" type="text" name="name" placeholder="{{labels.contact.placeholder_text.name}}">
+              <input class="contact-form-input" type="email" name="email" required="true" placeholder="{{labels.contact.placeholder_text.email}}">
+              <input class="contact-form-input" type="text" name="company" placeholder="{{labels.contact.placeholder_text.company}}">
+              <textarea class="contact-form-input contact-form-area"  placeholder="{{labels.contact.placeholder_text.message}}"></textarea>
+              <input class="contact-form-submit" type="submit" name="submit" value="SEND">
+            </form>
           </div>
-          <div id="map-canvas"></div>
-          <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript"></script>
-
+        </div>
+        <div class="contact-wraper-item contact-wraper-map">
+          <div class="contact-wraper-map-box">
+            <p class="contact-header-text">{{labels.contact.label.map_text}}</p>
+            <div class="contact-wraper-map-title">
+              <p class="company-address">
+                <span class="company-name">{{labels.company_info.name}}</span><br/><br/>
+                {{labels.company_info.address}}<br/><br/>
+                {{labels.company_info.email}}<br/>
+                {{labels.company_info.phone}}
+              </p>
+            </div>
+            <div id="map-canvas"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript"></script>
+            <div class="addres-button-hidden"></div>
+          </div>
         </div>
       </div>
-
     </div>
     {{> partials/footer.hbs}}
   {{/inline}}

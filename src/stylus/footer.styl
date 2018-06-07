@@ -99,21 +99,22 @@ $light-gray = #EEEEEE
 .footer-license
   display: flex
   text-align: center
+  background-color: $color-blue
 
   @media screen and (max-width: $media-mobile-w)
     font-size: 8px
 
-  .footer-license-p
-    max-width: $container-max-w
+  .container-center
     display: flex
-    lign-items: center
-    flex-grow: 1
-    justify-content: space-around
-    height: 50px
-    line-height: 50px
-    font-size: 18px
-    color: #fff
-    background-color: $color-blue
+    flex: 1
 
-    @media screen and (max-width: $media-mobile-w)
-      font-size: 13px
+    .footer-license-p
+      flex-grow: 1
+      // justify-content: space-around
+      height: 50px
+      line-height: 50px
+      font-size: 18px
+      color: #fff
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 13px

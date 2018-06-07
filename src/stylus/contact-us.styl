@@ -21,13 +21,11 @@ a
   text-decoration: none
   font-weight: bold
 
-
 .container
   height: auto
   background: transparent
 
   .container-center
-    border: 1px solid red
     max-width: $container-max-w
     margin: auto
 
@@ -37,97 +35,153 @@ a
   background-color: $light-gray
 
 .body-wraper
-  position: relative
+  min-height: 144.77px
+  min-width: 300px
+  display: flex
+  background: url('~img/bg/contact.jpg') no-repeat center center
+  background-size: cover
+  height: 560px
+  @media screen and (max-width: $media-tablet-w)
+    height: 344.77px
 
-  .contact-img
-    max-width: 100%
-    height: auto
-    vertical-align:middle
+  @media screen and (max-width: $media-mobile-w)
+    height: 144.77px
 
   .container-center
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
+    flex-grow: 1
     display: flex
     align-items: center
     justify-content: center
     flex-wrap: wrap
     flex-direction: column
     text-align: center
-    width: 90%
     padding-bottom: 15px
-    // .body-wraper-title
+
+    .body-wraper-title
+      font-weight: bold
+      text-transform: uppercase
+      color: $color-blue
+
+    .body-wraper-title-size
+      font-size: 40px
+      text-shadow: 0 0 2px #000
+
+    .container-center-label
+      font-size: 24px
+      color: white
+      font-weight: bold
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 18px
 
 .contact-container
   background-color: $light-gray
+  padding: 25px 0 25px 0
+
   .container-center
     display: flex
-    flex-direction: rows
-    align-items: center
-    justify-content: center
+    flex-direction: row
 
     @media screen and (max-width: $media-tablet-w)
       flex-direction: column
 
     .contact-wraper-item
       padding: 10px
-
       display: flex
-      height: auto
-      flex-direction: column
-      align-items: flex-start
-      justify-content: space-between
-      border: 1px solid red
+
+      .contact-wraper-input
+      .contact-wraper-map-box
+        .contact-header-text
+          color: $color-blue
+          font-weight: bold
+          font-size: 22px
+          padding: 20px 0 15px 0
+          letter-spacing: 1px
 
     .contact-wraper-form
-      max-width: 700px
-      height: 400px
-      flex-grow: 1
-      padding-bottom: 10px
+      flex-grow: 2
+      flex-basis: 100%
 
-      .contact-form
+      .contact-wraper-input
+        min-width: 300px
+        flex-grow: 1
+        align-self: stretch
         display: flex
-        // width: 300px
-        // height: 200px
         flex-direction: column
 
+        .contact-form
+          flex-grow: 1
+          display: flex
+          flex-direction: column
+          padding-right: 50px
 
-        .contact-form-input
-          width: 400px
-          height: 35px
-          margin-bottom: 10px
+          @media screen and (max-width: $media-tablet-w)
+            flex-direction: column
+            padding-right: 0
 
-        .contact-form-submit
+          .contact-form-input
+            border-radius: 10px
+            border: none
+            min-width: 300px
+            height: 35px
+            padding-left: 20px
+            padding-right: 20px
+            margin-bottom: 10px
+
+          .contact-form-area
+            flex: 1
+            resize: none
+            padding-top: 15px
+            min-height: 100px
+
+            @media screen and (max-width: $media-tablet-w)
+              padding-top: 10.5px
+
+          .contact-form-submit
+            min-width: 90px
+            width: 90px
+            height: 25px
+            margin-top: 10px
+            font-size: 16px
+            line-height: 25px
+            text-transform: uppercase
+            font-weight: bold
+            color: white
+            background-color: $color-blue
+            border: none
+            text-overflow: ellipsis
+            border-radius: 2000px
+
+    .contact-wraper-map
+      flex-grow: 1
+      flex-basis: 50%
+
+      .contact-wraper-map-box
+        align-self: stretch
+
+        @media screen and (max-width: $media-tablet-w)
+          flex-grow: 1
+
+        .contact-wraper-map-title
+          .company-address
+            line-height: 20px
+            padding-bottom: 20px
+
+            .company-name
+              font-weight: bold
+
+        #map-canvas
+          min-width: 300px
+          height: 200px
+
+        .addres-button-hidden
+          margin-top: 20px
           width: 90px
+          height: 25px
+          visibility: hidden
 
-        .contact-form-area
-          height: 100px
-          resize: none
-
-    .contact-maps
-      flex-grow: 1
-      display: flex
-      max-width: 500px
-      // align-items: center
-      justify-content: center
-      // flex-direction: column
-
-      .contact-maps-title
-        max-width: 300px
-        display: flex
-
-        // flex-wrap: wrap
-        align-items: flex-start
-        justify-content: center
-        flex-direction: column
-
-        .contact-maps-title-span
-          padding-bottom: 10px
-
-      #map-canvas
-        width: 200px
-        height: 200px
-        border: 1px solid black
+          @media screen and (max-width: $media-tablet-w)
+            display: none
 
 @require './footer'

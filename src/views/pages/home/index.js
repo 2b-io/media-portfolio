@@ -54,9 +54,23 @@ const labels = {
   },
   what_new: {
     title: 'what\'s new in our system?',
-    image_optimization: 'image-optimization',
-    image_size: 'properly size images',
-    image_animated: 'animated gifs to html5 videos',
+    feature: [
+      {
+        src: require('img/icon/image_optimization.svg'),
+        alt: 'image-optimization',
+        detail: 'optimization-image'
+      },
+      {
+        src: require('img/icon/image_size.svg'),
+        alt: 'size-image',
+        detail: 'properly size images'
+      },
+      {
+        src: require('img/icon/image_animated.svg'),
+        alt: 'gifs-to-html5-videos',
+        detail: 'animated gifs to html5 videos'
+      },
+    ],
   },
   subscribe: headerData.subscribe,
 }
@@ -67,19 +81,21 @@ const urls = {
 }
 
 const assets = {
-  header_logo: require('img/logo/logo_white.svg'),
-  footer_logo: require('img/logo/logo_white.svg'),
+  header_logo:  {
+    src: require('img/logo/logo_white.svg'),
+    alt: 'NTQ Solution',
+  },
+  footer_logo: {
+    src: require('img/logo/logo_white.svg'),
+    alt: 'NTQ Solution',
+  },
   feature_icon: {
     totally_optimized: require('img/icon/totally_optimized.svg'),
     powerful_features: require('img/icon/powerful_features.svg'),
     global_network: require('img/icon/global_network.svg'),
     totally_saved: require('img/icon/totally_saved.svg'),
   },
-  system_icon: {
-    image_optimization: require('img/icon/image_optimization.svg'),
-    image_size: require('img/icon/image_size.svg'),
-    image_animated: require('img/icon/image_animated.svg'),
-  },
+
   collaborator: {
     title: 'Trusted By',
     logo: [

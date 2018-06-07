@@ -84,20 +84,12 @@
           <p>{{labels.what_new.title}}</p>
         </div>
         <div class="what-new what-new-image-wraper">
-          <div class="what-new-image-box">
-            <img class="what-new-image" src={{assets.system_icon.image_optimization}} alt="image-optimization">
-            <p class="what-new-image-title">{{labels.what_new.image_optimization}}</p>
-          </div>
-          <div class="what-new-image-box">
-            <img class="what-new-image" src={{assets.system_icon.image_size}} alt="image-optimization">
-            <p class="what-new-image-title">{{labels.what_new.image_size}}</p>
-          </div>
-          <div class="what-new-image-box">
-            <img class="what-new-image" src={{assets.system_icon.image_animated}} alt="image-optimization">
-            <p class="what-new-image-title">
-              {{labels.what_new.image_animated}}
-            </p>
-          </div>
+          {{#each labels.what_new.feature}}
+            <div class="what-new-image-box">
+              <img class="what-new-image" src={{this.src}} alt="{{this.alt}}">
+              <p class="what-new-image-detail">{{this.detail}}</p>
+            </div>
+          {{/each}}
         </div>
       </div>
     </div>

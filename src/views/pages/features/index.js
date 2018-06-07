@@ -114,8 +114,14 @@ const urls = {
 }
 
 const assets = {
-  header_logo: require('img/logo/logo_blue.svg'),
-  footer_logo: require('img/logo/logo_white.svg'),
+  header_logo: {
+    src: require('img/logo/logo_blue.svg'),
+    alt: 'NTQ Solution',
+  },
+  footer_logo: {
+    src: require('img/logo/logo_white.svg'),
+    alt: 'NTQ Solution',
+  },
   collaborator: {
     title: 'integration tutorials',
     logo: [

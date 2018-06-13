@@ -21,6 +21,7 @@ export default {
   entry: {
     home: [ path.join(rootDir, 'src/js/home.js') ],
     features: [ path.join(rootDir, 'src/js/features.js') ],
+    'about-us': [ path.join(rootDir, 'src/js/about-us.js') ],
     'contact-us': [ path.join(rootDir, 'src/js/contact-us.js') ],
     'coming-soon': [ path.join(rootDir, 'src/js/coming-soon.js') ]
   },
@@ -53,6 +54,13 @@ export default {
     }),
     new HtmlWebpackPlugin({
       inject: true,
+      template: path.join(rootDir, 'src/views/pages/about-us'),
+      filename: path.join(rootDir, 'public/about-us.html'),
+      chunks: [ 'about-us' ],
+      minify: htmlMinifyOptions
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
       template: path.join(rootDir, 'src/views/pages/contact-us'),
       filename: path.join(rootDir, 'public/contact-us.html'),
       chunks: [ 'contact-us' ],
@@ -65,13 +73,6 @@ export default {
       chunks: [ 'features' ],
       minify: htmlMinifyOptions
     }),
-    // new HtmlWebpackPlugin({
-    //   inject: true,
-    //   template: path.join(rootDir, 'src/views/pages/about-us'),
-    //   filename: path.join(rootDir, 'public/about-us.html'),
-    //   chunks: [ 'about-us' ],
-    //   minify: htmlMinifyOptions
-    // }),
     // new HtmlWebpackPlugin({
     //   inject: true,
     //   template: path.join(rootDir, 'src/views/pages/coming-soon'),

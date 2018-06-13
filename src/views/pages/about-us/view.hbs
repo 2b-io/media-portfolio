@@ -1,7 +1,80 @@
 {{#> layouts/default}}
   {{#*inline "content-body"}}
-    <h1>About us</h1>
-    <a href="/">Home</a>
-    {{> partials/header.hbs}}
+    <div class="container header-wraper">
+      <div class="container-center">
+        {{> partials/header.hbs}}
+      </div>
+    </div>
+
+    <div class="container body-wraper">
+      <div class="container-center">
+        <h1 class="body-wraper-title body-wraper-title-size">{{labels.body_text.title}}</h1>
+        <p class="container-center-label">{{labels.body_text.label}}</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="container-center about-container">
+        <div class="about-div-center about-wraper">
+          <p class="about-div-center about-wraper-title">
+            <span>{{labels.about.about_us.label}}</span>
+          </p>
+          <div class="about-div-center about-wraper-text">
+            <span>{{{labels.about.about_us.text}}}</span>
+          </div>
+        </div>
+        <div class="what-we-do-wraper about-wraper">
+          <p class="about-div-center about-wraper-title">
+            <span>{{labels.about.what_we_do.label}}</span>
+          </p>
+          <div class="about-div-center about-wraper-text">
+            <span>{{{labels.about.what_we_do.text}}}</span>
+          </div>
+        </div>
+        <div class="about-div-center about-content-wraper">
+          <div class="about-content-wraper-left"></div>
+          <div class="about-content-wraper-right"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="about-max-width">
+        <div class="about-wraper-left">
+          <div class="about-left">
+            <div class="about-left-header">
+              <div class="about-left-header-content">
+                <div class="about-left-header-title">
+                  <span>Our Vision</span>
+                </div>
+                <div class="about-left-header-detail">
+                  <span>Todeliver a service that is par excellence, to maintain transparency with our clients, and be ethical in our work processes.</span>
+                </div>
+              </div>
+              <div class="about-left-header-content">
+                <div class="about-left-header-title">
+                  <span>Our Vision</span>
+                </div>
+                <div class="about-left-header-detail ">
+                  <span>Todeliver a service that is par excellence, to maintain transparency with our clients, and be ethical in our work processes.</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-left-body">
+              bvcbcv
+            </div>
+          </div>
+        </div>
+        <div class="about-wraper-right">
+          <div class="about-right">
+            <img src="{{assets.body_img.src}}" alt="{{assets.body_img.alt}}">
+          </div>
+
+          <div class="about-right-content">
+            <span>1 123 kl12h3 kl123h 12kjh3 kl12h3 kl12h3 kl12hkl 3h12kl 3h12kl 3h12klh3 12klh3 kl12h3 kl12h3l k12h3kl 12h3 kl12h 3kl12h 3kl12h 3kl12hkl 3h12kl3 h12kl3h 12klh 3kl12h 3kl12h 3kl12h k12h3 kl12h3k 12hk3h 12kl3h 12klh</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{> partials/footer.hbs}}
   {{/inline}}
 {{/ layouts/default}}

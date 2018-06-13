@@ -1,0 +1,217 @@
+meyer-reset()
+box-sizing-reset()
+normalize()
+
+$media-mobile-w = 480px
+$media-tablet-w = 768px
+$container-max-w = 1200px
+$color-blue = #0066b3
+$color-blue-white = #4ba6dd
+$color-gray = #999
+$light-gray = #EEEEEE
+$white = #FFFFFF
+
+html, body
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
+  overflow-x: hidden
+  height: 100%
+  min-width: 200px
+
+a
+  text-decoration: none
+  font-weight: bold
+
+.container
+  height: auto
+  background: transparent
+
+  .container-center
+    max-width: $container-max-w
+    margin: auto
+
+@require './header'
+
+.header-wraper
+  background-color: $light-gray
+
+.body-wraper
+  min-height: 200px
+  min-width: 300px
+  display: flex
+  background: url('~img/bg/about.jpg') no-repeat center center
+  background-size: cover
+  height: 600px
+  @media screen and (max-width: $media-tablet-w)
+    height: 400px
+
+  @media screen and (max-width: $media-mobile-w)
+    height: 200px
+
+  .container-center
+    flex-grow: 1
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    flex-direction: column
+    text-align: center
+    padding-bottom: 15px
+
+    .body-wraper-title
+      font-weight: bold
+      text-transform: uppercase
+      color: $color-blue
+
+    .body-wraper-title-size
+      font-size: 60px
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-tablet-w)
+        font-size: 40px
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 25px
+
+    .container-center-label
+      padding: 0px 10px 0 10px
+      font-size: 30px
+      color: white
+      font-weight: bold
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-tablet-w)
+        font-size: 24px
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 18px
+
+.container
+  .about-container
+    display: flex
+    flex-direction: column
+
+    .about-div-center
+      padding: 20px 10px 10px 10px
+
+    .about-wraper
+      display: flex
+      flex-direction: row
+      justify-content: center
+      flex-wrap: nowrap
+
+      @media screen and (max-width: $media-tablet-w)
+        flex-direction: column
+
+      .about-wraper-title
+        padding-right: 10px
+        flex: 1
+        font-size: 80px
+        font-weight: bold
+        color: $color-blue
+        margin: auto
+        text-transform: capitalize
+        min-width: 400px
+
+        @media screen and (max-width: $media-tablet-w)
+          text-align: center
+          min-width: 300px
+          font-size: 50px
+
+      .about-wraper-text
+        flex: 2
+        line-height: 19px
+        margin: auto
+
+    .what-we-do-wraper
+      flex-direction: row-reverse
+
+      @media screen and (max-width: $media-tablet-w)
+        flex-direction: column
+
+.container
+  .about-max-width
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row
+
+    @media screen and (max-width: $media-tablet-w)
+      flex-direction: column
+
+    .about-wraper-left
+      flex-grow: 1
+      width: 50%
+      border: 1px solid red
+      display: flex
+      justify-content: flex-end
+
+      @media screen and (max-width: $media-tablet-w)
+        justify-content: center
+        width: 100%
+
+      .about-left
+        max-width: 610px
+        min-width: 300px
+        display: flex
+        flex-direction: column
+
+        .about-left-header
+          flex-grow: 1
+          background-color: $color-blue
+
+          .about-left-header-content
+            padding: 20px 0 20px 0
+            margin: 0 20px 0 20px
+            border-bottom: 1px solid white
+
+            .about-left-header-title
+            .about-left-header-detail
+              color: white
+              padding: 10px 0 10px 0
+
+            .about-left-header-title
+              text-transform: capitalize
+              font-weight: bold
+              font-size: 24px
+
+
+        .about-left-body
+          flex-grow: 1
+
+
+    .about-wraper-right
+      flex-grow: 1
+      width: 50%
+      border: 1px solid red
+      display: flex
+      flex-direction: column
+
+      @media screen and (max-width: $media-tablet-w)
+        justify-content: center
+        align-items: center
+        width: 100%
+
+      .about-right
+        width: 100%
+        min-width: 300px
+        height: 100%
+
+        img
+          max-width: 100%
+
+      .about-right-content
+        max-width: 610px
+        min-width: 300px
+        height: 100%
+        padding-top: 30px
+        background-color: yellow
+
+      .about-right-content
+      .about-right
+        padding-left: 50px
+
+
+
+
+
+
+@require './footer'

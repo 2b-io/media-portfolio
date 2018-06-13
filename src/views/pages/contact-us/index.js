@@ -41,6 +41,7 @@ const assets = {
     src: require('img/logo/logo_white.svg'),
     alt: 'NTQ Solution',
   },
+  api_key: 'AIzaSyAJXhVpUoR0K9nUI5bVGf8NSa8u0g15ubA'
 }
 
 

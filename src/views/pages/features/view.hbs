@@ -1,14 +1,14 @@
 {{#> layouts/default}}
   {{#*inline "content-body"}}
-    <div class="container header-wraper">
+    <div class="container header-wrapper">
       <div class="container-center">
         {{> partials/header.hbs}}
       </div>
     </div>
 
-    <div class="container body-wraper">
+    <div class="container body-wrapper">
       <div class="container-center">
-        <h1 class="body-wraper-title body-wraper-title-size">{{labels.body_text.title}}</h1>
+        <h1 class="body-wrapper-title body-wrapper-title-size">{{labels.body_text.title}}</h1>
         <p class="container-center-label">{{labels.body_text.label}}</p>
       </div>
     </div>
@@ -17,7 +17,7 @@
       <div class="feature container-center">
         {{#each labels.feature}}
           <div class="feature-info">
-            <div class="feature-box-img-wraper">
+            <div class="feature-box-img-wrapper">
               <img class="feature-box-img" src={{this.img}} alt="optimized">
             </div>
             <div class="feature-info-box">
@@ -31,7 +31,7 @@
 
     <div class="container-feature container">
       <div class="advanced-feature container-center">
-        <p class="advanced-feature-wraper">
+        <p class="advanced-feature-wrapper">
             <span class="advanced-feature-title">{{labels.advanced_features.title}}</span> <br/><br/>
             <span>{{labels.advanced_features.detail}}</span> <br/><br/>
             <span>{{{labels.advanced_features.content}}}</span>
@@ -56,10 +56,10 @@
     </div>
 
     <div class="container">
-      <div class="knowledge-wraper container-center">
-        <p class="knowledge-wraper-text">
+      <div class="knowledge-wrapper container-center">
+        <p class="knowledge-wrapper-text">
           <span>{{labels.learn_more.label}}&nbsp;</span>
-          <a href="#" class="knowledge-wraper-link">{{labels.learn_more.link_label}}</a>
+          <a href="#" class="knowledge-wrapper-link">{{labels.learn_more.link_label}}</a>
         </p>
       </div>
     </div>

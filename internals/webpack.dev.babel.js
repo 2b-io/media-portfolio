@@ -41,14 +41,14 @@ export default {
     new HtmlWebpackPlugin({
       inject: true,
       template: path.join(rootDir, 'src/views/pages/coming-soon'),
-      filename: path.join(rootDir, 'public/index.html'),
+      filename: path.join(rootDir, 'public/coming-soon.html'),
       chunks: [ 'coming-soon' ],
       minify: htmlMinifyOptions
     }),
     new HtmlWebpackPlugin({
       inject: true,
       template: path.join(rootDir, 'src/views/pages/home'),
-      filename: path.join(rootDir, 'public/home.html'),
+      filename: path.join(rootDir, 'public/index.html'),
       chunks: [ 'home' ],
       minify: htmlMinifyOptions
     }),

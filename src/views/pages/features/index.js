@@ -110,7 +110,13 @@ const labels = {
 
 const urls = {
   menu: headerData.menu,
-  social: headerData.social
+  social: headerData.social,
+  form_subscribe: {
+    action: 'https://amazonaws.us18.list-manage.com/subscribe/post',
+    method: 'POST',
+    input_u_value: 'fe6b6383f2b1cc961b4c0d4f1',
+    input_id_value: 'e6719695d0'
+  }
 }
 
 const assets = {

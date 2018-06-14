@@ -7,42 +7,50 @@ export default {
   },
   menu: [
     {
-      link: 'features',
+      link: '/',
+      label: 'Home'
+    },
+    {
+      link: '/features',
       label: 'FEATURES'
     },
     {
-      link: '#',
+      link: '/#',
       label: 'PRICING'
     },
     {
-      link: 'about-us',
+      link: '/about-us',
       label: 'ABOUT'
     },
     {
-      link: 'contact-us',
+      link: '/contact-us',
       label: 'CONTACT'
     },
     {
-      link:'#',
+      link:'/#',
       label:'KNOWLEDGE BASE'
     },
   ],
   social: [
     {
-      link: 'facebook',
+      link: '#',
       icon: require('img/icon/facebook.svg'),
+      alt: 'facebook'
     },
     {
       link: '#',
       icon: require('img/icon/twitter.svg'),
+      alt: 'twitter'
     },
     {
       link: '#',
       icon: require('img/icon/skype.svg'),
+      alt: 'skype'
     },
     {
       link: '#',
       icon: require('img/icon/youtube.svg'),
+      alt: 'youtube'
     },
   ],
   footer_text: {

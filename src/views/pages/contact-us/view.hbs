@@ -17,12 +17,15 @@
         <div class="contact-wraper-item contact-wraper-form">
           <div class="contact-wraper-input">
             <p class="contact-header-text">{{labels.contact.label.form_text}}</p>
-            <form class="contact-form" action="" method="post" target="_blank">
-              <input class="contact-form-input" type="text" name="title" placeholder="{{labels.contact.placeholder_text.title}}">
-              <input class="contact-form-input" type="text" name="name" placeholder="{{labels.contact.placeholder_text.name}}">
-              <input class="contact-form-input" type="email" name="email" required="true" placeholder="{{labels.contact.placeholder_text.email}}">
-              <input class="contact-form-input" type="text" name="company" placeholder="{{labels.contact.placeholder_text.company}}">
-              <textarea class="contact-form-input contact-form-area"  placeholder="{{labels.contact.placeholder_text.message}}"></textarea>
+            <form class="contact-form" action="{{urls.form_contact.action}}" method="{{urls.form_contact.method}}" target="_blank">
+              <input type="hidden" name="u" value="{{urls.form_contact.input_u_value}}">
+              <input type="hidden" name="id" value="{{urls.form_contact.input_id_value}}">
+
+              <input class="contact-form-input" type="text" name="{{urls.form_contact.element.title.name}}" placeholder="{{urls.form_contact.element.title.placeholder_text}}">
+              <input class="contact-form-input" type="text" name="{{urls.form_contact.element.name.name}}" placeholder="{{urls.form_contact.element.name.placeholder_text}}">
+              <input class="contact-form-input" type="email" name="{{urls.form_contact.element.email.name}}" required="true" placeholder="{{urls.form_contact.element.email.placeholder_text}}">
+              <input class="contact-form-input" type="text" name="{{urls.form_contact.element.company.name}}" placeholder="{{urls.form_contact.element.company.placeholder_text}}">
+              <textarea class="contact-form-input contact-form-area" name="{{urls.form_contact.element.message.name}}" placeholder="{{urls.form_contact.element.message.placeholder_text}}"></textarea>
               <input class="contact-form-submit" type="submit" name="submit" value="SEND">
             </form>
           </div>

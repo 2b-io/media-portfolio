@@ -154,28 +154,46 @@ a
         display: flex
         flex-direction: column
 
-        .about-left-header
-          flex-grow: 1
-          background-color: $color-blue
+        @media screen and (max-width: $media-tablet-w)
+          max-width: none
 
-          .about-left-header-content
-            padding: 20px 0 20px 0
+        .about-left-header-bg
+          display: flex
+          flex-direction: column
+
+          @media screen and (max-width: $media-tablet-w)
+            background: url('~img/bg/why_choose_us.jpg') no-repeat center center
+            background-size: cover
+
+          .about-left-header
+            flex-grow: 1
             margin: 0 20px 0 20px
-            border-bottom: 1px solid white
 
-            .about-left-header-title
-            .about-left-header-detail
-              color: white
-              padding: 10px 0 10px 0
+            @media screen and (max-width: $media-tablet-w)
+              margin: 20px
 
-            .about-left-header-title
-              text-transform: capitalize
-              font-weight: bold
-              font-size: 24px
 
+            .about-left-header-content
+              background-color: $color-blue
+              padding: 30px
+              border-bottom: 1px solid white
+
+              @media screen and (max-width: $media-tablet-w)
+                background-color: rgba(00, 66, 179, 0.6)
+
+              .about-left-header-title
+              .about-left-header-detail
+                color: white
+                padding: 10px 0 10px 0
+
+              .about-left-header-title
+                text-transform: capitalize
+                font-weight: bold
+                font-size: 24px
 
         .about-left-body
-          flex-grow: 1
+          flex: 1
+          padding: 20px
 
 
     .about-wraper-right
@@ -197,6 +215,8 @@ a
 
         img
           max-width: 100%
+          @media screen and (max-width: $media-tablet-w)
+            display: none
 
       .about-right-content
         max-width: 610px
@@ -205,10 +225,15 @@ a
         padding-top: 30px
         background-color: yellow
 
+        @media screen and (max-width: $media-tablet-w)
+          max-width: none
+
       .about-right-content
       .about-right
         padding-left: 50px
 
+        @media screen and (max-width: $media-tablet-w)
+          padding-left: 0
 
 
 

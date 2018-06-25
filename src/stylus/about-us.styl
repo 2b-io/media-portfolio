@@ -199,12 +199,14 @@ a
           display: flex
           flex-direction: column
 
+          @media screen and (max-width: $media-tablet-w)
+            padding-bottom: 0
+
           .about-left-body-header-text
             color: $color-blue
             text-transform: capitalize
             font-weight: bold
             font-size: 20px
-
 
           .about-left-body-box
             .about-left-body-label
@@ -316,8 +318,8 @@ a
         padding-bottom: 20px
 
         @media screen and (max-width: $media-tablet-w)
-          padding-left: 0px
-          padding-right: 0px
-          padding-bottom: 0px
+          padding-left: 0
+          padding-right: 0
+          padding-bottom: 0
 
 @require './footer'

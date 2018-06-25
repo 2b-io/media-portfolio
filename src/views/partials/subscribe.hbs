@@ -1,0 +1,16 @@
+<div class="container subscribe">
+  <div class="subscribe-wrapper container-center">
+    <div class="subscribe-wrapper-item subscribe-text">
+      <label class="subscribe-text-p">{{labels.subscribe.title}}</label>
+    </div>
+    <div class="subscribe-wrapper-item subscribe-input">
+      <form action="{{urls.form_subscribe.action}}" method="{{urls.form_subscribe.method}}" target="_blank">
+        <input type="hidden" name="u" value="{{urls.form_subscribe.input_u_value}}">
+        <input type="hidden" name="id" value="{{urls.form_subscribe.input_id_value}}">
+
+        <input class="subscribe-input-item subscribe-input-item-email" type="email" name="MERGE0" id="MERGE0" value="" placeholder="Enter your email" required="true"/>
+        <input class="subscribe-input-item subscribe-input-item-submit" type="submit" value="Subscribe">
+      </form>
+    </div>
+  </div>
+</div>

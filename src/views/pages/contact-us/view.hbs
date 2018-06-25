@@ -1,47 +1,52 @@
 {{#> layouts/default}}
   {{#*inline "content-body"}}
-    <div class="container header-wraper">
+    <div class="container header-wrapper">
       <div class="container-center">
         {{> partials/header.hbs}}
       </div>
     </div>
 
-    <div class="container body-wraper">
-      <img class="contact-img" src={{assets.contact_img}} alt="contact-img">
+    <div class="container body-wrapper">
       <div class="container-center">
-        <h1 class="body-wraper-title">contact us</h1>
-        <p class="body-wraper-title" >Questions? Check our FAQ and Knowledge Base</p>
+        <h1 class="body-wrapper-title body-wrapper-title-size">{{labels.body_text.title}}</h1>
+        <p class="container-center-label">{{labels.body_text.label1}} <a href="" target="_blank" class="body-wrapper-title">{{labels.body_text.faq}} </a>{{labels.body_text.label2}} <a href="" target="_blank" class="body-wrapper-title">{{labels.body_text.knowledge_base}}</a></p>
       </div>
     </div>
-
     <div class="container contact-container">
       <div class="container-center">
-        <div class="contact-wraper-item contact-wraper-form">
-          <p>Get In Touch</p>
-          <form class="contact-form" action="" method="post">
-            <input class="contact-form-input" type="text" name="title" placeholder="Title">
-            <input class="contact-form-input" type="text" name="name" placeholder="Name">
-            <input class="contact-form-input" type="email" name="email" placeholder="Email">
-            <input class="contact-form-input" type="text" name="company" placeholder="Company">
-            <textarea class="contact-form-input contact-form-area"  placeholder="Message"></textarea>
-            <input class="contact-form-input contact-form-submit" type="submit" name="submit" value="SEND">
+        <div class="contact-wrapper-item contact-wrapper-form">
+          <div class="contact-wrapper-input">
+            <p class="contact-header-text">{{labels.contact.label.form_text}}</p>
+            <form class="contact-form" action="{{urls.form_contact.action}}" method="{{urls.form_contact.method}}" target="_blank">
+              <input type="hidden" name="u" value="{{urls.form_contact.input_u_value}}">
+              <input type="hidden" name="id" value="{{urls.form_contact.input_id_value}}">
 
-          </form>
-        </div>
-        <div class="contact-wraper-item contact-maps">
-          <div class="contact-maps-title">
-              <span class="contact-maps-title-span">Address</span>
-              <span class="contact-maps-title-span">NTQ Solution</span>
-              <span class="contact-maps-title-span">6th & 11th Floor, Sudico Building, Me Tri Street, Ha Noi, Viet Nam</span>
-              <span class="contact-maps-title-span">Email: sale@medianetwork-ntq.com</span>
-              <span class="contact-maps-title-span">Phone: (+84) 241 625 2145</span>
+              <input class="contact-form-input" type="text" name="{{urls.form_contact.element.title.name}}" placeholder="{{urls.form_contact.element.title.placeholder_text}}">
+              <input class="contact-form-input" type="text" name="{{urls.form_contact.element.name.name}}" placeholder="{{urls.form_contact.element.name.placeholder_text}}">
+              <input class="contact-form-input" type="email" name="{{urls.form_contact.element.email.name}}" required="true" placeholder="{{urls.form_contact.element.email.placeholder_text}}">
+              <input class="contact-form-input" type="text" name="{{urls.form_contact.element.company.name}}" placeholder="{{urls.form_contact.element.company.placeholder_text}}">
+              <textarea class="contact-form-input contact-form-area" name="{{urls.form_contact.element.message.name}}" placeholder="{{urls.form_contact.element.message.placeholder_text}}"></textarea>
+              <input class="contact-form-submit" type="submit" name="submit" value="SEND">
+            </form>
           </div>
-          <div id="map-canvas"></div>
-          <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript"></script>
-
+        </div>
+        <div class="contact-wrapper-item contact-wrapper-map">
+          <div class="contact-wrapper-map-box">
+            <p class="contact-header-text">{{labels.contact.label.map_text}}</p>
+            <div class="contact-wrapper-map-title">
+              <p class="company-address">
+                <span class="company-name">{{labels.company_info.name}}</span><br/><br/>
+                {{labels.company_info.address}}<br/><br/>
+                {{labels.company_info.email}}<br/>
+                {{labels.company_info.phone}}
+              </p>
+            </div>
+            <div id="map" class="map-canvas"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?key={{assets.api_key}}"></script>
+            <div class="addres-button-hidden"></div>
+          </div>
         </div>
       </div>
-
     </div>
     {{> partials/footer.hbs}}
   {{/inline}}

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="trusted container-center">
+    <div class="trusted-item trusted-title">
+      <p class="trusted-title-p">{{assets.collaborator.title}}</p>
+    </div>
+    <div class="trusted-item trusted-box">
+      <div class="trusted-box-item trusted-button">
+        <button class="trusted-button-item btn_left" id="btn_left">
+      </div>
+      <div class="trusted-box-item trusted-box-images">
+        <div class="trusted-image-wrapper">
+          {{#each assets.collaborator.logo}}
+            <img class="trusted-image" src={{this}} alt="image-optimization">
+          {{/each}}
+        </div>
+      </div>
+      <div class="trusted-box-item trusted-button">
+          <button class="trusted-button-item btn_right" id="btn_right">
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,325 @@
+meyer-reset()
+box-sizing-reset()
+normalize()
+
+$media-mobile-w = 480px
+$media-tablet-w = 768px
+$container-max-w = 1200px
+$color-blue = #0066b3
+$color-blue-white = #4ba6dd
+$color-gray = #999
+$light-gray = #EEEEEE
+$white = #FFFFFF
+
+html, body
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
+  overflow-x: hidden
+  height: 100%
+  min-width: 200px
+
+a
+  text-decoration: none
+  font-weight: bold
+
+.container
+  height: auto
+  background: transparent
+
+  .container-center
+    max-width: $container-max-w
+    margin: auto
+
+@require './header'
+
+.header-wrapper
+  background-color: $light-gray
+
+.body-wrapper
+  min-height: 200px
+  min-width: 300px
+  display: flex
+  background: url('~img/bg/about.jpg') no-repeat center center
+  background-size: cover
+  height: 600px
+  @media screen and (max-width: $media-tablet-w)
+    height: 400px
+
+  @media screen and (max-width: $media-mobile-w)
+    height: 200px
+
+  .container-center
+    flex-grow: 1
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    flex-direction: column
+    text-align: center
+    padding-bottom: 15px
+
+    .body-wrapper-title
+      font-weight: bold
+      text-transform: uppercase
+      color: $color-blue
+
+    .body-wrapper-title-size
+      font-size: 60px
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-tablet-w)
+        font-size: 40px
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 25px
+
+    .container-center-label
+      padding: 0px 10px 0 10px
+      font-size: 30px
+      color: white
+      font-weight: bold
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-tablet-w)
+        font-size: 24px
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 18px
+
+.container
+  .about-container
+    display: flex
+    flex-direction: column
+
+    .about-div-center
+      padding: 20px 10px 10px 10px
+
+    .about-wrapper
+      display: flex
+      flex-direction: row
+      justify-content: center
+      flex-wrap: nowrap
+
+      @media screen and (max-width: $media-tablet-w)
+        flex-direction: column
+
+      .about-wrapper-title
+        padding-right: 10px
+        flex: 1
+        font-size: 80px
+        font-weight: bold
+        color: $color-blue
+        margin: auto
+        text-transform: capitalize
+        min-width: 400px
+
+        @media screen and (max-width: $media-tablet-w)
+          text-align: center
+          min-width: 300px
+          font-size: 50px
+
+      .about-wrapper-text
+        flex: 2
+        line-height: 19px
+        margin: auto
+
+    .what-we-do-wrapper
+      flex-direction: row-reverse
+
+      @media screen and (max-width: $media-tablet-w)
+        flex-direction: column
+
+.container
+  .about-max-width
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row
+
+    @media screen and (max-width: $media-tablet-w)
+      flex-direction: column
+
+    .about-wrapper-left
+      flex-grow: 1
+      width: 50%
+      display: flex
+      justify-content: flex-end
+
+      @media screen and (max-width: $media-tablet-w)
+        justify-content: center
+        width: 100%
+
+      .about-left
+        max-width: 610px
+        min-width: 300px
+        display: flex
+        flex-direction: column
+
+        @media screen and (max-width: $media-tablet-w)
+          max-width: none
+
+        .about-left-header-bg
+          display: flex
+          flex-direction: column
+
+          @media screen and (max-width: $media-tablet-w)
+            background: url('~img/bg/why_choose_us.jpg') no-repeat center center
+            background-size: cover
+
+          .about-left-header
+            flex-grow: 1
+            margin: 0 20px 0 20px
+
+            @media screen and (max-width: $media-tablet-w)
+              margin: 20px
+
+            .about-left-header-content
+              background-color: $color-blue
+              padding: 30px 30px 0px
+
+              @media screen and (max-width: $media-tablet-w)
+                background-color: rgba(00, 66, 179, 0.6)
+
+              .about-left-header-title
+              .about-left-header-detail
+                color: white
+
+              .about-left-header-detail
+                padding: 10px 0 30px 0
+
+              .about-left-border
+                border-bottom: 1px solid white
+
+              .about-left-header-title
+                text-transform: capitalize
+                font-weight: bold
+                font-size: 24px
+
+        .about-left-body
+          flex: 1
+          padding: 20px
+          display: flex
+          flex-direction: column
+
+          @media screen and (max-width: $media-tablet-w)
+            padding-bottom: 0
+
+          .about-left-body-header-text
+            color: $color-blue
+            text-transform: capitalize
+            font-weight: bold
+            font-size: 20px
+
+          .about-left-body-box
+            .about-left-body-label
+              font-weight: bold
+              padding: 20px 0 20px 0
+
+
+    .about-wrapper-right
+      flex-grow: 1
+      width: 50%
+
+      display: flex
+      flex-direction: column
+
+      @media screen and (max-width: $media-tablet-w)
+        justify-content: center
+        align-items: center
+        width: 100%
+
+      .about-right
+        width: 100%
+        min-width: 300px
+
+        .about-right-img
+          max-width: 100%
+          @media screen and (max-width: $media-tablet-w)
+            display: none
+
+      .about-right-content
+        .about-left-body
+          flex: 1
+          padding: 20px 20px 20px 0
+          display: flex
+          flex-direction: column
+
+          @media screen and (max-width: $media-tablet-w)
+            padding-left: 20px
+
+          .about-left-body-header-text
+            color: $color-blue
+            text-transform: capitalize
+            font-weight: bold
+            font-size: 20px
+
+          .about-left-body-box
+            .about-left-body-label
+              font-weight: bold
+              padding: 20px 0 20px 0
+
+      .contact-wrapper
+        display: flex
+        flex-direction: column
+        text-align: center
+        padding-right: 20px
+
+        .contact-wrapper-box
+          background-color: $color-blue
+          width: 100%
+          padding: 30px 0
+          display: flex
+          flex-direction: column
+          align-items: center
+
+          .contact-wrapper-items
+            flex: 1
+            text-transform: uppercase
+            color: white
+            font-weight: bold
+            font-size: 40px
+
+          .contact-wrapper-label
+            font-weight: normal
+            padding-top: 15px
+
+          .contact-wrapper-button
+            margin-top: 20px
+            background: $color-blue
+            border-radius: 2000px
+            font-size: 18px
+            text-align: center
+            line-height: 50px
+            width: 240px
+            height: 50px
+            border: 1px solid white
+
+            &:hover
+              background: $color-blue-white
+
+
+
+      .about-right-content
+      .about-right
+      .contact-wrapper
+        padding-left: 50px
+
+        @media screen and (max-width: $media-tablet-w)
+          padding-left: 0
+
+      .about-right-content
+      .contact-wrapper
+        max-width: 610px
+        min-width: 300px
+
+        @media screen and (max-width: $media-tablet-w)
+          max-width: none
+          width: 100%
+
+      .contact-wrapper
+        padding-bottom: 20px
+
+        @media screen and (max-width: $media-tablet-w)
+          padding-left: 0
+          padding-right: 0
+          padding-bottom: 0
+
+@require './footer'

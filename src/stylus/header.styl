@@ -6,6 +6,9 @@ $color-blue-white = #4ba6dd
 $color-gray = #999
 $light-gray = #EEEEEE
 
+body
+  -webkit-overflow-scrolling: touch
+
 .container
   height: auto
   background: transparent
@@ -22,7 +25,7 @@ $light-gray = #EEEEEE
       .header-item
         display: flex
 
-      .header-logo-wraper
+      .header-logo-wrapper
         align-items: flex-start
         justify-content: center
 
@@ -66,6 +69,7 @@ $light-gray = #EEEEEE
                 line-height: 50px
                 height: 50px
                 color: black
+                text-transform: uppercase
 
                 @media screen and (max-width: $media-tablet-w)
                   font-size: 16px
@@ -97,7 +101,7 @@ $light-gray = #EEEEEE
           @media screen and (max-width: $media-mobile-w)
             width: 100%
 
-          .menu-mobile-wraper
+          .menu-mobile-wrapper
             flex-grow: 1
             visibility:hidden
             position: absolute
@@ -107,7 +111,7 @@ $light-gray = #EEEEEE
             height: 100vh
             z-index: 2
 
-            .menu-mobile-wraper-ul
+            .menu-mobile-wrapper-ul
               display: flex
               flex-direction: column
               justify-content: flex-end
@@ -121,6 +125,7 @@ $light-gray = #EEEEEE
                 .menu-item-a
                   flex-grow: 1
                   color: white
+                  text-transform: uppercase
 
                   &:hover
                     border-bottom: 1px solid white
@@ -160,7 +165,7 @@ $light-gray = #EEEEEE
                 background-repeat: no-repeat
                 background-size: cover
 
-            &:checked ~ .menu-mobile-wraper
+            &:checked ~ .menu-mobile-wrapper
               visibility: visible
               background-color: $color-blue
 

@@ -1,0 +1,342 @@
+$media-mobile-w = 480px
+$media-tablet-w = 768px
+$container-max-w = 1200px
+$color-blue = #0066b3
+$color-blue-white = #4ba6dd
+$color-gray = #999
+$color-gainsboro = #DEDEDE
+$light-gray = #EEEEEE
+$white = #FFFFFF
+
+meyer-reset()
+box-sizing-reset()
+normalize()
+
+html, body
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
+  overflow-x: hidden
+  height: 100%
+  min-width: 200px
+
+a
+  text-decoration: none
+  font-weight: bold
+
+.container
+  height: auto
+  background: transparent
+  min-width: 300px
+
+  .container-center
+    max-width: $container-max-w
+    margin: auto
+
+@require './header'
+
+.header-wrapper
+  background-color: $light-gray
+
+.body-wrapper
+  min-height: 200px
+  min-width: 300px
+  display: flex
+  background: url('~img/bg/feature.jpg') no-repeat center center
+  background-size: cover
+  height: 660px
+  @media screen and (max-width: $media-tablet-w)
+    height: 400px
+
+  @media screen and (max-width: $media-mobile-w)
+    height: 200px
+
+  .container-center
+    flex-grow: 1
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    flex-direction: column
+    text-align: center
+    padding-bottom: 15px
+
+    .body-wrapper-title
+      font-weight: bold
+      text-transform: uppercase
+      color: $color-blue
+
+    .body-wrapper-title-size
+      font-size: 60px
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-tablet-w)
+        font-size: 40px
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 25px
+
+    .container-center-label
+      padding: 0px 10px 0 10px
+      font-size: 30px
+      color: white
+      font-weight: bold
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-tablet-w)
+        font-size: 24px
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 18px
+
+.contact-container
+  background-color: $light-gray
+  padding: 25px 0 25px 0
+
+  .container-center
+    display: flex
+    flex-direction: row
+
+    @media screen and (max-width: $media-tablet-w)
+      flex-direction: column
+
+    .contact-wrapper-item
+      padding: 10px
+      display: flex
+
+      .contact-wrapper-input
+      .contact-wrapper-map-box
+        .contact-header-text
+          color: $color-blue
+          font-weight: bold
+          font-size: 22px
+          padding: 20px 0 15px 0
+          letter-spacing: 1px
+
+    .contact-wrapper-form
+      flex-grow: 2
+      flex-basis: 100%
+
+      .contact-wrapper-input
+        min-width: 300px
+        flex-grow: 1
+        align-self: stretch
+        display: flex
+        flex-direction: column
+
+        .contact-form
+          flex-grow: 1
+          display: flex
+          flex-direction: column
+          padding-right: 50px
+
+          @media screen and (max-width: $media-tablet-w)
+            flex-direction: column
+            padding-right: 0
+
+          .contact-form-input
+            border-radius: 10px
+            border: none
+            min-width: 300px
+            height: 35px
+            padding-left: 20px
+            padding-right: 20px
+            margin-bottom: 10px
+
+          .contact-form-area
+            flex: 1
+            resize: none
+            padding-top: 15px
+
+            @media screen and (max-width: $media-tablet-w)
+              padding-top: 10.5px
+
+          .contact-form-submit
+            min-width: 90px
+            width: 90px
+            height: 25px
+            margin-top: 10px
+            font-size: 16px
+            line-height: 25px
+            text-transform: uppercase
+            font-weight: bold
+            color: white
+            background-color: $color-blue
+            border: none
+            text-overflow: ellipsis
+            border-radius: 2000px
+
+    .contact-wrapper-map
+      flex-grow: 1
+      flex-basis: 50%
+
+      .contact-wrapper-map-box
+        align-self: stretch
+
+        .contact-wrapper-map-title
+          .company-address
+            line-height: 20px
+            padding-bottom: 20px
+
+            .company-name
+              font-weight: bold
+
+        #map-canvas
+          min-width: 300px
+          height: 200px
+
+      .addres-button-hidden
+        margin-top: 20px
+        width: 90px
+        height: 25px
+        visibility: hidden
+
+        @media screen and (max-width: $media-tablet-w)
+          display: none
+
+.container
+  .feature
+    text-align: center
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    flex-grow: 1
+    align-items: stretch
+    justify-content: center
+
+    @media screen and (max-width: $media-tablet-w)
+      flex-direction: column
+
+    .feature-info
+      height: auto
+      flex-grow: 1
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      padding: 20px 0 20px 0
+
+      .feature-box-img-wrapper
+        min-width: 260px
+        padding-bottom: 20px
+
+        .feature-box-img
+          margin: auto
+          height: 100px
+          width: 100px
+
+      .feature-info-box
+        min-width: 260px
+        height: auto
+        flex-grow: 1
+
+        .feature-info-box-title
+          font-weight: bold
+          height: 20px
+          text-transform: uppercase
+          margin-bottom: 10px
+
+        .feature-info-box-label
+          height: auto
+          font-size: 16px
+          padding-left: 10px
+          padding-right: 10px
+
+.container-feature
+  background: $light-gray
+  padding: 30px 10px 30px 10px
+
+  .advanced-feature
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    // flex-grow: 1
+    align-items: stretch
+    justify-content: center
+
+    .advanced-feature-wrapper
+      text-align: center
+      line-height: 20px
+      padding-bottom: 10px
+      padding-left: 10px
+      padding-right: 10px
+
+      .advanced-feature-title
+        text-transform:  uppercase
+        font-weight: bold
+        font-size: 30px
+
+        @media screen and (max-width: $media-tablet-w)
+          font-size: 25px
+
+    .advanced-feature-box
+      padding-top: 20px
+
+      .advanced-feature-box-label
+        background-color: $color-gainsboro
+        display: flex
+        justify-content: flex-start
+
+        .advanced-feature-box-label-item
+          font-weight: bold
+          flex: 1
+          display: flex
+          align-items: center
+
+          .advanced-feature-box-label-item-text
+            padding-top: 5px
+            padding-bottom: 5px
+            padding-left: 10px
+            text-transform: capitalize
+
+      .advanced-feature-box-list-item
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+
+        @media screen and (max-width: $media-tablet-w)
+          flex-direction: column
+
+        .advanced-feature-box-item
+          flex: 1
+          min-width: 50%
+          padding-top: 10px
+          padding-bottom: 10px
+          padding-left: 10px
+          padding-right: 10px
+          display: flex
+          align-items: flex-start
+
+          .advanced-feature-box-icon
+            width: 16px
+            height: 16px
+            background: url('~img/icon/tick.svg') no-repeat center center
+            background-size: cover
+
+          .advanced-feature-box-item-text
+            flex: 1
+            padding-left: 10px
+
+.container
+  .knowledge-wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 130px
+
+    .knowledge-wrapper-text
+      font-size: 30px
+      display: flex
+
+      @media screen and (max-width: $media-tablet-w)
+        flex-direction: column
+
+      @media screen and (max-width: $media-moblie-w)
+        padding-top: 20px
+        padding-bottom: 20px
+        font-size: 16px
+
+
+@require './collaborator'
+
+@require './subscribe'
+
+@require './footer'

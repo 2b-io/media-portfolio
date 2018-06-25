@@ -1,0 +1,70 @@
+$media-mobile-w = 480px
+$media-tablet-w = 768px
+$container-max-w = 1200px
+$color-blue = #0066b3
+$color-blue-white = #4ba6dd
+$color-gray = #999
+$light-gray = #EEEEEE
+
+.subscribe
+  background: $light-gray
+  height: auto
+  display: flex
+
+  .subscribe-wrapper
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    flex-grow: 1
+    flex-wrap: wrap
+    background: url('~img/bg/home_subscribe.svg') no-repeat right 100px center
+    background-size: 180px 100px
+
+    @media screen and (max-width: $media-tablet-w)
+      flex-direction: column
+
+    .subscribe-wrapper-item
+      padding: 0 10px 0 10px
+      height: 150px
+      display: flex
+      align-items: center
+      justify-content: space-around
+
+      @media screen and (max-width: $media-tablet-w)
+        height: 80px
+
+    .subscribe-text
+      .subscribe-text-p
+        font-size: 40px
+        color: $color-blue
+        flex-grow: 1
+        font-style: italic
+        letter-spacing: 1.5px
+
+    .subscribe-input
+      flex-direction: row
+
+      .subscribe-input-item
+        outline: none
+        flex-grow: 1
+        border: 1px solid $color-gray
+        border-radius: 5px
+        font-style: italic
+        font-size: 16px
+        background: white
+        cursor: pointer
+        height: 35px
+
+      .subscribe-input-item-email
+        width: 250px
+        padding: 0 10px 0 10px
+
+        @media screen and (max-width: $media-mobile-w)
+          width: 200px
+
+      .subscribe-input-item-submit
+        color: $color-gray
+
+        &:hover
+          color: $color-blue

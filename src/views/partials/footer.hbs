@@ -1,12 +1,12 @@
 <div class="container footer">
   <div class="container-center container-footer-center">
-    <div class="footer-wraper">
+    <div class="footer-wrapper">
       <div class="bottom-logo bottom-container">
         <a href="/">
-          <img class="bottom-logo-img" src="{{assets.footer_logo}}" alt="NTQ Solution">
+          <img class="bottom-logo-img" src="{{assets.footer_logo.src}}" alt="{{assets.footer_logo.alt}}">
         </a>
       </div>
-      <div class="bottom-menu-wraper-box bottom-container">
+      <div class="bottom-menu-wrapper-box bottom-container">
         <div class="bottom-menu-box">
           <ul class="bottom-menu">
             {{#each urls.menu}}
@@ -21,7 +21,7 @@
         <div class="bottom-icon-box">
           {{#each urls.social}}
             <a href="{{this.link}}">
-              <img class="bottom-icon-img" src="{{this.icon}}">
+              <img class="bottom-icon-img" src="{{this.icon}}" alt="{{this.alt}}">
             </a>
           {{/each}}
         </div>
@@ -29,7 +29,9 @@
     </div>
   </div>
 </div>
-<div class="footer-license">
-  <p class="footer-license-p">copyright &copy; 2018</p>
-  <p class="footer-license-p">sale contact: (+84) 241 625 2145</p>
+<div class="container footer footer-license">
+  <div class="container-center">
+    <p class="footer-license-p">{{{labels.footer_text.copy}}}</p>
+    <p class="footer-license-p">{{labels.footer_text.sale_contact}}</p>
+  </div>
 </div>

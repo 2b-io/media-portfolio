@@ -15,7 +15,7 @@
     <div class="container">
       <div class="container-center about-container">
         <div class="about-div-center about-wrapper">
-          <p class="about-div-center about-wrapper-title">
+          <p class="about-wrapper-title">
             <span>{{labels.about.about_us.label}}</span>
           </p>
           <div class="about-div-center about-wrapper-text">
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="what-we-do-wrapper about-wrapper">
-          <p class="about-div-center about-wrapper-title">
+          <p class="about-wrapper-title">
             <span>{{labels.about.what_we_do.label}}</span>
           </p>
           <div class="about-div-center about-wrapper-text">
@@ -46,41 +46,61 @@
                 <div class="about-left-header-content">
                   <div class="about-left-header-title">
                     <span>
-                      Our Vision
+                      {{labels.about_left.vision.label}}
                     </span>
                   </div>
-                  <div class="about-left-header-detail">
+                  <div class="about-left-header-detail about-left-border">
                     <span>
-                      Todeliver a service that is par excellence, to maintain transparency with our clients, and be ethical in our work processes.
+                      {{labels.about_left.vision.title}}
                     </span>
                   </div>
                 </div>
                 <div class="about-left-header-content">
                   <div class="about-left-header-title">
                     <span>
-                      Our Vision
+                      {{labels.about_left.mission.label}}
                     </span>
                   </div>
                   <div class="about-left-header-detail ">
                     <span>
-                      Todeliver a service that is par excellence, to maintain transparency with our clients, and be ethical in our work processes.
+                      {{labels.about_left.mission.title}}
                     </span>
                   </div>
                 </div>
               </div>
             </div>
             <div class="about-left-body">
-               <span>1 123 kl12h3 kl123h 12kjh3 kl12h3 kl12h3 kl12hkl 3h12kl 3h12kl 3h12klh3 12klh3 kl12h3 kl12h3l k12h3kl 12h3 kl12h 3kl12h 3kl12h 3kl12hkl 3h12kl3 h12kl3h 12klh 3kl12h 3kl12h 3kl12h k12h3 kl12h3k 12hk3h 12kl3h 12klh</span>
+               <span class="about-left-body-header-text">{{labels.about.what_you_get.header_text}}</span>
+              {{#each labels.about.what_you_get.content_text}}
+                <div class="about-left-body-box">
+                  <p class="about-left-body-label">{{{this.label}}}</p>
+                  <p class="about-left-body-title">{{this.title}}<p>
+                </div>
+              {{/each}}
             </div>
           </div>
         </div>
         <div class="about-wrapper-right">
           <div class="about-right">
-            <img src="{{assets.body_img.src}}" alt="{{assets.body_img.alt}}">
+            <img class="about-right-img" src="{{assets.body_img.src}}" alt="{{assets.body_img.alt}}">
           </div>
-
           <div class="about-right-content">
-            <span>1 123 kl12h3 kl123h 12kjh3 kl12h3 kl12h3 kl12hkl 3h12kl 3h12kl 3h12klh3 12klh3 kl12h3 kl12h3l k12h3kl 12h3 kl12h 3kl12h 3kl12h 3kl12hkl 3h12kl3 h12kl3h 12klh 3kl12h 3kl12h 3kl12h k12h3 kl12h3k 12hk3h 12kl3h 12klh</span>
+            <div class="about-left-body">
+               <span class="about-left-body-header-text">{{labels.about.why_choose_us.header_text}}</span>
+              {{#each labels.about.why_choose_us.content_text}}
+                <div class="about-left-body-box">
+                  <p class="about-left-body-label">{{{this.label}}}</p>
+                  <p class="about-left-body-title">{{this.title}}<p>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          <div class="contact-wrapper">
+            <div class="contact-wrapper-box">
+              <p class="contact-wrapper-items">{{urls.contact.label}}</p>
+              <p class="contact-wrapper-items contact-wrapper-label">{{urls.contact.title}}</p>
+              <a class="contact-wrapper-items contact-wrapper-button" href="{{urls.contact.url}}">{{urls.contact.button_label}}</a>
+            </div>
           </div>
         </div>
       </div>

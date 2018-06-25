@@ -140,7 +140,6 @@ a
     .about-wrapper-left
       flex-grow: 1
       width: 50%
-      border: 1px solid red
       display: flex
       justify-content: flex-end
 
@@ -172,11 +171,9 @@ a
             @media screen and (max-width: $media-tablet-w)
               margin: 20px
 
-
             .about-left-header-content
               background-color: $color-blue
-              padding: 30px
-              border-bottom: 1px solid white
+              padding: 30px 30px 0px
 
               @media screen and (max-width: $media-tablet-w)
                 background-color: rgba(00, 66, 179, 0.6)
@@ -184,7 +181,12 @@ a
               .about-left-header-title
               .about-left-header-detail
                 color: white
-                padding: 10px 0 10px 0
+
+              .about-left-header-detail
+                padding: 10px 0 30px 0
+
+              .about-left-border
+                border-bottom: 1px solid white
 
               .about-left-header-title
                 text-transform: capitalize
@@ -194,12 +196,26 @@ a
         .about-left-body
           flex: 1
           padding: 20px
+          display: flex
+          flex-direction: column
+
+          .about-left-body-header-text
+            color: $color-blue
+            text-transform: capitalize
+            font-weight: bold
+            font-size: 20px
+
+
+          .about-left-body-box
+            .about-left-body-label
+              font-weight: bold
+              padding: 20px 0 20px 0
 
 
     .about-wrapper-right
       flex-grow: 1
       width: 50%
-      border: 1px solid red
+
       display: flex
       flex-direction: column
 
@@ -211,32 +227,97 @@ a
       .about-right
         width: 100%
         min-width: 300px
-        height: 100%
 
-        img
+        .about-right-img
           max-width: 100%
           @media screen and (max-width: $media-tablet-w)
             display: none
 
       .about-right-content
-        max-width: 610px
-        min-width: 300px
-        height: 100%
-        padding-top: 30px
-        background-color: yellow
+        .about-left-body
+          flex: 1
+          padding: 20px 20px 20px 0
+          display: flex
+          flex-direction: column
 
-        @media screen and (max-width: $media-tablet-w)
-          max-width: none
+          @media screen and (max-width: $media-tablet-w)
+            padding-left: 20px
+
+          .about-left-body-header-text
+            color: $color-blue
+            text-transform: capitalize
+            font-weight: bold
+            font-size: 20px
+
+          .about-left-body-box
+            .about-left-body-label
+              font-weight: bold
+              padding: 20px 0 20px 0
+
+      .contact-wrapper
+        display: flex
+        flex-direction: column
+        text-align: center
+        padding-right: 20px
+
+        .contact-wrapper-box
+          background-color: $color-blue
+          width: 100%
+          padding: 30px 0
+          display: flex
+          flex-direction: column
+          align-items: center
+
+          .contact-wrapper-items
+            flex: 1
+            text-transform: uppercase
+            color: white
+            font-weight: bold
+            font-size: 40px
+
+          .contact-wrapper-label
+            font-weight: normal
+            padding-top: 15px
+
+          .contact-wrapper-button
+            margin-top: 20px
+            background: $color-blue
+            border-radius: 2000px
+            font-size: 18px
+            text-align: center
+            line-height: 50px
+            width: 240px
+            height: 50px
+            border: 1px solid white
+
+            &:hover
+              background: $color-blue-white
+
+
 
       .about-right-content
       .about-right
+      .contact-wrapper
         padding-left: 50px
 
         @media screen and (max-width: $media-tablet-w)
           padding-left: 0
 
+      .about-right-content
+      .contact-wrapper
+        max-width: 610px
+        min-width: 300px
 
+        @media screen and (max-width: $media-tablet-w)
+          max-width: none
+          width: 100%
 
+      .contact-wrapper
+        padding-bottom: 20px
 
+        @media screen and (max-width: $media-tablet-w)
+          padding-left: 0px
+          padding-right: 0px
+          padding-bottom: 0px
 
 @require './footer'

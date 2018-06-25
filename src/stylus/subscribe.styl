@@ -15,7 +15,7 @@ $light-gray = #EEEEEE
     display: flex
     flex-direction: row
     align-items: center
-    justify-content: center
+    justify-content: space-around
     flex-grow: 1
     flex-wrap: wrap
     background: url('~img/bg/home_subscribe.svg') no-repeat right 100px center
@@ -23,6 +23,7 @@ $light-gray = #EEEEEE
 
     @media screen and (max-width: $media-tablet-w)
       flex-direction: column
+      align-items: stretch
 
     .subscribe-wrapper-item
       padding: 0 10px 0 10px
@@ -35,6 +36,9 @@ $light-gray = #EEEEEE
         height: 80px
 
     .subscribe-text
+      flex-grow: 1
+      text-align: center
+
       .subscribe-text-p
         font-size: 40px
         color: $color-blue
@@ -44,27 +48,44 @@ $light-gray = #EEEEEE
 
     .subscribe-input
       flex-direction: row
+      outline: none
+      flex-grow: 2
 
-      .subscribe-input-item
-        outline: none
-        flex-grow: 1
-        border: 1px solid $color-gray
-        border-radius: 5px
-        font-style: italic
-        font-size: 16px
-        background: white
-        cursor: pointer
-        height: 35px
+      @media screen and (max-width: $media-tablet-w)
+        align-items: flex-start
+        text-align: center
+        padding-top: 10px
 
-      .subscribe-input-item-email
-        width: 250px
-        padding: 0 10px 0 10px
+      .subscribe-form-wrapper
+        width: 100%
 
-        @media screen and (max-width: $media-mobile-w)
-          width: 200px
+        .subscribe-input-item
+          outline: none
+          border: 1px solid $color-gray
+          border-radius: 5px
+          font-style: italic
+          font-size: 16px
+          background: white
+          cursor: pointer
+          height: 35px
 
-      .subscribe-input-item-submit
-        color: $color-gray
+        .subscribe-input-item-email
+          min-width: 250px
+          padding: 0 10px 0 10px
+          width: 60%
 
-        &:hover
-          color: $color-blue
+          @media screen and (max-width: $media-tablet-w)
+            min-width: 200px
+
+          &::placeholder
+            font-style: italic
+            color: #D4D4D4
+
+          &:focus::placeholder
+            color: $color-gray
+
+        .subscribe-input-item-submit
+          color: $color-gray
+
+          &:hover
+            color: $color-blue

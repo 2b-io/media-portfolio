@@ -135,6 +135,7 @@ a
 
           .feature-info-box-link
             padding-bottom: 10px
+            color: $color-blue
 
             &:hover
               border-bottom: 1px solid $color-blue
@@ -213,10 +214,17 @@ a
       margin: auto
       height: 50vh
 
+      @media screen and (max-width: $media-tablet-w)
+        height: 30vh
+
+      @media screen and (max-width: $media-mobile-w)
+        height: 20vh
+
     .maps-footer
       margin: auto
       height: 100px
       display: flex
+      padding-top: 30px
 
       .maps-footer-text
         margin: auto

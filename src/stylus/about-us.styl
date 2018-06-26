@@ -90,14 +90,12 @@ a
     display: flex
     flex-direction: column
 
-    .about-div-center
-      padding: 20px 10px 10px 10px
-
     .about-wrapper
       display: flex
       flex-direction: row
       justify-content: center
       flex-wrap: nowrap
+      padding: 20px
 
       @media screen and (max-width: $media-tablet-w)
         flex-direction: column
@@ -111,6 +109,7 @@ a
         margin: auto
         text-transform: capitalize
         min-width: 400px
+        text-align: center
 
         @media screen and (max-width: $media-tablet-w)
           text-align: center
@@ -148,7 +147,7 @@ a
         width: 100%
 
       .about-left
-        max-width: 610px
+        max-width: 600px
         min-width: 300px
         display: flex
         flex-direction: column
@@ -173,7 +172,7 @@ a
 
             .about-left-header-content
               background-color: $color-blue
-              padding: 30px 30px 0px
+              padding: 20px 20px 0px
 
               @media screen and (max-width: $media-tablet-w)
                 background-color: rgba(00, 66, 179, 0.6)
@@ -183,7 +182,7 @@ a
                 color: white
 
               .about-left-header-detail
-                padding: 10px 0 30px 0
+                padding: 10px 0 20px 0
 
               .about-left-border
                 border-bottom: 1px solid white
@@ -308,7 +307,7 @@ a
 
       .about-right-content
       .contact-wrapper
-        max-width: 610px
+        max-width: 600px
         min-width: 300px
 
         @media screen and (max-width: $media-tablet-w)

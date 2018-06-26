@@ -6,7 +6,6 @@ import template from './view.hbs'
 const labels = {
   header: {
     text: 'we speed up your site </br>across the globe',
-    link_title: 'learn more'
   },
   footer_text: headerData.footer_text,
   feature: {
@@ -17,7 +16,7 @@ const labels = {
     },
     powerful_features: {
       title: 'POWERFUL FEATURES',
-      text: 'HTTP/2, origin shield, RESTFUL API, real-time stats and many more awesome features crafted with love for you.',
+      text: 'HTTP/2, origin shield, RESTFUL API, real-time stats and many more awesome features crafted with love for you. ',
       footer_text: 'View Features',
     },
     global_network: {
@@ -83,6 +82,10 @@ const urls = {
     method: 'POST',
     input_u_value: 'fe6b6383f2b1cc961b4c0d4f1',
     input_id_value: 'e6719695d0'
+  },
+  header_link: {
+    title: 'learn more',
+    link: 'features'
   }
 }
 

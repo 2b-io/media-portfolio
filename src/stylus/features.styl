@@ -198,20 +198,20 @@ a
     display: flex
     flex-direction: row
     flex-wrap: nowrap
-    flex-grow: 1
-    align-items: stretch
-    justify-content: center
+    // flex-grow: 1
+    // align-items: stretch
+    // justify-content: center
 
     @media screen and (max-width: $media-tablet-w)
       flex-direction: column
 
     .feature-info
-      height: auto
-      flex-grow: 1
+      // height: auto
+      flex: 1
       display: flex
       flex-direction: column
       justify-content: center
-      align-items: center
+      // align-items: center
       padding: 20px 0 20px 0
 
       .feature-box-img-wrapper
@@ -227,18 +227,22 @@ a
         min-width: 260px
         height: auto
         flex-grow: 1
+        display: flex
+        flex-direction: column
 
         .feature-info-box-title
           font-weight: bold
-          height: 20px
+          // height: 20px
           text-transform: uppercase
-          margin-bottom: 10px
+          padding-bottom: 10px
+          // flex: 1
 
         .feature-info-box-label
           height: auto
           font-size: 16px
           padding-left: 10px
           padding-right: 10px
+          flex: 1
 
 .container-feature
   background: $light-gray

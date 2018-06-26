@@ -23,23 +23,6 @@ const labels = {
     }
   },
   subscribe: headerData.subscribe,
-  feature: [
-    {
-      img: require('img/icon/featureicon1.svg'),
-      label: 'full control',
-      detail: 'Easy pay-as-you-go pricing with full control over your assets using our powerful management dashboard and RESTful API.'
-    },
-    {
-      img: require('img/icon/featureicon2.svg'),
-      label: 'high performance',
-      detail: 'Crafted with a focus on high performance, customized TCP stack, and highly optimized IP Anycast and geolocation routing.'
-    },
-    {
-      img: require('img/icon/featureicon3.svg'),
-      label: 'reliable & secure',
-      detail: 'Requests are routed to the nearest available POP, while providing industry-leading encryption standards and two-factor auth.'
-    },
-  ],
   advanced_features: {
     title: 'advanced features',
     detail: 'Everything you need for efficient content delivery.',
@@ -116,7 +99,27 @@ const urls = {
     method: 'POST',
     input_u_value: 'fe6b6383f2b1cc961b4c0d4f1',
     input_id_value: 'e6719695d0'
-  }
+  },
+  feature: [
+    {
+      img: require('img/icon/featureicon1.svg'),
+      alt: 'full control',
+      label: 'full control',
+      detail: 'Easy pay-as-you-go pricing with full control over your assets using our powerful management dashboard and RESTful API.'
+    },
+    {
+      img: require('img/icon/featureicon2.svg'),
+      alt: 'high performance',
+      label: 'high performance',
+      detail: 'Crafted with a focus on high performance, customized TCP stack, and highly optimized IP Anycast and geolocation routing.'
+    },
+    {
+      img: require('img/icon/featureicon3.svg'),
+      alt: 'reliable secure',
+      label: 'reliable & secure',
+      detail: 'Requests are routed to the nearest available POP, while providing industry-leading encryption standards and two-factor auth.'
+    },
+  ],
 }
 
 const assets = {

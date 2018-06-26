@@ -1,0 +1,186 @@
+meyer-reset()
+box-sizing-reset()
+normalize()
+
+$media-mobile-w = 480px
+$media-tablet-w = 768px
+$container-max-w = 1200px
+$color-blue = #0066b3
+$color-blue-white = #4ba6dd
+$color-gray = #999
+$light-gray = #EEEEEE
+$white = #FFFFFF
+
+html, body
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
+  overflow-x: hidden
+  height: 100%
+  min-width: 200px
+
+a
+  text-decoration: none
+  font-weight: bold
+
+.container
+  height: auto
+  background: transparent
+
+  .container-center
+    max-width: $container-max-w
+    margin: auto
+
+@require './header'
+
+.header-wrapper
+  background-color: $light-gray
+
+.body-wrapper
+  min-height: 144.77px
+  min-width: 300px
+  display: flex
+  background: url('~img/bg/knowledgebase.jpg') no-repeat center center
+  background-size: cover
+  height: 560px
+  @media screen and (max-width: $media-tablet-w)
+    height: 344.77px
+
+  @media screen and (max-width: $media-mobile-w)
+    height: 144.77px
+
+  .container-center
+    flex-grow: 1
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    flex-direction: column
+    text-align: center
+    padding-bottom: 15px
+
+    .body-wrapper-title
+      font-weight: bold
+      text-transform: uppercase
+      color: $color-blue
+
+    .body-wrapper-title-size
+      font-size: 60px
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-tablet-w)
+        font-size: 40px
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 28px
+
+    .container-center-label
+      padding-left: 10px
+      padding-right: 10px
+      font-size: 24px
+      color: white
+      font-weight: bold
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 18px
+
+.container
+  .feature
+    text-align: center
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    padding: 20px 0 20px 0
+
+    @media screen and (max-width: $media-tablet-w)
+      flex-direction: column
+
+    .feature-info
+      // height: auto
+      flex: 1
+      display: flex
+      flex-direction: column
+      justify-content: center
+      // align-items: center
+      padding: 20px 0 20px 0
+
+      .feature-box-img-wrapper
+        min-width: 260px
+        padding-bottom: 20px
+
+        .feature-box-img
+          margin: auto
+          height: 100px
+          width: 100px
+
+      .feature-info-box
+        min-width: 260px
+        height: auto
+        flex-grow: 1
+        display: flex
+        flex-direction: column
+
+        .feature-info-box-label
+          font-weight: bold
+          // height: 20px
+          text-transform: uppercase
+          padding-bottom: 10px
+          // flex: 1
+
+        .feature-info-box-title
+          height: auto
+          font-size: 16px
+          padding-left: 10px
+          padding-right: 10px
+          flex: 1
+
+.knowledge-base
+  background-color: $light-gray
+
+  .container-center
+    display: flex
+    flex-direction: column
+    text-align: center
+    padding: 30px 20px
+
+    .knowledge-base-label
+      flex-grow: 1
+      text-transform: uppercase
+      font-weight: bold
+      font-size: 50px
+      color: $color-blue
+      padding-bottom: 10px
+
+      @media screen and (max-width: $media-tablet-w)
+        font-size: 30px
+
+    .knowledge-base-title
+      flex-grow: 1
+      padding-bottom: 30px
+
+    .knowledge-base-form
+      flex-grow: 1
+
+      // align-self: center
+
+      .knowledge-base-input
+        width: 60%
+        height: 40px
+        box-sizing: border-box
+        border: none
+        border-radius: 4px
+        font-size: 16px
+        background-color: white
+        background-image: url('~img/icon/searchicon.svg')
+        background-position: 14px 12px
+        background-repeat: no-repeat
+        background-size: 16px
+        padding: 12px 20px 12px 40px
+        -webkit-transition: width 0.4s ease-in-out
+        transition: width 0.4s ease-in-out
+        outline: none
+
+        &::-webkit-input-placeholder
+        &::placeholder
+          text-overflow:ellipsis
+          color: #D4D4D4
+
+@require './footer'

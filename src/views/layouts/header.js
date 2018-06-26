@@ -27,7 +27,7 @@ export default {
       label: 'CONTACT'
     },
     {
-      link:'/#',
+      link:'/knowledge-base',
       label:'KNOWLEDGE BASE'
     },
   ],

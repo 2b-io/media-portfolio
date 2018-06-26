@@ -23,7 +23,8 @@ export default {
     features: [ path.join(rootDir, 'src/js/features.js') ],
     'about-us': [ path.join(rootDir, 'src/js/about-us.js') ],
     'contact-us': [ path.join(rootDir, 'src/js/contact-us.js') ],
-    'coming-soon': [ path.join(rootDir, 'src/js/coming-soon.js') ]
+    'coming-soon': [ path.join(rootDir, 'src/js/coming-soon.js') ],
+    'knowledge-base': [ path.join(rootDir, 'src/js/knowledge-base.js') ]
   },
   output: {
     path: path.join(rootDir, 'public/assets'),
@@ -71,6 +72,13 @@ export default {
       template: path.join(rootDir, 'src/views/pages/features'),
       filename: path.join(rootDir, 'public/features.html'),
       chunks: [ 'features' ],
+      minify: htmlMinifyOptions
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(rootDir, 'src/views/pages/knowledge-base'),
+      filename: path.join(rootDir, 'public/knowledge-base.html'),
+      chunks: [ 'knowledge-base' ],
       minify: htmlMinifyOptions
     }),
     // new HtmlWebpackPlugin({

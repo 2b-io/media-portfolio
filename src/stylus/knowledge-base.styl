@@ -42,10 +42,10 @@ a
   background-size: cover
   height: 560px
   @media screen and (max-width: $media-tablet-w)
-    height: 344.77px
+    height: 350px
 
   @media screen and (max-width: $media-mobile-w)
-    height: 144.77px
+    height: 150px
 
   .container-center
     flex-grow: 1
@@ -57,12 +57,12 @@ a
     text-align: center
     padding-bottom: 15px
 
-    .body-wrapper-title
+    ^[-1]-title
       font-weight: bold
       text-transform: uppercase
       color: $color-blue
 
-    .body-wrapper-title-size
+    ^[-1]-title-size
       font-size: 60px
       text-shadow: 0 0 2px #000
 
@@ -71,16 +71,21 @@ a
       @media screen and (max-width: $media-mobile-w)
         font-size: 28px
 
-    .container-center-label
+    &-label
       padding-left: 10px
       padding-right: 10px
       font-size: 24px
+      line-width: 20px
       color: white
       font-weight: bold
       text-shadow: 0 0 2px #000
 
+      @media screen and (max-width: $media-tablet-w)
+        line-height: 30px
+
       @media screen and (max-width: $media-mobile-w)
         font-size: 18px
+        line-height: 25px
 
 .container
   .feature
@@ -94,12 +99,10 @@ a
       flex-direction: column
 
     .feature-info
-      // height: auto
       flex: 1
       display: flex
       flex-direction: column
       justify-content: center
-      // align-items: center
       padding: 20px 0 20px 0
 
       .feature-box-img-wrapper
@@ -111,21 +114,21 @@ a
           height: 100px
           width: 100px
 
-      .feature-info-box
+      &-box
         min-width: 260px
         height: auto
         flex-grow: 1
         display: flex
         flex-direction: column
 
-        .feature-info-box-label
+        &-label
           font-weight: bold
           // height: 20px
           text-transform: uppercase
           padding-bottom: 10px
           // flex: 1
 
-        .feature-info-box-title
+        &-title
           height: auto
           font-size: 16px
           padding-left: 10px
@@ -141,28 +144,34 @@ a
     text-align: center
     padding: 30px 20px
 
-    .knowledge-base-label
+    ^[0]-label
       flex-grow: 1
       text-transform: uppercase
       font-weight: bold
-      font-size: 50px
+      font-size: 40px
       color: $color-blue
       padding-bottom: 10px
 
       @media screen and (max-width: $media-tablet-w)
         font-size: 30px
 
-    .knowledge-base-title
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 24px
+
+    ^[0]-title
       flex-grow: 1
+      font-size: 22px
       padding-bottom: 30px
 
-    .knowledge-base-form
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 18px
+
+    ^[0]-form
       flex-grow: 1
 
-      // align-self: center
-
-      .knowledge-base-input
+      ^[0]-input
         width: 60%
+        min-width: 260px
         height: 40px
         box-sizing: border-box
         border: none
@@ -178,9 +187,12 @@ a
         transition: width 0.4s ease-in-out
         outline: none
 
-        &::-webkit-input-placeholder
         &::placeholder
-          text-overflow:ellipsis
           color: #D4D4D4
+
+        &[placeholder]
+          text-overflow:ellipsis
+
+
 
 @require './footer'

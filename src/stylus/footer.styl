@@ -1,10 +1,4 @@
-$media-mobile-w = 480px
-$media-tablet-w = 768px
-$container-max-w = 1200px
-$color-blue = #0066b3
-$color-blue-white = #4ba6dd
-$color-gray = #999
-$light-gray = #EEEEEE
+@require './variable'
 
 .footer
   background: black
@@ -65,6 +59,10 @@ $light-gray = #EEEEEE
             @media screen and (max-width: $media-mobile-w)
               padding-left: 4px
               padding-right: 4px
+
+            @media screen and (max-width: 480px)
+              padding-left: 2px
+              padding-right: 2px
 
             .bottom-menu-item-a
               flex: 1

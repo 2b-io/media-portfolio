@@ -1,36 +1,5 @@
-$media-mobile-w = 480px
-$media-tablet-w = 768px
-$container-max-w = 1200px
-$color-blue = #0066b3
-$color-blue-white = #4ba6dd
-$color-gray = #999
-$color-gainsboro = #DEDEDE
-$light-gray = #EEEEEE
-$white = #FFFFFF
-
-meyer-reset()
-box-sizing-reset()
-normalize()
-
-html, body
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
-  overflow-x: hidden
-  height: 100%
-  min-width: 200px
-
-a
-  text-decoration: none
-  font-weight: bold
-
-.container
-  height: auto
-  background: transparent
-  min-width: 300px
-
-  .container-center
-    max-width: $container-max-w
-    margin: auto
-
+@require './variable'
+@require './top-style'
 @require './header'
 
 .header-wrapper

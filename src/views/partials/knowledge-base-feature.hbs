@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="feature container-center">
+    {{#each urls.feature}}
+      <div class="feature-info">
+        <div class="feature-box-img-wrapper">
+          <a href="{{this.link}}">
+            <img class="feature-box-img" src={{this.img}} alt="{{this.alt}}">
+          </a>
+        </div>
+        <div class="feature-info-box">
+          <p class="feature-info-box-label">{{this.label}}</p>
+          <p class="feature-info-box-title">{{this.detail}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

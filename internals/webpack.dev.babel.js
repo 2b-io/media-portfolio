@@ -24,7 +24,9 @@ export default {
     'about-us': [ path.join(rootDir, 'src/js/about-us.js') ],
     'contact-us': [ path.join(rootDir, 'src/js/contact-us.js') ],
     'coming-soon': [ path.join(rootDir, 'src/js/coming-soon.js') ],
-    'knowledge-base': [ path.join(rootDir, 'src/js/knowledge-base.js') ]
+    'knowledge-base': [ path.join(rootDir, 'src/js/knowledge-base.js') ],
+    'knowledge-base-gettingstarted': [ path.join(rootDir, 'src/js/knowledge-base-gettingstarted.js') ],
+    'knowledge-base-developerguide': [ path.join(rootDir, 'src/js/knowledge-base-developerguide.js') ],
   },
   output: {
     path: path.join(rootDir, 'public/assets'),
@@ -79,6 +81,20 @@ export default {
       template: path.join(rootDir, 'src/views/pages/knowledge-base'),
       filename: path.join(rootDir, 'public/knowledge-base.html'),
       chunks: [ 'knowledge-base' ],
+      minify: htmlMinifyOptions
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(rootDir, 'src/views/pages/knowledge-base-gettingstarted'),
+      filename: path.join(rootDir, 'public/knowledge-base-gettingstarted.html'),
+      chunks: [ 'knowledge-base-gettingstarted' ],
+      minify: htmlMinifyOptions
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(rootDir, 'src/views/pages/knowledge-base-developerguide'),
+      filename: path.join(rootDir, 'public/knowledge-base-developerguide.html'),
+      chunks: [ 'knowledge-base-developerguide' ],
       minify: htmlMinifyOptions
     }),
     // new HtmlWebpackPlugin({

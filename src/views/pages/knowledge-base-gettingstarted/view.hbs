@@ -1,0 +1,34 @@
+{{#> layouts/default}}
+  {{#*inline "content-body"}}
+    <div class="container header-wrapper">
+      <div class="container-center">
+        {{> partials/header.hbs}}
+      </div>
+    </div>
+
+    {{> partials/knowledge-base.hbs}}
+    <div class="container knowledge-base-body">
+      <div class="knowledge-base-body-menu">
+        <div class="knowledge-base-body-menu-center">
+          <span>Home</span>&#160;&#160;&#160;&#160;&#62;&#160;&#160;&#160;  <span class="container-center knowledge-base-body-menu-linked">Getting Started</span>
+        </div>
+      </div>
+      <div class="container-center knowledge-base-body-wrapper">
+        <div class="knowledge-base-body-wrapper-label">
+          <span>Getting started</span>
+        </div>
+        <div class="knowledge-base-body-wrapper-content">
+          <div class="knowledge-base-body-wrapper-content-left">
+            <span>1</span>
+          </div>
+          <div class="knowledge-base-body-wrapper-content-right">
+            <span>2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{> partials/knowledge-base-search.hbs}}
+
+    {{> partials/footer.hbs}}
+  {{/inline}}
+{{/ layouts/default}}

@@ -4,9 +4,9 @@
       <div class="container-center">
         {{> partials/header.hbs}}
         <div class="header-bottom">
-          <p class="header-text">
+          <span class="header-text">
             {{{labels.header.text}}}
-          </p>
+          </span>
             <a class="lean-more" href="/{{urls.header_link.link}}" target="_blank">{{urls.header_link.title}}</a>
         </div>
       </div>
@@ -90,13 +90,13 @@
     <div class="container">
       <div class="what-new-wrapper container-center ">
         <div class="what-new what-new-title">
-          <p>{{labels.what_new.title}}</p>
+          <span>{{labels.what_new.title}}</span>
         </div>
         <div class="what-new what-new-image-wrapper">
           {{#each labels.what_new.feature}}
             <div class="what-new-image-box">
               <img class="what-new-image" src={{this.src}} alt="{{this.alt}}">
-              <p class="what-new-image-detail">{{this.detail}}</p>
+              <span class="what-new-image-detail">{{this.detail}}</span>
             </div>
           {{/each}}
         </div>

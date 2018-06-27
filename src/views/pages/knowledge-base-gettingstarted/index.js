@@ -1,3 +1,21 @@
+// import knowledgeBaseData from '../knowledge-base'
+
+// import template from './view.hbs'
+
+// const labels = knowledgeBaseData.labels
+
+// const urls = knowledgeBaseData.urls
+
+// const assets = knowledgeBaseData.assets
+
+// const context = {
+//   labels: labels,
+//   urls: urls,
+//   assets: assets
+// }
+
+// export default template(context)
+
 import headerData from '../../layouts/header'
 
 import template from './view.hbs'

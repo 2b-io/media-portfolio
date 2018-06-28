@@ -25,8 +25,8 @@ export default {
     'contact-us': [ path.join(rootDir, 'src/js/contact-us.js') ],
     'coming-soon': [ path.join(rootDir, 'src/js/coming-soon.js') ],
     'knowledge-base': [ path.join(rootDir, 'src/js/knowledge-base.js') ],
-    'knowledge-base-gettingstarted': [ path.join(rootDir, 'src/js/knowledge-base-gettingstarted.js') ],
-    'knowledge-base-developerguide': [ path.join(rootDir, 'src/js/knowledge-base-developerguide.js') ],
+    'knowledge-base/getting-started': [ path.join(rootDir, 'src/js/knowledge-base/getting-started.js') ],
+    'knowledge-base/developer-guide': [ path.join(rootDir, 'src/js/knowledge-base/developer-guide.js') ],
   },
   output: {
     path: path.join(rootDir, 'public/assets'),
@@ -85,16 +85,16 @@ export default {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.join(rootDir, 'src/views/pages/knowledge-base-gettingstarted'),
-      filename: path.join(rootDir, 'public/knowledge-base-gettingstarted.html'),
-      chunks: [ 'knowledge-base-gettingstarted' ],
+      template: path.join(rootDir, 'src/views/pages/knowledge-base/getting-started'),
+      filename: path.join(rootDir, 'public/knowledge-base/getting-started.html'),
+      chunks: [ 'knowledge-base/getting-started' ],
       minify: htmlMinifyOptions
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.join(rootDir, 'src/views/pages/knowledge-base-developerguide'),
-      filename: path.join(rootDir, 'public/knowledge-base-developerguide.html'),
-      chunks: [ 'knowledge-base-developerguide' ],
+      template: path.join(rootDir, 'src/views/pages/knowledge-base/developer-guide'),
+      filename: path.join(rootDir, 'public/knowledge-base/developer-guide.html'),
+      chunks: [ 'knowledge-base/developer-guide' ],
       minify: htmlMinifyOptions
     }),
     // new HtmlWebpackPlugin({

@@ -1,5 +1,5 @@
 @require './variable'
-@require './top-style'
+@require './common'
 @require './header'
 
 .header-wrapper
@@ -303,6 +303,9 @@
 
       .knowledge-wrapper-link
         color: $color-blue
+
+        @media screen and (max-width: $media-tablet-w)
+          padding-top: 12px
 
 
 @require './collaborator'

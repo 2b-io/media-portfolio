@@ -21,14 +21,14 @@ const urls = {
     {
       img: require('img/icon/gettingstart.svg'),
       alt: 'getting-start',
-      link: '/knowledge-base-gettingstarted',
+      link: '/knowledge-base/getting-started',
       label: 'getting started',
       detail: 'Setting up KeyCDN with your site is quick and easy. Learn more about how to accelerate your web content.'
     },
     {
       img: require('img/icon/developeguide.svg'),
       alt: 'developer-guide',
-      link: '/knowledge-base-developerguide',
+      link: '/knowledge-base/developer-guide',
       label: 'developer guide',
       detail: 'Didn\'t find the answer in our knowledge base? Open a developer guide to get assistance.'
     },
@@ -54,7 +54,7 @@ const assets = {
 }
 
 
-const context = {
+export const context = {
   labels: labels,
   urls: urls,
   assets: assets

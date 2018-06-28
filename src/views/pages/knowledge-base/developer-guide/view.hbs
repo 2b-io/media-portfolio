@@ -1,0 +1,33 @@
+{{#> layouts/default}}
+  {{#*inline "content-body"}}
+    <div class="container header-wrapper">
+      <div class="container-center">
+        {{> partials/header.hbs}}
+      </div>
+    </div>
+
+    {{> partials/knowledge-base.hbs}}
+    <div class="container knowledge-base-body">
+      <div class="knowledge-base-body-menu">
+        <div class="knowledge-base-body-menu-center">
+          <a class="knowledge-base-body-menu-center-home" href="/knowledge-base">Home</a>&#62;<span class="knowledge-base-body-menu-center-home-linked">Developer Guide</span>
+        </div>
+      </div>
+      <div class="container-center knowledge-base-body-wrapper">
+        <div class="knowledge-base-body-wrapper-label">
+          <span>Over View</span>
+        </div>
+        <div class="knowledge-base-body-wrapper-content">
+          <div class="knowledge-base-body-wrapper-content-left">
+            <span>1</span>
+          </div>
+          <div class="knowledge-base-body-wrapper-content-right">
+            <span>2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{> partials/footer.hbs}}
+  {{/inline}}
+{{/ layouts/default}}

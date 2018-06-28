@@ -105,65 +105,6 @@
           padding-right: 10px
           flex: 1
 
-.knowledge-base
-  background-color: $light-gray
-
-  .container-center
-    display: flex
-    flex-direction: column
-    text-align: center
-    padding: 30px 20px
-
-    ^[0]-label
-      flex-grow: 1
-      text-transform: uppercase
-      font-weight: bold
-      font-size: 40px
-      line-height: 40px
-      color: $color-blue
-      padding-bottom: 10px
-
-      @media screen and (max-width: $media-tablet-w)
-        font-size: 30px
-
-      @media screen and (max-width: $media-mobile-w)
-        font-size: 24px
-        line-height: 26px
-
-    ^[0]-title
-      flex-grow: 1
-      font-size: 22px
-      padding-bottom: 30px
-
-      @media screen and (max-width: $media-mobile-w)
-        font-size: 18px
-
-    ^[0]-form
-      flex-grow: 1
-
-      ^[0]-input
-        width: 60%
-        min-width: 260px
-        height: 40px
-        box-sizing: border-box
-        border: none
-        border-radius: 4px
-        font-size: 16px
-        background-color: white
-        background-image: url('~img/icon/searchicon.svg')
-        background-position: 14px 12px
-        background-repeat: no-repeat
-        background-size: 16px
-        padding: 12px 20px 12px 40px
-        transition: width 0.4s ease-in-out
-        outline: none
-
-        &::placeholder
-          color: #D4D4D4
-
-        &[placeholder]
-          text-overflow:ellipsis
-
-
+@require './knowledge-base/base-search'
 
 @require './footer'

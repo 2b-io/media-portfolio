@@ -59,7 +59,6 @@
         &[placeholder]
           text-overflow:ellipsis
 
-
 .knowledge-search
   display: block
   display: none
@@ -72,20 +71,18 @@
       max-width: $container-max-w
       height: 100px
       margin: auto
-      background: url('~img/icon/file.svg') no-repeat left 0px center
-      background-size: 120px 80px
       display: flex
+
+      &:nth-child(even)
+        background: $light-gray
 
       &-box
         flex-grow: 1
         padding-left: 110px
         padding-top: 10px
         padding-bottom: 10px
-
-    .rs-grow
-      background-color: $light-gray
-      max-width: $container-max-w
-      margin: auto
+        background: url('~img/icon/file.svg') no-repeat left 0px center
+        background-size: 120px 80px
 
   &-pagging
     padding: 30px 0

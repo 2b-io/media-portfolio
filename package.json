@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "handlebars": "4.0.11",
+    "jquery": "3.3.1",
     "kouto-swiss": "1.1.0",
     "typeface-space-mono": "0.0.54"
   },

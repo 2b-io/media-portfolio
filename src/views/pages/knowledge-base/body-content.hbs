@@ -1,0 +1,19 @@
+<div class="knowledge-base-body-wrapper-label">
+  <span>Getting started</span>
+</div>
+<div class="knowledge-base-body-wrapper-content">
+  <div class="knowledge-base-body-wrapper-content-left">
+    {{#each data.posts}}
+      {{{this.html}}} <br/><br/><br/>
+    {{/each}}
+  </div>
+  <div class="knowledge-base-body-wrapper-content-right">
+    <ul id="knowledge-base-body-wrapper-content-right-ul">
+      {{#each data.urls}}
+        <li id="knowledge-base-body-wrapper-content-right-li">
+          <a href="{{this.link}}">{{this.title}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

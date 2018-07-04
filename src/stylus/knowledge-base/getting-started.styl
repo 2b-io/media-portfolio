@@ -37,8 +37,9 @@
       padding-right: 20px
       height: 40px
       font-weight: bold
-      vertical-align: bottom
-      display: table-cell
+      display: inline-block
+      padding-top: 20px
+      margin-bottom: 10px
       text-transform: uppercase
 
     &-content
@@ -50,15 +51,22 @@
 
       @media screen and (max-width: $media-tablet-w)
         flex-direction:  column
+        padding-bottom: 20px
 
       &-left
         // border: 1px solid red
         flex-grow: 2
         max-width: 70%
+        @media screen and (max-width: $media-tablet-w)
+          max-width: none
 
       &-right
         background-color: $color-gray
         flex-grow: 1
+        align-self: flex-start
+
+        @media screen and (max-width: $media-tablet-w)
+          align-self: auto
 
         #knowledge-base-body-wrapper-content-right-ul
           padding-left: 30px
@@ -71,14 +79,14 @@
             padding-top: 30px
             text-transform: uppercase
 
+            &:first-child
+              border-bottom: 2px solid $color-blue
+              display:inline-block
+              padding-bottom:2px
+
             a
               color: black
               font-weight: normal
-
-          .current-directory
-            border-bottom: 2px solid $color-blue
-            display:inline-block
-            padding-bottom:2px
 
       &-right
       &-left

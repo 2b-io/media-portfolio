@@ -13,37 +13,42 @@ function onSuccess(data) {
 
   var $bodyWrapper = $('#knowledge-base-body-wrapper')
 
-  data.urls = [
-    {
-      link: '/knowledge-base/getting-started',
-      title: 'Getting started',
-    },
-    {
-      link: '/knowledge-base/developer-guide',
-      title: 'Developer Guide',
-    },
-    {
-      link: '#',
-      title: 'FAQ',
-    },
-  ]
+  $.each(data.posts, function (i, post) {
+    post.tagId = post.primary_tag.id
+  })
+
+  $.each(data.tags, function (i, tag) {
+    tag.postID = []
+    $.each(data.posts, function (i, post) {
+      if (post.tagId==tag.id) {
+        var postDetail = {}
+        postDetail.id = post.id
+        postDetail.title = post.title
+        tag.postID.push(postDetail)
+      }
+    })
+  })
 
   $bodyWrapper.append(postTemplate({data}))
 }
 
-
 $(document).ready(function () {
+    // Fetch posts
+  $.get(ghost.url.api('posts', {limit: "all", include: 'tags'})).done(function (postList) {
+    // Fetch all list
+    $.get(ghost.url.api('tags', {filter: 'slug:[getting-started]',limit: 1, include: 'count.posts'})).done(
+      function (data) {
+        data.posts = postList.posts
+        onSuccess(data)
+      }
+    ).fail(
+    function (err){
+      console.log(err);
+    });
+  }).fail(
+      function (err){
+        console.log(err);
+      });
 
-    // Fetch the 20 most recently published posts
-  $.get(ghost.url.api('posts',
-    {filter: 'primary_tag.name: [getting-started]',
-    limit: 1, include: 'tags'}
-    )).done(onSuccess).fail(function (err){
-    console.log(err);
-  });
-
-  // Fetch all tags
-/*  $.get(ghost.url.api('tags', {limit: "all"})).done(onSuccess).fail(function (err){
-    console.log(err);
-  });*/
 })
+

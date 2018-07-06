@@ -1,1 +1,53 @@
 import 'stylus/knowledge-base/developer-guide.styl'
+
+import $ from 'jquery'
+
+import postTemplate from '../../views/pages/knowledge-base/body-content.hbs'
+
+ghost.init({
+  clientId: "ghost-frontend",
+  clientSecret: "0a2a68264135"
+})
+
+function onSuccess(data) {
+
+  var $bodyWrapper = $('#knowledge-base-body-wrapper')
+
+  $.each(data.posts, function (i, post) {
+    post.tagId = post.primary_tag.id
+  })
+
+  $.each(data.tags, function (i, tag) {
+    tag.postID = []
+    $.each(data.posts, function (i, post) {
+      if (post.tagId==tag.id) {
+        var postDetail = {}
+        postDetail.id = post.id
+        postDetail.title = post.title
+        tag.postID.push(postDetail)
+      }
+    })
+  })
+
+  $bodyWrapper.append(postTemplate({data}))
+}
+
+$(document).ready(function () {
+    // Fetch posts
+  $.get(ghost.url.api('posts', {filter: 'primary_tag.slug:[developer-guide]', limit: "all", include: 'tags'})).done(function (postList) {
+    // Fetch all list
+    $.get(ghost.url.api('tags', {filter: 'slug:[developer-guide]',limit: 1, include: 'count.posts'})).done(
+      function (data) {
+        data.posts = postList.posts
+        onSuccess(data)
+      }
+    ).fail(
+    function (err){
+      console.log(err);
+    });
+  }).fail(
+      function (err){
+        console.log(err);
+      });
+
+})

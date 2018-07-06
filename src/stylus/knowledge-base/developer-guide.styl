@@ -2,66 +2,8 @@
 @require './common'
 @require './header'
 
-.header-wrapper
-  background-color: $light-gray
-
 @require '../knowledge-base'
 
-.knowledge-base-body
-  background-color: $white
-
-  &-menu
-    border-bottom: thick solid $color-gray
-
-    &-center
-      padding-left: 20px
-      padding-right: 20px
-      max-width: $container-max-w
-      margin: auto
-      height: 40px
-      line-height: 40px
-
-      &-home
-        color: black
-        padding-right: 20px
-
-      &-home-linked
-        color: $color-blue
-        padding-left: 20px
-
-  &-wrapper
-    display: block
-
-    &-label
-      padding-left: 20px
-      padding-right: 20px
-      height: 40px
-      font-weight: bold
-      vertical-align: bottom
-      display: table-cell
-      text-transform: uppercase
-
-    &-content
-      padding-left: 20px
-      padding-right: 20px
-      // border: 1px solid red
-      display: flex
-      flex-direction: row
-
-      @media screen and (max-width: $media-tablet-w)
-        flex-direction:  column
-
-      &-left
-        // border: 1px solid red
-        flex-grow: 2
-
-      &-right
-        background-color: $color-gray
-        flex-grow: 1
-
-      &-right
-      &-left
-        padding-top: 20px
-        padding-bottom: 20px
+@require './getting-started'
 
 @require './footer'

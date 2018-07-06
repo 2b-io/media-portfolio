@@ -45,7 +45,6 @@
     &-content
       padding-left: 20px
       padding-right: 20px
-      // border: 1px solid red
       display: flex
       flex-direction: row
 
@@ -54,39 +53,75 @@
         padding-bottom: 20px
 
       &-left
-        // border: 1px solid red
         flex-grow: 2
         max-width: 70%
         @media screen and (max-width: $media-tablet-w)
           max-width: none
 
+        &-title
+          padding-bottom: 20px
+          font-size: 30px
+
+        .kg-card-markdown
+          padding-right: 20px
+          padding-bottom: 50px
+
+          @media screen and (max-width: $media-tablet-w)
+            padding-right: 0
+
+          p
+          a
+          li
+            font-size: 17px
+
+          img
+            width: 100%
+
+          // pre
+          //   font-size: 9px
+
+
       &-right
-        background-color: $color-gray
+        position: sticky
+        top: 0
+        background-color: $light-gray
         flex-grow: 1
         align-self: flex-start
 
         @media screen and (max-width: $media-tablet-w)
           align-self: auto
 
-        #knowledge-base-body-wrapper-content-right-ul
+        &-ul
           padding-left: 30px
           display: block
           flex-direction: column
 
 
-          #knowledge-base-body-wrapper-content-right-li
-            padding-bottom: 10px
+          &-li
+            padding-bottom: 5px
             padding-top: 30px
+            padding-right: 10px
             text-transform: uppercase
-
-            &:first-child
-              border-bottom: 2px solid $color-blue
-              display:inline-block
-              padding-bottom:2px
 
             a
               color: black
-              font-weight: normal
+              font-size: 18px
+
+          ^[-1]-child-ul
+            padding-left: 20px
+            padding-right: 20px
+
+            &-li
+
+              display: block
+              width: fit-content
+              padding-top: 30px
+              padding-bottom: 5px
+              font-size: 18px
+
+              a
+                color: black
+                font-weight: normal
 
       &-right
       &-left

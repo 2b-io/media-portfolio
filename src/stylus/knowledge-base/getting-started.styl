@@ -74,11 +74,87 @@
           li
             font-size: 17px
 
+          a
+            color: black
+            border-bottom: 1px solid $color-blue
+
           img
             width: 100%
 
-          // pre
-          //   font-size: 9px
+          ul
+            list-style: disc
+            padding-left: 1.3em
+            padding-right: 1.5em
+
+            li
+              word-break: break-word
+              margin: 1em 0
+              line-height: 25px
+
+              code
+                padding: 0 5px 2px
+                font-size: .8em
+                line-height: 1em
+                font-weight: 400!important
+                background: #e5eff5
+                border-radius: 3px
+
+          code
+            padding: 0 5px 2px
+            font-size: .8em
+            line-height: 1em
+            font-weight: 400!important
+            background: #e5eff5
+            border-radius: 3px
+
+          h2
+            margin: .5em 0 .2em
+            font-size: 30px
+            font-weight: 700
+
+            @media screen and (max-width: $media-tablet-w)
+              font-size: 1.9rem
+
+          h3
+            margin: .5em 0 .2em
+            font-size: 23px
+            font-weight: 700
+            line-height: 1.15
+            text-rendering: optimizeLegibility
+
+            @media screen and (max-width: $media-tablet-w)
+              font-size: 1.6rem
+
+          ol
+            list-style: decimal
+            padding-left: 1.3em
+            padding-right: 1.5em
+
+            li
+              margin: .5em 0
+              padding-left: .3em
+              line-height: 1.6em
+              word-break: break-word
+
+          blockquote
+            margin: 0 0 1.5em
+            padding: 0 1.5em
+            border-left: 3px solid $color-blue
+
+            p
+              font-style: italic
+
+          hr
+            height: 1px
+            border: 0
+            border-top: 1px solid #e3e9ed
+            margin: 30px 0
+
+        .kg-card-markdown > p
+          padding-bottom: 30px
+
+          @media screen and (max-width: $media-tablet-w)
+            padding-bottom: 20px
 
 
       &-right

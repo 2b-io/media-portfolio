@@ -2,12 +2,11 @@ import 'stylus/knowledge-base.styl'
 
 import $ from 'jquery'
 
+import ghostConfig from '../../../internals/config.ghost.js'
+
 import postTemplate from '../views/pages/knowledge-base/base-search-result.hbs'
 
-ghost.init({
-  clientId: "ghost-frontend",
-  clientSecret: "0a2a68264135"
-})
+ghost.init(ghostConfig.ghostInit)
 
 
 function onSuccess(data) {

@@ -2,12 +2,11 @@ import 'stylus/knowledge-base/getting-started.styl'
 
 import $ from 'jquery'
 
+import ghostConfig from '../../../internals/config.ghost.js'
+
 import postTemplate from '../../views/pages/knowledge-base/body-content.hbs'
 
-ghost.init({
-  clientId: "ghost-frontend",
-  clientSecret: "0a2a68264135"
-})
+ghost.init(ghostConfig.ghostInit)
 
 function onSuccess(data) {
 
@@ -34,7 +33,7 @@ function onSuccess(data) {
 
 $(document).ready(function () {
     // Fetch posts
-  $.get(ghost.url.api('posts', {limit: "all", include: 'tags'})).done(function (postList) {
+  $.get(ghost.url.api('posts', {filter: 'primary_tag.slug:[getting-started]', limit: "all", include: 'tags'})).done(function (postList) {
     // Fetch all list
     $.get(ghost.url.api('tags', {filter: 'slug:[getting-started]',limit: 1, include: 'count.posts'})).done(
       function (data) {

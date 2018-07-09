@@ -40,6 +40,7 @@ const urls = {
       detail: 'Check these common questions to get a better technical understanding of a CDN.'
     },
   ],
+  ghostIP: 'http://18.210.159.133/public/ghost-sdk.min.js',
 }
 
 const assets = {

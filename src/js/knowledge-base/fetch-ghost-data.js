@@ -12,8 +12,7 @@ const buildTagData = ({ posts, tags }) => {
       postID: posts.map(
         post => post.primary_tag.id !== tag.id ?
           null : {
-          // id: post.id,
-          id: post.id,
+          slug: post.slug,
           title: post.title
         }
       ).filter(Boolean)

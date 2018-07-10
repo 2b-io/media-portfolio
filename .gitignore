@@ -58,3 +58,5 @@ typings/
 .env
 
 /public
+/local-config
+/docker-compose-ghost.yml

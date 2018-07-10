@@ -12,6 +12,14 @@ const labels = {
   },
   footer_text: headerData.footer_text,
   company_info: headerData.company_info,
+  feature: {
+    home_text: 'Home',
+    page_title: {
+      getting_started: 'Getting Started',
+      developer_guide: 'Developer Guide',
+      faq: 'FAQ',
+    }
+  }
 }
 
 const urls = {
@@ -35,7 +43,7 @@ const urls = {
     {
       img: require('img/icon/FAQ.svg'),
       alt: 'FAQ',
-      link: '#',
+      link: '/knowledge-base/faq',
       label: 'FAQ',
       detail: 'Check these common questions to get a better technical understanding of a CDN.'
     },

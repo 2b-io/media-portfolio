@@ -8,6 +8,7 @@ $(document).ready(function () {
   const getPostUrl = ghost.url.api('posts', {
     filter: 'primary_tag.slug:[getting-started]',
     limit: 'all',
+    order: 'updated_at desc',
     include: 'tags'
   })
 

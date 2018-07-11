@@ -7,7 +7,8 @@ import { displayContentFromGhost } from './fetch-ghost-data.js'
 $(document).ready(function () {
   const getPostUrl = ghost.url.api('posts', {
     filter: 'primary_tag.slug:[developer-guide]',
-    limit: "all",
+    limit: 'all',
+    order: 'updated_at asc',
     include: 'tags'
   })
 

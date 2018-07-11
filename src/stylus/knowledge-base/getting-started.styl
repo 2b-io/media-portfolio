@@ -7,6 +7,9 @@ $height = 15px
 $bounce_height = 30px
 $colorOrange = #fbae17
 
+body
+  overflow-x: visible
+
 .header-wrapper
   background-color: $light-gray
 
@@ -45,8 +48,8 @@ $colorOrange = #fbae17
       flex-direction: row
 
       @media screen and (max-width: $media-tablet-w)
-        flex-direction:  column
-        padding-bottom: 20px
+        flex-direction:  column-reverse
+        // padding-bottom: 20px
 
       &-left
         flex-grow: 2
@@ -171,14 +174,16 @@ $colorOrange = #fbae17
 
 
       &-right
-        position: sticky
-        top: 0
+        // position: sticky
+        // top: 0
         background-color: $light-gray
         flex-grow: 1
         align-self: flex-start
 
         @media screen and (max-width: $media-tablet-w)
           align-self: auto
+          // position: unset
+          margin-bottom: 20px
 
         &-ul
           padding-left: 30px
@@ -233,14 +238,12 @@ $colorOrange = #fbae17
 
     .bounceball
       position: relative
-      display: inline-block
       height: 37px
       width: $width
 
       &:before
         position: absolute
         content: ''
-        display: block
         top: 0
         width: $width
         height: $height
@@ -268,7 +271,6 @@ $colorOrange = #fbae17
 
   100%
     top: 0
-
 
 
 @require './footer'

@@ -19,5 +19,5 @@ $(document).ready(function () {
   })
 
   displayContentFromGhost(getPostUrl, getTagUrl)
-})
 
+})

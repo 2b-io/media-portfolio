@@ -106,6 +106,30 @@
           padding-right: 10px
           flex: 1
 
+.back-to-top
+  position: fixed
+  bottom: 20px
+  right: 20px
+  background: rgba(0,0,0, 0.6) url('~img/icon/icon-back-to-top.svg') no-repeat center center
+  height: 60px
+  width: 60px
+  display: block
+  text-decoration: none
+  border-radius: 50%
+  // display: none
+  transition: all 0.3s ease
+
+  @media screen and (max-width: $media-tablet-w)
+    height: 30px
+    width: 30px
+    bottom: 5px
+    right: 5px
+    background-size: 55%
+
+  @media screen and (min-width: $media-tablet-w)
+    &:hover
+      background: rgba(0, 0, 0, 0.9)  url('~img/icon/icon-back-to-top.svg') no-repeat center center
+
 @require './knowledge-base/base-search'
 
 @require './footer'

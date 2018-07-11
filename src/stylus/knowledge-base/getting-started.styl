@@ -32,17 +32,8 @@
   &-wrapper
     display: block
 
-    &-label
-      padding-left: 20px
-      padding-right: 20px
-      height: 40px
-      font-weight: bold
-      display: inline-block
-      padding-top: 20px
-      margin-bottom: 10px
-      text-transform: uppercase
-
     &-content
+      padding-top: 20px
       padding-left: 20px
       padding-right: 20px
       display: flex
@@ -55,17 +46,29 @@
       &-left
         flex-grow: 2
         max-width: 70%
+        display: flex
+        flex-direction: column
+
         @media screen and (max-width: $media-tablet-w)
           max-width: none
 
         &-title
-          padding-bottom: 20px
+          padding-bottom: 5px
           font-size: 30px
+
+        &-time
+          font-style: italic
+          padding-bottom: 20px
+          align-self: right
+          padding-right: 20px
+          align-self: flex-end
 
         .kg-card-markdown
           padding-right: 20px
-          padding-bottom: 50px
+          padding-bottom: 30px
 
+        &-time
+        .kg-card-markdown
           @media screen and (max-width: $media-tablet-w)
             padding-right: 0
 
@@ -187,21 +190,28 @@
               color: black
               font-size: 18px
 
+
           ^[-1]-child-ul
             padding-left: 20px
             padding-right: 20px
+            display:flex
+            flex-direction: column
+            align-items: flex-start
+
+            @media screen and (max-width: $media-tablet-w)
+              padding-right: 0
 
             &-li
+              padding: 15px 0
 
-              display: block
-              width: fit-content
-              padding-top: 30px
-              padding-bottom: 5px
-              font-size: 18px
+              &:hover
+                border-bottom: 1px solid blue
 
               a
                 color: black
                 font-weight: normal
+                font-size: 18px
+                line-height: 24px
 
       &-right
       &-left

@@ -1,11 +1,10 @@
-<div class="knowledge-base-body-wrapper-label">
-</div>
 <div class="knowledge-base-body-wrapper-content">
   <div class="knowledge-base-body-wrapper-content-left">
     {{#each data.posts}}
       <a id="{{this.slug}}">
         <h2 class="knowledge-base-body-wrapper-content-left-title">{{this.title}}</h2>
       </a>
+      <div class="knowledge-base-body-wrapper-content-left-time">{{this.updateAt}}</div>
         {{{this.html}}}
 
     {{/each}}
@@ -16,7 +15,7 @@
         <li class="knowledge-base-body-wrapper-content-right-ul-li">
           <a href="#">{{this.name}}</a></li>
           <ul class="knowledge-base-body-wrapper-content-right-child-ul">
-            {{#each this.postID}}
+            {{#each this.postIDs}}
               <li class="knowledge-base-body-wrapper-content-right-child-ul-li">
                 <a href="#{{this.slug}}">{{{this.title}}}</a>
               </li>

@@ -14,6 +14,7 @@ const labels = {
   company_info: headerData.company_info,
   feature: {
     home_text: 'Home',
+    loading_text: 'NOW LOADING',
     page_title: {
       getting_started: 'Getting Started',
       developer_guide: 'Developer Guide',

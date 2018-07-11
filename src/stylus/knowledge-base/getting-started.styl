@@ -2,6 +2,11 @@
 @require './common'
 @require './header'
 
+$width = 15px
+$height = 15px
+$bounce_height = 30px
+$colorOrange = #fbae17
+
 .header-wrapper
   background-color: $light-gray
 
@@ -61,7 +66,8 @@
           padding-bottom: 20px
           align-self: right
           padding-right: 20px
-          align-self: flex-end
+          white-space: nowrap
+          // align-self: flex-end
 
         .kg-card-markdown
           padding-right: 20px
@@ -217,5 +223,52 @@
       &-left
         // padding-top: 10px
         padding-bottom: 20px
+
+  .loading-wrapper
+    display: flex
+    align-items: baseline
+    justify-content: center
+    height: 100vh
+    padding-top: 50px
+
+    .bounceball
+      position: relative
+      display: inline-block
+      height: 37px
+      width: $width
+
+      &:before
+        position: absolute
+        content: ''
+        display: block
+        top: 0
+        width: $width
+        height: $height
+        border-radius: 50%
+        background-color: $colorOrange
+        transform-origin: 50%
+        animation: bounce 500ms alternate infinite ease
+
+    .text
+      color: $colorOrange
+      display: inline-block
+      margin-left: 5px
+
+@keyframes bounce
+  0%
+    top: $bounce_height
+    height: 5px
+    border-radius: 60px 60px 20px 20px
+    transform: scaleX(2)
+
+  35%
+    height: $height
+    border-radius: 50%
+    transform: scaleX(1)
+
+  100%
+    top: 0
+
+
 
 @require './footer'

@@ -9,7 +9,7 @@ ghost.init(ghostConfig.ghostInit)
 
 const formatDate = (dateString) => {
   var date = new Date(dateString)
-  return dateformat(date, 'dddd, mmmm dS, yyyy')
+  return dateformat(date, 'ddd, mmmm dS, yyyy')
 }
 
 const buildPostData = (posts) => {
@@ -49,6 +49,7 @@ export const displayContentFromGhost = (getPostUrl, getTagUrl) => {
     ]
   }).then(([ posts, tags ]) => {
     // display
+    $('#loading-wrapper').toggle()
     $('#knowledge-base-body-wrapper').append(postTemplate({
       data: { posts, tags }
     }))

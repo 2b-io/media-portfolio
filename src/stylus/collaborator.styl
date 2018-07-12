@@ -37,7 +37,7 @@
         display: flex
         flex-wrap: nowrap
         flex-direction: row
-        justify-content: center
+        justify-content: flex-start
         align-items: center
 
       .trusted-box-images
@@ -48,10 +48,18 @@
           justify-content: center
           align-items: center
           flex-grow: 1
+          position: relative
+          left: 0
 
           .trusted-image
             flex-grow: 1
             padding: 0 10px 0 10px
+
+            @media screen and (max-width: $media-tablet-w)
+              width: 150px
+
+            @media screen and (max-width: $media-mobile-w)
+              width: 110px
 
       .trusted-button
         width: 100px

@@ -112,6 +112,10 @@ const assets = {
       require('img/logo/logmeln.jpg'),
       require('img/logo/discord.jpg'),
       require('img/logo/cisco.jpg'),
+      require('img/logo/nasdaq.jpg'),
+      require('img/logo/logmeln.jpg'),
+      require('img/logo/discord.jpg'),
+      require('img/logo/cisco.jpg'),
     ]
   },
 }

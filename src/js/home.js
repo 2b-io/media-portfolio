@@ -6,7 +6,8 @@ $(document).ready(function(){
 	handleHoldButtons()
 })
 
-function handleHoldButtons() {
+
+export function handleHoldButtons() {
 	const state = {
 		holdLeftButton: false,
 		holdRightButton: false

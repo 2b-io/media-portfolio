@@ -29,7 +29,7 @@
       height: 100px
       display: flex
       flex-direction: row
-      justify-content: center
+      justify-content: space-between
       align-items: center
 
       .trusted-box-item
@@ -45,7 +45,7 @@
 
         .trusted-image-wrapper
           display: flex
-          justify-content: center
+          justify-content: space-around
           align-items: center
           flex-grow: 1
           position: relative
@@ -54,6 +54,7 @@
 
           .trusted-image
             flex-grow: 1
+            max-width: 220px
             padding: 0 10px 0 10px
 
             @media screen and (max-width: $media-tablet-w)
@@ -63,8 +64,9 @@
               width: 110px
 
       .trusted-button
-        width: 100px
+        max-width: 50px
         height: 100px
+        flex-grow: 1
 
         .trusted-button-item
           width: 50px

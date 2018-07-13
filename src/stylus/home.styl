@@ -103,6 +103,7 @@
               padding-right: 5px
 
         .feature-info-box-link
+          white-space: nowrap
           padding-top: 15px
           color: $color-blue
 
@@ -194,28 +195,38 @@
 
     .maps-footer
       margin: auto
-      // height: 100px
       display: flex
       padding-top: 30px
+      justify-content: space-between
+
+      @media screen and (max-width: $media-tablet-w)
+        padding-top: 15px
 
       .maps-footer-text
-        margin: auto
         width: 250px
-        height: 100px
-        display: flex
+        padding: 0 10px
 
         .maps-footer-p
           margin: auto
-          // height: 70px
 
           .maps-span-value
-            font-size: 25px
+            font-size: 45px
             font-weight: bold
+            display: block
+            line-height: 45px
+
+            @media screen and (max-width: $media-tablet-w)
+              font-size: 25px
+              line-height: 25px
 
           .maps-span-small
-            margin-top: 10px
+            padding-top: 20px
             font-size: 17px
             font-weight: normal
+            display: block
+
+            @media screen and (max-width: $media-tablet-w)
+              padding-top: 10px
 
 @require './collaborator'
 
@@ -223,7 +234,3 @@
 
 @require './footer'
 
-/* Desktop support */
-// body.no-touch
-//   button:hover
-//     color: black

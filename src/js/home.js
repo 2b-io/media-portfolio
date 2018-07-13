@@ -7,59 +7,59 @@ $(document).ready(function(){
 })
 
 function handleHoldButtons() {
-	let mouseStillDown = false
+	let holdLeftButton = false
+	let holdRightButton = false
   let maxSize = $('#trusted-image-wrapper').outerWidth()
 	let itemSize = $('#trusted-image-wrapper img').outerWidth();
 	let indexLeft = 0
 
-	$('#btn_left').prop('disabled', true)
-
   $('#btn_right').on('mousedown touchstart', () => {
-    moveLeft()
+  	if (!holdRightButton) {
+	    holdRightButton = setInterval(moveLeft, 300)
+	    moveLeft()
+	  }
   }).on('mouseup touchend', () => {
-    clearInterval(mouseStillDown)
-    mouseStillDown = false
+    clearInterval(holdRightButton)
+    holdRightButton = false
   })
 
   $('#btn_left').on('mousedown touchstart', () => {
-  	moveRight()
+  	if (!holdLeftButton) {
+	    holdLeftButton = setInterval(moveRight, 300)
+	    moveRight()
+	  }
+
   }).on('mouseup touchend', () => {
-    clearInterval(mouseStillDown)
-    mouseStillDown = false
+    clearInterval(holdLeftButton)
+    holdLeftButton = false
   })
 
 
   function moveLeft() {
 	  if (itemSize-indexLeft == maxSize) {
+	  	clearInterval(holdRightButton)
 			$('#btn_right').prop('disabled', true)
 		} else {
 			indexLeft = indexLeft-itemSize
-			console.log('indexLeft', indexLeft)
 			$('#trusted-image-wrapper').css({'left': indexLeft})
 		}
 		if (indexLeft < 0) {
 			$('#btn_left').prop('disabled', false)
 		}
-		if (!mouseStillDown) {
-			console.log('mouseStillDown')
-	    mouseStillDown = setInterval(moveLeft, 300)
-	  }
+
 	}
 
 	function moveRight() {
 		if (indexLeft == 0) {
+			clearInterval(holdLeftButton)
 			$('#btn_left').prop('disabled', true)
 		} else {
 			indexLeft = indexLeft+itemSize
-			console.log('btn_right', indexLeft)
 			$('#trusted-image-wrapper').css({'left': indexLeft})
 		}
 		if (indexLeft < 0) {
 			$('#btn_right').prop('disabled', false)
 		}
-		if (!mouseStillDown) {
-			console.log('mouseStillDown')
-	    mouseStillDown = setInterval(moveRight, 300)
-	  }
+
 	}
 }

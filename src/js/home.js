@@ -7,59 +7,62 @@ $(document).ready(function(){
 })
 
 function handleHoldButtons() {
-	let holdLeftButton = false
-	let holdRightButton = false
-  let maxSize = $('#trusted-image-wrapper').outerWidth()
-	let itemSize = $('#trusted-image-wrapper img').outerWidth();
-	let indexLeft = 0
-
-  $('#btn_right').on('mousedown touchstart', () => {
-  	if (!holdRightButton) {
-	    holdRightButton = setInterval(moveLeft, 300)
-	    moveLeft()
-	  }
-  }).on('mouseup touchend', () => {
-    clearInterval(holdRightButton)
-    holdRightButton = false
-  })
-
-  $('#btn_left').on('mousedown touchstart', () => {
-  	if (!holdLeftButton) {
-	    holdLeftButton = setInterval(moveRight, 300)
-	    moveRight()
-	  }
-
-  }).on('mouseup touchend', () => {
-    clearInterval(holdLeftButton)
-    holdLeftButton = false
-  })
-
-
-  function moveLeft() {
-	  if (itemSize-indexLeft == maxSize) {
-	  	clearInterval(holdRightButton)
-			$('#btn_right').prop('disabled', true)
-		} else {
-			indexLeft = indexLeft-itemSize
-			$('#trusted-image-wrapper').css({'left': indexLeft})
-		}
-		if (indexLeft < 0) {
-			$('#btn_left').prop('disabled', false)
-		}
-
+	const state = {
+		holdLeftButton: false,
+		holdRightButton: false
 	}
 
-	function moveRight() {
-		if (indexLeft == 0) {
-			clearInterval(holdLeftButton)
-			$('#btn_left').prop('disabled', true)
-		} else {
-			indexLeft = indexLeft+itemSize
-			$('#trusted-image-wrapper').css({'left': indexLeft})
-		}
-		if (indexLeft < 0) {
-			$('#btn_right').prop('disabled', false)
-		}
+  $('#btn_left')
+		.on('mousedown touchstart', () => {
+			state.holdLeftButton = true
+			state.holdRightButton = false
+		})
+		.on('mouseup touchend', () => {
+			state.holdLeftButton = false
+			state.holdRightButton = false
+		})
 
-	}
+	$('#btn_right')
+		.on('mousedown touchstart', () => {
+			state.holdLeftButton = false
+			state.holdRightButton = true
+		})
+		.on('mouseup touchend', () => {
+			state.holdLeftButton = false
+			state.holdRightButton = false
+		})
+
+	handleHoldState(state)
+}
+
+function handleHoldState(state) {
+	const imageWrapper = $('#trusted-image-wrapper')
+	const viewport = $('#viewport')
+
+	const wrapperWidth = imageWrapper.outerWidth()
+	const viewportWidth = viewport.outerWidth()
+	const step = (viewportWidth / 10)
+
+	setInterval(() => {
+		if (state.holdLeftButton) {
+			const currentLeft = parseInt(imageWrapper.css('left'), 10)
+
+			const desiredLeft = currentLeft - step
+
+			if (desiredLeft + wrapperWidth > viewportWidth) {
+				imageWrapper.css('left', desiredLeft)
+			} else {
+				imageWrapper.css('left', viewportWidth - wrapperWidth)
+			}
+		} else if (state.holdRightButton) {
+			const currentLeft = parseInt(imageWrapper.css('left'), 10)
+			const desiredLeft = currentLeft + step
+
+			if (desiredLeft < 0) {
+				imageWrapper.css('left', desiredLeft)
+			} else {
+				imageWrapper.css('left', 0)
+			}
+		}
+	}, 200)
 }

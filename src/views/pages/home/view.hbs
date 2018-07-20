@@ -4,10 +4,10 @@
       <div class="container-center">
         {{> partials/header.hbs}}
         <div class="header-bottom">
-          <p class="header-text">
+          <span class="header-text">
             {{{labels.header.text}}}
-          </p>
-            <a class="lean-more" href="/" target="_blank">{{labels.header.link_title}}</a>
+          </span>
+            <a class="lean-more" href="/{{urls.header_link.link}}" target="_blank">{{urls.header_link.title}}</a>
         </div>
       </div>
     </div>
@@ -15,47 +15,56 @@
       <div class="feature container-center">
         <div class="container-center-box">
           <div class="feature-info">
-            <div class="feature-box-img-wrapper">
-              <img class="feature-box-img" src={{assets.feature_icon.totally_optimized}} alt="optimized">
+            <div class="feature-info-container">
+              <div class="feature-box-img-wrapper">
+                <img class="feature-box-img" src={{assets.feature_icon.totally_optimized}} alt="optimized">
+              </div>
+              <div class="feature-info-box">
+                <p class="feature-info-box-title">{{labels.feature.totally_optimized.title}}</p>
+                <p class="feature-info-box-label">{{labels.feature.totally_optimized.text}}</p>
+              </div>
             </div>
-            <div class="feature-info-box">
-              <p class="feature-info-box-title">{{labels.feature.totally_optimized.title}}</p>
-              <p class="feature-info-box-label">{{labels.feature.totally_optimized.text}}</p>
-              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.totally_optimized.footer_text}}</a>
-            </div>
+            <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.totally_optimized.footer_text}}</a>
           </div>
           <div class="feature-info">
-            <div class="feature-box-img-wrapper">
-              <img class="feature-box-img" src={{assets.feature_icon.powerful_features}} alt="features">
+            <div class="feature-info-container">
+              <div class="feature-box-img-wrapper">
+                <img class="feature-box-img" src={{assets.feature_icon.powerful_features}} alt="features">
+              </div>
+              <div class="feature-info-box">
+                <p class="feature-info-box-title">{{labels.feature.powerful_features.title}}</p>
+                <p class="feature-info-box-label">{{labels.feature.powerful_features.text}}</p>
+              </div>
             </div>
-            <div class="feature-info-box">
-              <p class="feature-info-box-title">{{labels.feature.powerful_features.title}}</p>
-              <p class="feature-info-box-label">{{labels.feature.powerful_features.text}}</p>
-              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.powerful_features.footer_text}}</a>
-            </div>
+            <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.powerful_features.footer_text}}</a>
           </div>
         </div>
         <div class="container-center-box">
           <div class="feature-info">
-            <div class="feature-box-img-wrapper">
-              <img class="feature-box-img" src={{assets.feature_icon.global_network}} alt="network">
+            <div class="feature-info-container">
+              <div class="feature-box-img-wrapper">
+                <img class="feature-box-img" src={{assets.feature_icon.global_network}} alt="network">
+              </div>
+              <div class="feature-info-box">
+                <p class="feature-info-box-title">{{labels.feature.global_network.title}}</p>
+                <p class="feature-info-box-label">{{labels.feature.global_network.text}}</p>
+              </div>
             </div>
-            <div class="feature-info-box">
-              <p class="feature-info-box-title">{{labels.feature.global_network.title}}</p>
-              <p class="feature-info-box-label">{{labels.feature.global_network.text}}</p>
-              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.global_network.footer_text}}</a>
-            </div>
+            <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.global_network.footer_text}}
+             </a>
           </div>
           <div class="feature-info">
-            <div class="feature-box-img-wrapper">
-              <img class="feature-box-img" src={{assets.feature_icon.totally_saved}} alt="saved">
+            <div class="feature-info-container">
+              <div class="feature-box-img-wrapper">
+                <img class="feature-box-img" src={{assets.feature_icon.totally_saved}} alt="saved">
+              </div>
+              <div class="feature-info-box">
+                <p class="feature-info-box-title">{{labels.feature.totally_saved.title}}</p>
+                <p class="feature-info-box-label">{{labels.feature.totally_saved.text}}</p>
+              </div>
             </div>
-            <div class="feature-info-box">
-              <p class="feature-info-box-title">{{labels.feature.totally_saved.title}}</p>
-              <p class="feature-info-box-label">{{labels.feature.totally_saved.text}}</p>
-              <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.totally_saved.footer_text}}</a>
-            </div>
-          </div>
+            <a class="feature-info-box-link" href="#" target="_blank">{{labels.feature.totally_saved.footer_text}}
+              </a>
         </div>
       </div>
     </div>
@@ -70,7 +79,7 @@
           {{#each labels.maps.title}}
             <div class="maps-footer-text">
               <p class="maps-footer-p">
-                <span class="maps-span-value">{{{this.value}}}</span><br/><br/>
+                <span class="maps-span-value">{{{this.value}}}</span>
                 <span class="maps-span-small">{{this.text}}<span>
               </p>
             </div>
@@ -81,13 +90,13 @@
     <div class="container">
       <div class="what-new-wrapper container-center ">
         <div class="what-new what-new-title">
-          <p>{{labels.what_new.title}}</p>
+          <span>{{labels.what_new.title}}</span>
         </div>
         <div class="what-new what-new-image-wrapper">
           {{#each labels.what_new.feature}}
             <div class="what-new-image-box">
               <img class="what-new-image" src={{this.src}} alt="{{this.alt}}">
-              <p class="what-new-image-detail">{{this.detail}}</p>
+              <span class="what-new-image-detail">{{this.detail}}</span>
             </div>
           {{/each}}
         </div>

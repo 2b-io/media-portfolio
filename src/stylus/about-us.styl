@@ -1,34 +1,5 @@
-meyer-reset()
-box-sizing-reset()
-normalize()
-
-$media-mobile-w = 480px
-$media-tablet-w = 768px
-$container-max-w = 1200px
-$color-blue = #0066b3
-$color-blue-white = #4ba6dd
-$color-gray = #999
-$light-gray = #EEEEEE
-$white = #FFFFFF
-
-html, body
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
-  overflow-x: hidden
-  height: 100%
-  min-width: 200px
-
-a
-  text-decoration: none
-  font-weight: bold
-
-.container
-  height: auto
-  background: transparent
-
-  .container-center
-    max-width: $container-max-w
-    margin: auto
-
+@require './variable'
+@require './common'
 @require './header'
 
 .header-wrapper
@@ -89,15 +60,14 @@ a
   .about-container
     display: flex
     flex-direction: column
-
-    .about-div-center
-      padding: 20px 10px 10px 10px
+    padding: 20px 0
 
     .about-wrapper
       display: flex
       flex-direction: row
       justify-content: center
       flex-wrap: nowrap
+      padding: 20px
 
       @media screen and (max-width: $media-tablet-w)
         flex-direction: column
@@ -111,11 +81,16 @@ a
         margin: auto
         text-transform: capitalize
         min-width: 400px
+        text-align: center
+        line-height: 80px
 
         @media screen and (max-width: $media-tablet-w)
           text-align: center
           min-width: 300px
           font-size: 50px
+          line-height: 50px
+          padding-bottom: 20px
+          padding-right: 20px
 
       .about-wrapper-text
         flex: 2
@@ -148,7 +123,7 @@ a
         width: 100%
 
       .about-left
-        max-width: 610px
+        max-width: 600px
         min-width: 300px
         display: flex
         flex-direction: column
@@ -173,7 +148,7 @@ a
 
             .about-left-header-content
               background-color: $color-blue
-              padding: 30px 30px 0px
+              padding: 20px 20px 0px
 
               @media screen and (max-width: $media-tablet-w)
                 background-color: rgba(00, 66, 179, 0.6)
@@ -183,7 +158,7 @@ a
                 color: white
 
               .about-left-header-detail
-                padding: 10px 0 30px 0
+                padding: 10px 0 20px 0
 
               .about-left-border
                 border-bottom: 1px solid white
@@ -206,7 +181,7 @@ a
             color: $color-blue
             text-transform: capitalize
             font-weight: bold
-            font-size: 20px
+            font-size: 24px
 
           .about-left-body-box
             .about-left-body-label
@@ -249,7 +224,7 @@ a
             color: $color-blue
             text-transform: capitalize
             font-weight: bold
-            font-size: 20px
+            font-size: 24px
 
           .about-left-body-box
             .about-left-body-label
@@ -265,7 +240,7 @@ a
         .contact-wrapper-box
           background-color: $color-blue
           width: 100%
-          padding: 30px 0
+          padding: 40px 0
           display: flex
           flex-direction: column
           align-items: center
@@ -291,6 +266,7 @@ a
             width: 240px
             height: 50px
             border: 1px solid white
+            outline: none
 
             &:hover
               background: $color-blue-white
@@ -307,7 +283,7 @@ a
 
       .about-right-content
       .contact-wrapper
-        max-width: 610px
+        max-width: 600px
         min-width: 300px
 
         @media screen and (max-width: $media-tablet-w)

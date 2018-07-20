@@ -8,7 +8,6 @@ const labels = {
     label1: 'Questions? Check our',
     faq: 'FAQ',
     label2: 'and',
-    knowledge_base: 'Knowledge Base'
   },
   footer_text: headerData.footer_text,
   company_info: headerData.company_info,
@@ -51,6 +50,10 @@ const urls = {
         name: 'MERGE5'
       },
     }
+  },
+  knowledge_base: {
+    link: '/knowledge-base',
+    title: 'Knowledge Base'
   }
 }
 

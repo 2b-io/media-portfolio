@@ -23,7 +23,11 @@ export default {
     features: [ path.join(rootDir, 'src/js/features.js') ],
     'about-us': [ path.join(rootDir, 'src/js/about-us.js') ],
     'contact-us': [ path.join(rootDir, 'src/js/contact-us.js') ],
-    'coming-soon': [ path.join(rootDir, 'src/js/coming-soon.js') ]
+    'coming-soon': [ path.join(rootDir, 'src/js/coming-soon.js') ],
+    'knowledge-base': [ path.join(rootDir, 'src/js/knowledge-base.js') ],
+    'knowledge-base/getting-started': [ path.join(rootDir, 'src/js/knowledge-base/getting-started.js') ],
+    'knowledge-base/developer-guide': [ path.join(rootDir, 'src/js/knowledge-base/developer-guide.js') ],
+    'knowledge-base/faq': [ path.join(rootDir, 'src/js/knowledge-base/faq.js') ],
   },
   output: {
     path: path.join(rootDir, 'public/assets'),
@@ -73,6 +77,34 @@ export default {
       chunks: [ 'features' ],
       minify: htmlMinifyOptions
     }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(rootDir, 'src/views/pages/knowledge-base'),
+      filename: path.join(rootDir, 'public/knowledge-base.html'),
+      chunks: [ 'knowledge-base' ],
+      minify: htmlMinifyOptions
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(rootDir, 'src/views/pages/knowledge-base/getting-started'),
+      filename: path.join(rootDir, 'public/knowledge-base/getting-started.html'),
+      chunks: [ 'knowledge-base/getting-started' ],
+      minify: htmlMinifyOptions
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(rootDir, 'src/views/pages/knowledge-base/developer-guide'),
+      filename: path.join(rootDir, 'public/knowledge-base/developer-guide.html'),
+      chunks: [ 'knowledge-base/developer-guide' ],
+      minify: htmlMinifyOptions
+    }),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.join(rootDir, 'src/views/pages/knowledge-base/faq'),
+      filename: path.join(rootDir, 'public/knowledge-base/faq.html'),
+      chunks: [ 'knowledge-base/faq' ],
+      minify: htmlMinifyOptions
+    }),
     // new HtmlWebpackPlugin({
     //   inject: true,
     //   template: path.join(rootDir, 'src/views/pages/coming-soon'),
@@ -100,7 +132,8 @@ export default {
                   target: {
                     browser: [ 'last 2 versions', 'safari >=7' ]
                   }
-                } ]
+                } ],
+                'stage-2'
               ],
               plugins: [
                 'transform-runtime'

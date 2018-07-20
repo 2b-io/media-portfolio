@@ -1,0 +1,135 @@
+@require './variable'
+@require './common'
+@require './header'
+
+.header-wrapper
+  background-color: $light-gray
+
+.body-wrapper
+  min-height: 144.77px
+  min-width: 300px
+  display: flex
+  background: url('~img/bg/knowledgebase.jpg') no-repeat center center
+  background-size: cover
+  height: 560px
+  @media screen and (max-width: $media-tablet-w)
+    height: 350px
+
+  @media screen and (max-width: $media-mobile-w)
+    height: 150px
+
+  .container-center
+    flex-grow: 1
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    flex-direction: column
+    text-align: center
+    padding-bottom: 15px
+
+    ^[-1]-title
+      font-weight: bold
+      text-transform: uppercase
+      color: $color-blue
+
+    ^[-1]-title-size
+      font-size: 60px
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-tablet-w)
+        font-size: 40px
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 28px
+
+    &-label
+      padding-left: 10px
+      padding-right: 10px
+      font-size: 24px
+      line-width: 20px
+      color: white
+      font-weight: bold
+      text-shadow: 0 0 2px #000
+
+      @media screen and (max-width: $media-tablet-w)
+        line-height: 30px
+
+      @media screen and (max-width: $media-mobile-w)
+        font-size: 18px
+        line-height: 25px
+
+.container
+  .feature
+    text-align: center
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    padding: 20px 0 20px 0
+
+    @media screen and (max-width: $media-tablet-w)
+      flex-direction: column
+
+    .feature-info
+      flex: 1
+      display: flex
+      flex-direction: column
+      justify-content: center
+      padding: 20px 0 20px 0
+
+      .feature-box-img-wrapper
+        min-width: 260px
+        padding-bottom: 20px
+
+        .feature-box-img
+          margin: auto
+          height: 100px
+          width: 100px
+
+      &-box
+        min-width: 260px
+        height: auto
+        flex-grow: 1
+        display: flex
+        flex-direction: column
+
+        &-label
+          font-weight: bold
+          text-transform: uppercase
+          color: black
+          padding: 0 10px 10px
+
+        &-title
+          height: auto
+          font-size: 16px
+          padding-left: 10px
+          padding-right: 10px
+          flex: 1
+
+.back-to-top
+  position: fixed
+  bottom: 20px
+  right: 20px
+  background: rgba(0,0,0, 0.6) url('~img/icon/icon-back-to-top.svg') no-repeat center center
+  height: 60px
+  width: 60px
+  display: block
+  text-decoration: none
+  border-radius: 50%
+  // display: none
+  transition: all 0.3s ease
+
+  @media screen and (max-width: $media-tablet-w)
+    height: 30px
+    width: 30px
+    bottom: 5px
+    right: 5px
+    background-size: 55%
+
+  @media screen and (min-width: $media-tablet-w)
+    &:hover
+      background: rgba(0, 0, 0, 0.9)  url('~img/icon/icon-back-to-top.svg') no-repeat center center
+
+@require './knowledge-base/base-search'
+
+@require './footer'

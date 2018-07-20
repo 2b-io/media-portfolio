@@ -1,34 +1,5 @@
-meyer-reset()
-box-sizing-reset()
-normalize()
-
-$media-mobile-w = 480px
-$media-tablet-w = 768px
-$container-max-w = 1200px
-$color-blue = #0066b3
-$color-blue-white = #4ba6dd
-$color-gray = #999
-$light-gray = #EEEEEE
-$white = #FFFFFF
-
-html, body
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
-  overflow-x: hidden
-  height: 100%
-  min-width: 200px
-
-a
-  text-decoration: none
-  font-weight: bold
-
-.container
-  height: auto
-  background: transparent
-
-  .container-center
-    max-width: $container-max-w
-    margin: auto
-
+@require './variable'
+@require './common'
 @require './header'
 
 .container
@@ -94,8 +65,7 @@ a
     display: flex
     flex-wrap: wrap
     flex-grow: 1
-    align-items: center
-    justify-content: center
+    padding-bottom: 30px
 
     .container-center-box
       display: flex
@@ -103,41 +73,42 @@ a
       flex-grow: 1
 
       .feature-info
-        height: 360px
+        padding-top: 30px
         flex-grow: 1
         display: flex
         flex-direction: column
-        justify-content: center
         align-items: center
+        justify-content: space-between
 
-        .feature-box-img-wrapper
-          width: 260px
-          padding-bottom: 20px
+        .feature-info-container
+          .feature-box-img-wrapper
+            width: 260px
+            padding-bottom: 20px
 
-          .feature-box-img
-            margin: auto
-            height: 100px
-            width: 100px
+            .feature-box-img
+              margin: auto
+              height: 100px
+              width: 100px
 
-        .feature-info-box
-          width: 260px
-          height: 160px
+          .feature-info-box
+            width: 260px
 
-          .feature-info-box-title
-            font-weight: bold
-            height: 20px
+            .feature-info-box-title
+              font-weight: bold
+              padding-bottom: 10px
 
-          .feature-info-box-label
-            height: 100px
-            font-size: 16px
-            padding-left: 5px
-            padding-right: 5px
+            .feature-info-box-label
+              font-size: 16px
+              padding-left: 5px
+              padding-right: 5px
 
-          .feature-info-box-link
-            padding-bottom: 10px
+        .feature-info-box-link
+          white-space: nowrap
+          padding-top: 15px
+          color: $color-blue
 
-            &:hover
-              border-bottom: 1px solid $color-blue
+          &:hover
+            border-bottom: 1px solid $color-blue
 
   .what-new-wrapper
     flex-direction: column
@@ -170,7 +141,7 @@ a
 
       .what-new-image-box
         flex-grow: 1
-        padding-bottom: 40px
+        padding-bottom: 10px
         display: flex
         flex-direction: column
         justify-content: space-between
@@ -183,16 +154,19 @@ a
           padding: 0 5px 0 5px
 
         .what-new-image-detail
-          padding-top: 20px
-          height: 80px
-          line-height: 80px
+          // padding-top: 20px
+          height: 60px
+          line-height: 60px
           font-weight: bold
           text-transform: uppercase
 
 .maps
   background: $light-gray
-  padding-bottom: 40px
+  padding-bottom: 10px
   display: block
+
+  @media screen and (max-width: $media-tablet-w)
+    padding-bottom: 15px
 
   .container-center
     text-align: center
@@ -213,29 +187,46 @@ a
       margin: auto
       height: 50vh
 
+      @media screen and (max-width: $media-tablet-w)
+        height: 30vh
+
+      @media screen and (max-width: $media-mobile-w)
+        height: 20vh
+
     .maps-footer
       margin: auto
-      height: 100px
       display: flex
+      padding-top: 30px
+      justify-content: space-between
+
+      @media screen and (max-width: $media-tablet-w)
+        padding-top: 15px
 
       .maps-footer-text
-        margin: auto
         width: 250px
-        height: 100px
-        display: flex
+        padding: 0 10px
 
         .maps-footer-p
           margin: auto
-          height: 70px
 
           .maps-span-value
-            font-size: 25px
+            font-size: 45px
             font-weight: bold
+            display: block
+            line-height: 45px
+
+            @media screen and (max-width: $media-tablet-w)
+              font-size: 25px
+              line-height: 25px
 
           .maps-span-small
-            margin-top: 10px
+            padding-top: 20px
             font-size: 17px
             font-weight: normal
+            display: block
+
+            @media screen and (max-width: $media-tablet-w)
+              padding-top: 10px
 
 @require './collaborator'
 
@@ -243,7 +234,3 @@ a
 
 @require './footer'
 
-/* Desktop support */
-// body.no-touch
-//   button:hover
-//     color: black

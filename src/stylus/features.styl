@@ -1,36 +1,5 @@
-$media-mobile-w = 480px
-$media-tablet-w = 768px
-$container-max-w = 1200px
-$color-blue = #0066b3
-$color-blue-white = #4ba6dd
-$color-gray = #999
-$color-gainsboro = #DEDEDE
-$light-gray = #EEEEEE
-$white = #FFFFFF
-
-meyer-reset()
-box-sizing-reset()
-normalize()
-
-html, body
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
-  overflow-x: hidden
-  height: 100%
-  min-width: 200px
-
-a
-  text-decoration: none
-  font-weight: bold
-
-.container
-  height: auto
-  background: transparent
-  min-width: 300px
-
-  .container-center
-    max-width: $container-max-w
-    margin: auto
-
+@require './variable'
+@require './common'
 @require './header'
 
 .header-wrapper
@@ -198,20 +167,16 @@ a
     display: flex
     flex-direction: row
     flex-wrap: nowrap
-    flex-grow: 1
-    align-items: stretch
-    justify-content: center
+    padding: 20px 0 20px 0
 
     @media screen and (max-width: $media-tablet-w)
       flex-direction: column
 
     .feature-info
-      height: auto
-      flex-grow: 1
+      flex: 1
       display: flex
       flex-direction: column
       justify-content: center
-      align-items: center
       padding: 20px 0 20px 0
 
       .feature-box-img-wrapper
@@ -227,18 +192,20 @@ a
         min-width: 260px
         height: auto
         flex-grow: 1
-
-        .feature-info-box-title
-          font-weight: bold
-          height: 20px
-          text-transform: uppercase
-          margin-bottom: 10px
+        display: flex
+        flex-direction: column
 
         .feature-info-box-label
+          font-weight: bold
+          text-transform: uppercase
+          padding-bottom: 10px
+
+        .feature-info-box-title
           height: auto
           font-size: 16px
           padding-left: 10px
           padding-right: 10px
+          flex: 1
 
 .container-feature
   background: $light-gray
@@ -333,6 +300,12 @@ a
         padding-top: 20px
         padding-bottom: 20px
         font-size: 16px
+
+      .knowledge-wrapper-link
+        color: $color-blue
+
+        @media screen and (max-width: $media-tablet-w)
+          padding-top: 12px
 
 
 @require './collaborator'

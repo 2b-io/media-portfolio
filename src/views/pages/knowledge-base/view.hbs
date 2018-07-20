@@ -1,0 +1,15 @@
+{{#> layouts/default title="Knowledge Base"}}
+  {{#*inline "content-body"}}
+    <div class="container header-wrapper">
+      <div class="container-center">
+        {{> partials/header.hbs}}
+      </div>
+    </div>
+
+    {{> pages/knowledge-base/base.hbs}}
+    {{> pages/knowledge-base/base-search.hbs}}
+    {{> pages/knowledge-base/base-feature.hbs}}
+
+    {{> partials/footer.hbs}}
+  {{/inline}}
+{{/ layouts/default}}

@@ -15,3 +15,16 @@ services:
       - .:/usr/src
     ports:
       - "3007:80"
+
+  ghost:
+    image: ghost:1-alpine
+    container_name: media.portfolio.ghost
+    ports:
+      - 80:2368
+    environment:
+      url: http://localhost
+      database__client: mysql
+      database__connection__host:
+      database__connection__user: root
+      database__connection__password: admin
+      database__connection__database: ghost

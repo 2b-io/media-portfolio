@@ -1,51 +1,22 @@
-meyer-reset()
-box-sizing-reset()
-normalize()
-
-$media-mobile-w = 480px
-$media-tablet-w = 768px
-$container-max-w = 1200px
-$color-blue = #0066b3
-$color-blue-white = #4ba6dd
-$color-gray = #999
-$light-gray = #EEEEEE
-$white = #FFFFFF
-
-html, body
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
-  overflow-x: hidden
-  height: 100%
-  min-width: 200px
-
-a
-  text-decoration: none
-  font-weight: bold
-
-.container
-  height: auto
-  background: transparent
-
-  .container-center
-    max-width: $container-max-w
-    margin: auto
-
+@require './variable'
+@require './common'
 @require './header'
 
 .header-wrapper
   background-color: $light-gray
 
 .body-wrapper
-  min-height: 144.77px
   min-width: 300px
   display: flex
   background: url('~img/bg/contact.jpg') no-repeat center center
   background-size: cover
   height: 560px
+
   @media screen and (max-width: $media-tablet-w)
-    height: 344.77px
+    height: 380px
 
   @media screen and (max-width: $media-mobile-w)
-    height: 144.77px
+    height: 180px
 
   .container-center
     flex-grow: 1
@@ -122,7 +93,7 @@ a
             flex-direction: column
             padding-right: 0
 
-          .contact-form-input
+          &-input
             border-radius: 10px
             border: none
             min-width: 300px
@@ -130,20 +101,30 @@ a
             padding-left: 20px
             padding-right: 20px
             margin-bottom: 10px
+            outline: none
 
-          .contact-form-area
+            &::placeholder
+              font-style: italic
+              color: #D4D4D4
+
+            &:focus::placeholder
+              color: $color-gray
+
+          &-area
             flex: 1
             resize: none
             padding-top: 15px
             min-height: 100px
+            outline: none
+            margin-bottom: 0
 
             @media screen and (max-width: $media-tablet-w)
               padding-top: 10.5px
 
-          .contact-form-submit
+          &-submit
             min-width: 90px
-            width: 90px
-            height: 25px
+            width: 120px
+            height: 40px
             margin-top: 10px
             font-size: 16px
             line-height: 25px
@@ -154,18 +135,19 @@ a
             border: none
             text-overflow: ellipsis
             border-radius: 2000px
+            outline: none
 
     .contact-wrapper-map
       flex-grow: 1
       flex-basis: 50%
 
-      .contact-wrapper-map-box
+      &-box
         align-self: stretch
 
         @media screen and (max-width: $media-tablet-w)
           flex-grow: 1
 
-        .contact-wrapper-map-title
+        ^[-1]-title
           .company-address
             line-height: 20px
             padding-bottom: 20px
@@ -181,7 +163,7 @@ a
         .addres-button-hidden
           margin-top: 20px
           width: 90px
-          height: 25px
+          height: 30px
           visibility: hidden
 
           @media screen and (max-width: $media-tablet-w)

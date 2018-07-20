@@ -1,10 +1,4 @@
-$media-mobile-w = 480px
-$media-tablet-w = 768px
-$container-max-w = 1200px
-$color-blue = #0066b3
-$color-blue-white = #4ba6dd
-$color-gray = #999
-$light-gray = #EEEEEE
+@require './variable'
 
 .container
   .trusted
@@ -35,7 +29,7 @@ $light-gray = #EEEEEE
       height: 100px
       display: flex
       flex-direction: row
-      justify-content: center
+      justify-content: space-between
       align-items: center
 
       .trusted-box-item
@@ -43,7 +37,7 @@ $light-gray = #EEEEEE
         display: flex
         flex-wrap: nowrap
         flex-direction: row
-        justify-content: center
+        justify-content: flex-start
         align-items: center
 
       .trusted-box-images
@@ -51,17 +45,28 @@ $light-gray = #EEEEEE
 
         .trusted-image-wrapper
           display: flex
-          justify-content: center
+          justify-content: space-around
           align-items: center
           flex-grow: 1
+          position: relative
+          left: 0
+          transition: left .2s linear
 
           .trusted-image
             flex-grow: 1
+            max-width: 220px
             padding: 0 10px 0 10px
 
+            @media screen and (max-width: $media-tablet-w)
+              width: 150px
+
+            @media screen and (max-width: $media-mobile-w)
+              width: 110px
+
       .trusted-button
-        width: 100px
+        max-width: 50px
         height: 100px
+        flex-grow: 1
 
         .trusted-button-item
           width: 50px

@@ -36,6 +36,8 @@
   },
   "homepage": "https://github.com/media-network/media-portfolio#readme",
   "scripts": {
-    "start": "run.env nodemon ./src --exec babel-node"
+    "start": "concurrently --raw \"npm run dev-server\" \"wait-on http://localhost:3008/alive && npm run server\"",
+    "server": "run.env nodemon ./src --exec babel-node --watch ./src",
+    "dev-server": "run.env nodemon ./internals/dev-server --exec babel-node --watch ./internals"
   }
 }

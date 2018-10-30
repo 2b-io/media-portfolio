@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
   <head>
+    <title>Media CDN</title>
+    <% include 'partials/meta.ect' %>
+    <% include 'partials/inline-css.ect' %>
     <% if @__asset('home.css') :%>
       <link rel="stylesheet" href="<%= @__asset('home.css') %>">
     <% end %>

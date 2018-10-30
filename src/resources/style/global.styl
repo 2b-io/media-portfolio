@@ -1,4 +1,5 @@
-@require '~typeface-roboto-mono/index.css'
+@import '~typeface-roboto-mono/index.css'
+@import '~typeface-space-mono/index.css'
 
 meyer-reset()
 box-sizing-reset()
@@ -8,4 +9,11 @@ html
   /* Prevent font scaling in landscape while allowing user zoom */
   -webkit-text-size-adjust: 100%
 
-  font-family: 'Roboto Mono'
+  font-family: 'Space Mono', 'Roboto Mono'
+  line-height: 24px
+
+  * {
+    font-family: inherit
+    font-size: inherit
+    line-height: inherit
+  }

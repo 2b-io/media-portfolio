@@ -9,7 +9,12 @@
     <% end %>
   </head>
   <body>
-    <h1>Hello world</h1>
+    <div id="scene">
+      <div>Background</div>
+      <div data-depth="0.3" class="blocks"></div>
+      <div data-depth="0.6" class="blocks"></div>
+      <div data-depth="0.9" class="blocks"></div>
+    </div>
     <script src="<%= @__asset('home.js') %>"></script>
   </body>
 </html>

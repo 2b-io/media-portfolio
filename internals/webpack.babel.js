@@ -7,8 +7,10 @@ const rootDir = path.join(__dirname, '..')
 const resourceDir = path.join(rootDir, './src/resources')
 const outDir = path.join(rootDir, 'dist/assets')
 
-const cdn = process.env.NODE_ENV === 'production' ?
-  process.env.CDN_SERVER : process.env.DEV_SERVER
+const devMode = process.env.NODE_ENV !== 'production'
+const cdn = devMode ?
+  process.env.DEV_SERVER :
+  process.env.CDN_SERVER
 
 export default {
   mode: 'production',
@@ -51,7 +53,9 @@ export default {
     }, {
       test: /\.styl$/,
       use: [ {
-        loader: MiniCssExtractPlugin.loader
+        loader: devMode ?
+          'style-loader' :
+          MiniCssExtractPlugin.loader
       }, {
         loader: 'css-loader',
         options: {

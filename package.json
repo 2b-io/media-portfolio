@@ -22,6 +22,7 @@
     "fs-extra": "7.0.0",
     "kouto-swiss": "1.1.0",
     "stylus": "0.54.5",
+    "typeface-roboto-mono": "0.0.54",
     "typeface-space-mono": "0.0.54"
   },
   "devDependencies": {
@@ -34,8 +35,10 @@
     "clean-webpack-plugin": "0.1.19",
     "concurrently": "4.0.1",
     "css-loader": "1.0.1",
+    "file-loader": "2.0.0",
     "mini-css-extract-plugin": "0.4.4",
     "nodemon": "1.18.5",
+    "optimize-css-assets-webpack-plugin": "5.0.1",
     "run.env": "1.1.0",
     "style-loader": "0.23.1",
     "stylus-loader": "3.0.2",

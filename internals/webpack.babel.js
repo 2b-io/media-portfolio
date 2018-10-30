@@ -1,6 +1,7 @@
 import path from 'path'
 import CleanWebpackPlugin from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import WebpackAssetsManifest from 'webpack-assets-manifest'
 
 const rootDir = path.join(__dirname, '..')
@@ -37,7 +38,8 @@ export default {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash:6].css'
-    })
+    }),
+    new OptimizeCssAssetsPlugin()
   ],
   module: {
     rules: [ {
@@ -50,6 +52,18 @@ export default {
           plugins: [ '@babel/plugin-transform-runtime' ]
         }
       }
+    }, {
+      test: /\.css/,
+      use: [ {
+        loader: devMode ?
+          'style-loader' :
+          MiniCssExtractPlugin.loader
+      }, {
+        loader: 'css-loader',
+        options: {
+          minimize: true
+        }
+      } ]
     }, {
       test: /\.styl$/,
       use: [ {
@@ -66,13 +80,39 @@ export default {
         options: {
           import: [
             '~kouto-swiss/index.styl'
-          ]
+          ],
+          preferPathResolver: 'webpack'
         }
       } ]
+    }, {
+      test: /\.(ico|jpg|png|gif|svg|bmp|webp|mp4)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: 'img/[name].[hash:6].[ext]',
+            publicPath: `${ cdn }/assets`,
+            emitFile: true
+          }
+        }
+      ]
+    },
+    {
+      test: /\.(ttf|eot|woff|woff2)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[hash:6].[ext]',
+            publicPath: `${ cdn }/assets`,
+            emitFile: true
+          }
+        }
+      ]
     } ]
   },
   resolve: {
-    extensions: [ '.js', '.styl' ],
+    extensions: [ '.css', '.js', '.styl' ],
     modules: [
       'node_modules',
       'src/resources'

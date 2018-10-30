@@ -1,5 +1,6 @@
 import path from 'path'
 import CleanWebpackPlugin from 'clean-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import WebpackAssetsManifest from 'webpack-assets-manifest'
 
 const rootDir = path.join(__dirname, '..')
@@ -13,7 +14,7 @@ export default {
   mode: 'production',
   entry: {
     home: [
-      path.join(resourceDir, 'js/home.js')
+      path.join(resourceDir, 'pages/home')
     ]
   },
   output: {
@@ -28,9 +29,12 @@ export default {
       allowExternal: true
     }),
     new WebpackAssetsManifest({
-      output: path.resolve(__dirname, '../dist/manifest.json'),
+      output: path.join(outDir, '../manifest.json'),
       publicPath: `${ cdn }/assets/`,
       writeToDisk: true
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[hash:6].css'
     })
   ],
   module: {
@@ -44,6 +48,30 @@ export default {
           plugins: [ '@babel/plugin-transform-runtime' ]
         }
       }
+    }, {
+      test: /\.styl$/,
+      use: [ {
+        loader: MiniCssExtractPlugin.loader
+      }, {
+        loader: 'css-loader',
+        options: {
+          minimize: true
+        }
+      }, {
+        loader: 'stylus-loader',
+        options: {
+          import: [
+            '~kouto-swiss/index.styl'
+          ]
+        }
+      } ]
     } ]
+  },
+  resolve: {
+    extensions: [ '.js', '.styl' ],
+    modules: [
+      'node_modules',
+      'src/resources'
+    ]
   }
 }

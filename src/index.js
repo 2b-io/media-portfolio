@@ -1,5 +1,6 @@
-import express from 'express'
+import config from './server/infrastructure/config'
+import server from './server'
 
-const app = express()
+const { port } = config
 
-app.listen(3007, () => console.log('Server started at :3007'))
+server.listen(port, () => console.log(`Started at :${ port }`))

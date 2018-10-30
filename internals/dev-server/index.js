@@ -1,33 +1,40 @@
+import cors from 'cors'
 import express from 'express'
 import path from 'path'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 
-
 import webpackConfig from '../webpack.babel'
 
+const devServer = process.env.DEV_SERVER
 const app = express()
 const port = 3008
 let started = false
 
 const compiler = webpack({
   ...webpackConfig,
+  // override things for development mode
+  mode: 'development',
   entry: Object.entries(webpackConfig.entry).reduce(
     (entry = {}, [ key, value ]) => ({
       ...entry,
-      [ key ]: [
+      [key]: [
         ...value,
-        'webpack-hot-middleware/client?reload=true'
+        `webpack-hot-middleware/client?reload=true&path=${ devServer }/__hmr`
       ]
     }),
     {}
   ),
-  mode: 'development'
+  plugins: [
+    ...webpackConfig.plugins,
+    new webpack.HotModuleReplacementPlugin()
+  ]
 })
 
 app.get('/alive', (req, res, next) => res.sendStatus(200))
 app.use(
+  cors(),
   webpackDevMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath,
     watchOption: {
@@ -35,7 +42,9 @@ app.use(
     },
     // logLevel: 'warn'
   }),
-  webpackHotMiddleware(compiler)
+  webpackHotMiddleware(compiler, {
+    path: '/__hmr'
+  })
 )
 
 compiler.hooks.emit.tap('done', () => {

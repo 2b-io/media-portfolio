@@ -15,9 +15,11 @@
   },
   "dependencies": {
     "body-parser": "1.18.3",
+    "cors": "2.8.4",
     "ect": "0.5.9",
     "express": "4.16.4",
     "express-slash": "2.0.1",
+    "fs-extra": "7.0.0",
     "kouto-swiss": "1.1.0",
     "stylus": "0.54.5",
     "typeface-space-mono": "0.0.54"
@@ -26,8 +28,10 @@
     "@babel/cli": "7.1.2",
     "@babel/core": "7.1.2",
     "@babel/node": "7.0.0",
+    "@babel/plugin-transform-runtime": "7.1.0",
     "@babel/preset-env": "7.1.0",
     "babel-loader": "8.0.4",
+    "clean-webpack-plugin": "0.1.19",
     "concurrently": "4.0.1",
     "nodemon": "1.18.5",
     "run.env": "1.1.0",
@@ -41,7 +45,7 @@
   "homepage": "https://github.com/media-network/media-portfolio#readme",
   "scripts": {
     "start": "concurrently --raw \"npm run dev-server\" \"wait-on http://localhost:3008/alive && npm run server\"",
-    "server": "run.env nodemon ./src --exec babel-node --watch ./src",
+    "server": "run.env nodemon ./src --exec babel-node --watch ./src --watch ./dist/manifest.json",
     "dev-server": "run.env nodemon ./internals/dev-server --exec babel-node --watch ./internals",
     "webpack": "webpack --config internals/webpack.babel.js"
   }

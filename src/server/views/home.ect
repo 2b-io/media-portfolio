@@ -9,11 +9,23 @@
     <% end %>
   </head>
   <body>
-    <div id="scene">
-      <div>Background</div>
-      <div data-depth="0.3" class="blocks"></div>
-      <div data-depth="0.6" class="blocks"></div>
-      <div data-depth="0.9" class="blocks"></div>
+    <div class="announcement">
+      <div class="container">
+        <span>We give away $100 credit to every new account!</span>
+      </div>
+    </div>
+    <div class="header">
+    </div>
+    <div id="target-scene" class="target-scene">
+      <div data-depth="0" class="layer"></div>
+      <div data-depth="0.1" class="layer"></div>
+      <div data-depth="0.2" class="layer"></div>
+      <div data-depth="0.4" class="layer"></div>
+    </div>
+    <div class="section-promotion">
+      <div class="container">
+        TRY IT NOW
+      </div>
     </div>
     <script src="<%= @__asset('home.js') %>"></script>
   </body>

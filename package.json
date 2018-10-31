@@ -23,6 +23,7 @@
     "fs-extra": "7.0.0",
     "kouto-swiss": "1.1.0",
     "parallax-js": "3.1.0",
+    "random-int": "1.0.0",
     "stylus": "0.54.5",
     "typeface-roboto-mono": "0.0.54",
     "typeface-space-mono": "0.0.54"
@@ -31,8 +32,10 @@
     "@babel/cli": "7.1.2",
     "@babel/core": "7.1.2",
     "@babel/node": "7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
     "@babel/plugin-transform-runtime": "7.1.0",
     "@babel/preset-env": "7.1.0",
+    "@babel/runtime": "7.1.2",
     "babel-loader": "8.0.4",
     "clean-webpack-plugin": "0.1.19",
     "concurrently": "4.0.1",

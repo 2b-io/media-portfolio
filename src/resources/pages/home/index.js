@@ -23,9 +23,10 @@ const createBlock = (scene, layer, sizeRange, initialBlock) => {
 
   const x = randomInt(width)
   const duration = randomInt(4e3, 10e3)
+  const latency = randomInt(2e3)
 
   block.style.left = `${ x }px`
-  // block.style.top = '-32px'
+  block.style.top = '-64px'
 
   const verticalMotion = createMotion({ y: -64 })
     .to({ y: height + 24 }, duration)
@@ -33,6 +34,7 @@ const createBlock = (scene, layer, sizeRange, initialBlock) => {
       block.style.top = `${ y }px`
     })
     .easing(TWEEN.Easing.Quadratic.In)
+    .delay(latency)
 
   // const horizontalMotion = createMotion({ x })
   //   .to({ x: x + randomInt(-100, 100) }, duration)
@@ -74,6 +76,6 @@ window.addEventListener('load', () => {
   })
   createScene(document.getElementById('target-scene'), {
     sizeRange: [ 0, 2 ],
-    blocksPerLayer: 16
+    blocksPerLayer: 24
   })
 })

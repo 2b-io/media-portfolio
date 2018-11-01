@@ -21,9 +21,7 @@ const createBlock = (scene, layer, sizeRange, initialBlock) => {
 
   // initial style
   const block = initialBlock || document.createElement('div')
-  block.classList.add('block')
-  block.style.left = `${ x }px`
-  block.style.top = `-${ size + 2 }px`
+  block.style.transform = `translate3d(${ x }px, -${ size + 2}px, 0)`
   block.style.width = `${ size }px`
   block.style.height = `${ size }px`
 
@@ -31,7 +29,7 @@ const createBlock = (scene, layer, sizeRange, initialBlock) => {
   const fallingMotion = createMotion({ y: -(size + 2) })
     .to({ y: height + 24 }, duration)
     .onUpdate(({ y }) => {
-      block.style.top = `${ y }px`
+      block.style.transform = `translate3d(${ x }px, ${ y }px, 0)`
     })
     .easing(TWEEN.Easing.Quintic.In)
     .delay(latency)

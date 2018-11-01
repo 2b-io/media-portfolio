@@ -2,6 +2,7 @@
 
 .section-scene
   position: relative
+  background: $color_white
 
   .top-line
     position: absolute
@@ -9,7 +10,7 @@
     left: 0
     height: 1px
     width: 100%
-    background: $color_black
+    background: $color_primary
     z-index: 0
 
   .bottom-line
@@ -18,12 +19,12 @@
     left: 0
     height: 1px
     width: 100%
-    background: $color_black
+    background: $color_primary
     z-index: 0
 
   .scene
     position: relative
-    height: 300px
+    height: 150px
     overflow: hidden
     z-index: 1
 
@@ -35,7 +36,7 @@
         position: absolute
         background: $color_white
         transition: opacity .2s
-        border: 1px solid $color_black
+        border: 1px solid $color_primary
 
 
   .intro
@@ -52,7 +53,20 @@
 .section-promotion
   background: $color_white
   color: $color_black
-  height: 300px
+  padding-top: 48px
+  padding-bottom: 48px
+  text-align: center
+
+  h1
+    font-size: 24px
+    font-weight: bold
+    line-height: 40px
+    color: $color_primary
+
+  h2
+    font-size 20px
+    line-height: 24px
+    color: $color_secondary
 
 .container
   margin: 0 auto
@@ -73,8 +87,8 @@
 
 .header
   background: $color_white
-  color: $color_black
-  height: 40px
+  color: $color_primary
+  padding: 16px 0
   text-align: right
 
   .top-nav
@@ -83,6 +97,17 @@
     li
       display: inline-block
       line-height: 40px
+      font-weight: bold
 
       &:not(:last-child)
         padding-right: 8px
+
+      a
+        text-decoration: none
+        border-bottom: 1px solid $color_primary
+
+.break-after
+  &:after
+    display: block
+    content: ''
+    height: 16px

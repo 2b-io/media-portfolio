@@ -6,14 +6,13 @@ import Parallax from 'parallax-js'
 import randomInt from 'random-int'
 import TWEEN, { createMotion } from 'js/services/motion'
 
+const SIZES = [ 4, 8, 16, 32, 64, 128 ]
 
-const SIZES = [ 4, 8, 16 ]
-
-const createBlock = (scene, layer, initialBlock) => {
+const createBlock = (scene, layer, sizeRange, initialBlock) => {
   const rect = scene.getBoundingClientRect()
   const { width, height } = rect
 
-  const size = SIZES[ randomInt(2) ]
+  const size = SIZES[ randomInt(...sizeRange) ]
 
   const block = initialBlock || document.createElement('div')
 
@@ -22,66 +21,46 @@ const createBlock = (scene, layer, initialBlock) => {
   block.style.width = `${ size }px`
   block.style.height = `${ size }px`
 
-  const motion = createMotion({
-    x: randomInt(width),
-    y: height + 24
-  }).to({
-    x: randomInt(width),
-    y: -24
-  }, randomInt(4e3, 10e3))
+  const x = randomInt(width)
+  const duration = randomInt(4e3, 10e3)
 
-  motion.onUpdate(({ x, y }, ...rest) => {
-    block.style.left = `${ x }px`
-    block.style.top = `${ y }px`
+  block.style.left = `${ x }px`
+  // block.style.top = '-32px'
+
+  const verticalMotion = createMotion({ y: -64 })
+    .to({ y: height + 24 }, duration)
+    .onUpdate(({ y }) => {
+      block.style.top = `${ y }px`
+    })
+    .easing(TWEEN.Easing.Quadratic.In)
+
+  // const horizontalMotion = createMotion({ x })
+  //   .to({ x: x + randomInt(-100, 100) }, duration)
+  //   .onUpdate(({ x }) => {
+  //     block.style.left = `${ x }px`
+  //   })
+  //   .easing(TWEEN.Easing.Back.InOut)
+
+  // repeat montion
+  verticalMotion.onComplete(() => {
+    createBlock(scene, layer, sizeRange, block)
   })
 
-  motion.onComplete(() => {
-    createBlock(scene, layer, block)
-  })
-
-  motion.easing(TWEEN.Easing.Quadratic.In)
-  motion.start()
+  // start both motions
+  verticalMotion.start()
+  // horizontalMotion.start()
 
   if (!initialBlock) {
     layer.appendChild(block)
   }
 }
 
-const createTargetScene = () => {
-  const scene = document.getElementById('target-scene')
+const createScene = (scene, { sizeRange, blocksPerLayer }) => {
   const layers = scene.querySelectorAll('.layer')
 
   Array.from(layers).forEach((layer) => {
-    for (let i = 0; i < 8; i++) {
-      createBlock(scene, layer)
-    }
-  })
-
-  const parallaxInstance = new Parallax(scene)
-}
-
-const createOriginScene = () => {
-  const scene = document.getElementById('origin-scene')
-  const layers = scene.querySelectorAll('.layer')
-  const numberOfBlocks = Math.ceil(window.innerWidth / 96)
-
-  console.log(numberOfBlocks)
-
-  Array.from(layers).forEach((layer, index) => {
-    layer.innerHTML = ''
-
-    for (let i = 0; i < numberOfBlocks; i++) {
-      const block = document.createElement('div')
-      block.classList.add('block')
-      block.style.top = `${ randomInt(-48, -16) }px`
-
-      const left = index % (layers.length)
-
-      block.style.left = `calc(${ ((100 / (numberOfBlocks - 1)) * i) }%`
-
-      block.style.transform = `translateX(${ randomInt(-48, -16) }px)`
-
-      layer.appendChild(block)
+    for (let i = 0; i < blocksPerLayer; i++) {
+      createBlock(scene, layer, sizeRange)
     }
   })
 
@@ -89,5 +68,12 @@ const createOriginScene = () => {
 }
 
 window.addEventListener('load', () => {
-  createTargetScene()
+  createScene(document.getElementById('origin-scene'), {
+    sizeRange: [ 2, 4 ],
+    blocksPerLayer: 4
+  })
+  createScene(document.getElementById('target-scene'), {
+    sizeRange: [ 0, 2 ],
+    blocksPerLayer: 16
+  })
 })

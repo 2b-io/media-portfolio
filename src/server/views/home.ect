@@ -9,23 +9,51 @@
     <% end %>
   </head>
   <body>
-    <div class="announcement">
+    <!-- <div class="announcement">
+      <span>We give away $100 credit to every new account!</span>
+    </div> -->
+    <div class="header">
       <div class="container">
-        <span>We give away $100 credit to every new account!</span>
+        <ul class="top-nav">
+          <li>
+            <a href="#">Why Media CDN?</a>
+          </li>
+          <li>
+            <a href="#">Pricing</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="header">
-    </div>
-    <div id="target-scene" class="target-scene">
-      <div data-depth="0" class="layer"></div>
-      <div data-depth="0.1" class="layer"></div>
-      <div data-depth="0.2" class="layer"></div>
-      <div data-depth="0.4" class="layer"></div>
+    <div class="section-landing section-scene">
+      <div class="top-line"></div>
+      <div class="bottom-line"></div>
+      <div id="origin-scene" class="scene">
+        <div data-depth="0" class="layer"></div>
+        <div data-depth="0.1" class="layer"></div>
+        <div data-depth="0.2" class="layer"></div>
+        <div data-depth="0.4" class="layer"></div>
+      </div>
+      <!-- <div class="intro">
+        <h1>A Simple, Fast and Reliable CDN</h1>
+      </div> -->
     </div>
     <div class="section-promotion">
       <div class="container">
         TRY IT NOW
       </div>
+    </div>
+    <div class="section-landing section-scene">
+      <div class="top-line"></div>
+      <div class="bottom-line"></div>
+      <div id="target-scene" class="scene">
+        <div data-depth="0" class="layer"></div>
+        <div data-depth="0.1" class="layer"></div>
+        <div data-depth="0.2" class="layer"></div>
+        <div data-depth="0.4" class="layer"></div>
+      </div>
+      <!-- <div class="intro">
+        <h1>A Simple, Fast and Reliable CDN</h1>
+      </div> -->
     </div>
     <script src="<%= @__asset('home.js') %>"></script>
   </body>

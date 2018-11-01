@@ -4,6 +4,9 @@
 meyer-reset()
 box-sizing-reset()
 
+/* import common variables */
+@import './color-palette'
+
 html
   -webkit-tap-highlight-color: rgba(0,0,0,0)
   /* Prevent font scaling in landscape while allowing user zoom */
@@ -12,12 +15,16 @@ html
   font-family: 'Space Mono', 'Roboto Mono', 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace
   font-size: 14px
   line-height: 24px
+  color: $color_black
 
-  * {
+  *
     font-family: inherit
     font-size: inherit
     line-height: inherit
-  }
+    color: inherit
+
+  a
+    text-decoration: none
 
 html, body
   height: 100%

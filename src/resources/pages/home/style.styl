@@ -1,40 +1,88 @@
 @require '~style/global'
 
-.target-scene
+.section-scene
   position: relative
-  height: 600px
-  background: #ffffff
-  overflow: hidden
 
-  .layer
+  .top-line
+    position: absolute
+    top: 0
+    left: 0
+    height: 1px
+    width: 100%
+    background: $color_black
+    z-index: 0
+
+  .bottom-line
+    position: absolute
+    bottom: 0
+    left: 0
+    height: 1px
+    width: 100%
+    background: $color_black
+    z-index: 0
+
+  .scene
     position: relative
-    size: 100%
+    height: 300px
+    overflow: hidden
+    z-index: 1
 
-    .block
-      position: absolute
-      background: #111111
-      transition: opacity .2s
+    .layer
+      position: relative
+      size: 100%
+
+      .block
+        position: absolute
+        background: $color_white
+        transition: opacity .2s
+        border: 1px solid $color_black
+
+
+  .intro
+    position: absolute
+    top: 40px
+    left: 50%
+    transform: translateX(-50%)
+    background: rgba(17, 17, 17, 0.7)
+    min-width: 288px
+    height: 128px
+    text-align: center
+    color: $color_white
 
 .section-promotion
-  background: #111111
-  color: #ffffff
-  padding: 16px
+  background: $color_white
+  color: $color_black
+  height: 300px
 
 .container
   margin: 0 auto
   max-width: 960px
+  padding-left: 16px
+  padding-right: 16px
 
 .announcement
   position: relative
   z-index: 1
   line-height: 24px
-  background: #111111
-  color: #ffffff
+  background: $color_black
+  color: $color_white
   font-size: 12px
-  padding-left: 16px
-  padding-right: 16px
+  padding-left: 8px
+  padding-right: 8px
+  text-align: center
 
 .header
-  background: #111111
-  color: #ffffff
+  background: $color_white
+  color: $color_black
   height: 40px
+  text-align: right
+
+  .top-nav
+    display: inline-block
+
+    li
+      display: inline-block
+      line-height: 40px
+
+      &:not(:last-child)
+        padding-right: 8px

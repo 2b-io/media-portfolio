@@ -32,7 +32,6 @@ const createBlock = (viewport, layer, sizeRange, block) => {
   const latency = randomInt(4e3)
 
   // set style
-  block.style.display = 'block'
   block.style.left = `${ x }px`
   block.style.width = `${ size }px`
   block.style.height = `${ size }px`
@@ -41,13 +40,14 @@ const createBlock = (viewport, layer, sizeRange, block) => {
   // set animation
   block.style.animation = `falling-${ size } ${ duration }ms ${ timingFunc } ${ latency }ms`
 
+  // all set - go
+  block.style.display = 'block'
+
   listenOnce(block, 'animationend', () => {
-    layer.removeChild(block)
+    block.style.display = 'none'
 
-    createBlock(viewport, layer, sizeRange, block)
+    setTimeout(() => createBlock(viewport, layer, sizeRange, block))
   })
-
-  layer.appendChild(block)
 }
 
 const createScene = (scene, { sizeRange, blocksPerLayer }) => {
@@ -69,7 +69,11 @@ const createScene = (scene, { sizeRange, blocksPerLayer }) => {
 
   Array.from(layers).forEach((layer) => {
     for (let i = 0; i < blocksPerLayer; i++) {
-      createBlock(viewport, layer, sizeRange, document.createElement('div'))
+      const block = document.createElement('div')
+
+      createBlock(viewport, layer, sizeRange, block)
+
+      layer.appendChild(block)
     }
   })
 

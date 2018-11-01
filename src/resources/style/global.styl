@@ -1,3 +1,4 @@
+@import '~typeface-open-sans/index.css'
 @import '~typeface-roboto-mono/index.css'
 @import '~typeface-space-mono/index.css'
 
@@ -13,6 +14,8 @@ html
   -webkit-text-size-adjust: 100%
 
   font-family: 'Space Mono', 'Roboto Mono', 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace
+  font-family: 'Open Sans', sans-serif
+
   font-size: 14px
   line-height: 24px
   color: $color_black
@@ -22,6 +25,8 @@ html
     font-size: inherit
     line-height: inherit
     color: inherit
+    font-smoothing: antialiased
+    transform: perspective(1px) translate3d( 0, 0, 0)
 
 html, body
   height: 100%

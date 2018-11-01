@@ -9,49 +9,39 @@ import TWEEN, { createMotion } from 'js/services/motion'
 const SIZES = [ 4, 8, 16, 32, 64, 128 ]
 
 const createBlock = (scene, layer, sizeRange, initialBlock) => {
+  // get viewport size real-time
   const rect = scene.getBoundingClientRect()
   const { width, height } = rect
 
+  // randomize things
   const size = SIZES[ randomInt(...sizeRange) ]
+  const x = randomInt(width)
+  const duration = randomInt(4e3, 8e3)
+  const latency = randomInt(4e3)
 
+  // initial style
   const block = initialBlock || document.createElement('div')
-
   block.classList.add('block')
-  // block.style.left = `${ randomInt(width) }px`
+  block.style.left = `${ x }px`
+  block.style.top = `-${ size + 2 }px`
   block.style.width = `${ size }px`
   block.style.height = `${ size }px`
 
-  const x = randomInt(width)
-  const duration = randomInt(4e3, 10e3)
-  const latency = randomInt(2e3)
-
-  block.style.left = `${ x }px`
-  block.style.top = '-64px'
-
-  const verticalMotion = createMotion({ y: -64 })
+  // define falling motion
+  const fallingMotion = createMotion({ y: -(size + 2) })
     .to({ y: height + 24 }, duration)
     .onUpdate(({ y }) => {
       block.style.top = `${ y }px`
     })
-    .easing(TWEEN.Easing.Quadratic.In)
+    .easing(TWEEN.Easing.Quintic.In)
     .delay(latency)
+    .onComplete(() => {
+      // repeat motion
+      createBlock(scene, layer, sizeRange, block)
+    })
+    .start()
 
-  // const horizontalMotion = createMotion({ x })
-  //   .to({ x: x + randomInt(-100, 100) }, duration)
-  //   .onUpdate(({ x }) => {
-  //     block.style.left = `${ x }px`
-  //   })
-  //   .easing(TWEEN.Easing.Back.InOut)
-
-  // repeat montion
-  verticalMotion.onComplete(() => {
-    createBlock(scene, layer, sizeRange, block)
-  })
-
-  // start both motions
-  verticalMotion.start()
-  // horizontalMotion.start()
-
+  // append to layer in first run
   if (!initialBlock) {
     layer.appendChild(block)
   }
@@ -71,11 +61,11 @@ const createScene = (scene, { sizeRange, blocksPerLayer }) => {
 
 window.addEventListener('load', () => {
   createScene(document.getElementById('origin-scene'), {
-    sizeRange: [ 2, 4 ],
-    blocksPerLayer: 4
+    sizeRange: [ 2, 5 ],
+    blocksPerLayer: 2
   })
   createScene(document.getElementById('target-scene'), {
-    sizeRange: [ 0, 2 ],
+    sizeRange: [ 1, 3 ],
     blocksPerLayer: 24
   })
 })

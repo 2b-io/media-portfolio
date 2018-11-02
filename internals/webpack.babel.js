@@ -1,3 +1,4 @@
+import glob from 'glob'
 import path from 'path'
 import CleanWebpackPlugin from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -16,9 +17,9 @@ const cdn = devMode ?
 export default {
   mode: 'production',
   entry: {
-    home: [
-      path.join(resourceDir, 'pages/home')
-    ]
+    home: glob.sync(
+      path.join(resourceDir, 'pages/home/index.*')
+    )
   },
   output: {
     path: outDir,

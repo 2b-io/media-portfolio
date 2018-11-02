@@ -53,27 +53,62 @@
           font-family: 'Roboto Mono', monospace
 
           .number
-            font-size: 36px
-            line-height: 40px
+            font-size: $font_size_heading
+            line-height: $line_height_heading
             color: $color_primary
 
           .text
-            font-size: 12px
-            line-height: 16px
+            font-size: $font_size_small
+            line-height: $line_height_small
             color: $color_secondary
 
 .section
-  padding-top: 32px
+  padding-top: 48px
   padding-bottom: 32px
   text-align: center
 
   &.intro
-    font-size: 22px
-    line-height: 40px
+    font-size: $font_size_large
+    line-height: $line_height_large
+
+    .conclusion
+      color: $color_primary
+      font-size: $font_size_heading
+      line-height: $line_height_heading
 
   &.pricing
     background: $color_primary
     color: $color_white
+
+    .purpose
+      font-size: $font_size_heading
+      line-height: $line_height_heading
+      text-transform: uppercase
+
+    .price
+      display: grid
+      width: min-content
+      margin: 0 auto 96px auto
+      grid-template-columns: 48px min-content 48px
+      align-items: end
+
+      .value
+        display: inline-block
+        font-size: 80px
+        line-height: 80px
+        height: 80px
+        position: relative
+        font-family: 'Roboto Mono'
+
+      .prefix, .postfix
+        font-size: $font_size_small
+        line-height: $line_height_small
+
+      .prefix
+        text-align: right
+
+      .postfix
+        text-align: left
 
     .feature-list
       display: grid
@@ -106,18 +141,19 @@
 
         .feature-name
           text-transform: uppercase
-          font-size: 16px
           font-family: 'Roboto Mono', monospace
-          line-height: 40px
+          font-size: $font_size_large
+          line-height: $line_height_large
 
         .feature-description
-          font-size: 12px
+          font-size: $font_size_small
+          line-height: $line_height_small
 
   &.footer
     background: $color_black
     color: $color_white
-    font-size: 12px
-    line-height: 24px
+    font-size: $font_size_small
+    line-height: $line_height_small
     padding-top: 8px
     padding-bottom: 8px
 
@@ -128,16 +164,18 @@
 
     .offer
       display: inline-block
-      padding: 16px 32px
+      padding: 8px 32px
       background: $color_primary
       color: $color_white
       text-decoration: none
       text-transform: uppercase
-      font-size: 16px
+      font-size: $font_size_large
+      line-height: $line_height_large
 
     .note
       display: block
-      font-size: 12px
+      font-size: $font_size_small
+      line-height: $line_height_small
       color: $color_secondary
 
 .container
@@ -145,17 +183,6 @@
   max-width: 960px
   padding-left: 16px
   padding-right: 16px
-
-.announcement
-  position: relative
-  z-index: 1
-  line-height: 24px
-  background: $color_black
-  color: $color_white
-  font-size: 12px
-  padding-left: 8px
-  padding-right: 8px
-  text-align: center
 
 .header
   background: $color_white
@@ -167,17 +194,18 @@
     display: grid
     grid-template-columns: min-content 1fr
     grid-gap: 8px
+    align-items: center
 
     .logo
-      size: 40px
+      size: 24px
       background: $color_primary
 
       &:after
         display: block
         content: ''
         background: $color_white
-        size: 24px
-        margin: 8px
+        size: 16px
+        margin: 4px
 
     .top-nav
       display: inline-block
@@ -186,7 +214,8 @@
         display: inline-block
         line-height: 40px
         text-transform: uppercase
-        font-size: 12px
+        font-size: $font_size_small
+        line-height: $line_height_small
 
         &:not(:last-child)
           padding-right: 16px

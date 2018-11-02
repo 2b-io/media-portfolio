@@ -19,6 +19,9 @@ export default {
   entry: {
     home: glob.sync(
       path.join(resourceDir, 'pages/home/index.*')
+    ),
+    img: glob.sync(
+      path.join(resourceDir, 'img/**/*')
     )
   },
   output: {

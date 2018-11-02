@@ -34,7 +34,7 @@ const createBlock = (viewport, layer, sizeRange, block) => {
   block.style.transform = `translateY(-${ size + 8 }px)`
 
   // set animation
-  block.style.animation = `falling-${ size } ${ duration }ms ${ timingFunc } ${ latency }ms`
+  block.style.animation = `falling-${ height }-${ size } ${ duration }ms ${ timingFunc } ${ latency }ms`
 
   // all set - go
   block.style.display = 'block'
@@ -44,6 +44,31 @@ const createBlock = (viewport, layer, sizeRange, block) => {
 
     setTimeout(() => createBlock(viewport, layer, sizeRange, block))
   })
+}
+
+const createKeyFrames = (height, sizes) => {
+  const style = document.getElementById(`falling-${ height }`)
+
+  if (style) {
+    return
+  }
+
+  const appendingStyle = document.createElement('style')
+
+  appendingStyle.id = `falling-${ height }`
+  appendingStyle.innerHTML = sizes.map((size) => `
+    @keyframes falling-${ height }-${ size } {
+      from {
+        transform: translateY(-${ size + 8 }px);
+      }
+
+      to {
+        transform: translateY(${ height + 8 }px);
+      }
+    }
+  `).join('\n')
+
+  document.body.appendChild(appendingStyle)
 }
 
 const createScene = (scene, { sizeRange, blocksPerLayer }) => {
@@ -58,6 +83,9 @@ const createScene = (scene, { sizeRange, blocksPerLayer }) => {
   const rect = scene.getBoundingClientRect()
 
   viewport.width = rect.width
+  viewport.height = rect.height
+
+  createKeyFrames(viewport.height, SIZES)
 
   const layers = scene.querySelectorAll('.layer')
 

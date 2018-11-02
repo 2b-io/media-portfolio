@@ -1,65 +1,3 @@
-$scene_height = 128px
-
-@keyframes falling-4 {
-  from {
-    transform: translateY(-12px)
-  }
-
-  to {
-    transform: translateY($scene_height + 8px)
-  }
-}
-
-@keyframes falling-8 {
-  from {
-    transform: translateY(-16px)
-  }
-
-  to {
-    transform: translateY($scene_height + 8px)
-  }
-}
-
-@keyframes falling-16 {
-  from {
-    transform: translateY(-24px)
-  }
-
-  to {
-    transform: translateY($scene_height + 8px)
-  }
-}
-
-@keyframes falling-32 {
-  from {
-    transform: translateY(-40px)
-  }
-
-  to {
-    transform: translateY($scene_height + 8px)
-  }
-}
-
-@keyframes falling-64 {
-  from {
-    transform: translateY(-72px)
-  }
-
-  to {
-    transform: translateY($scene_height + 8px)
-  }
-}
-
-@keyframes falling-128 {
-  from {
-    transform: translateY(-132px)
-  }
-
-  to {
-    transform: translateY($scene_height + 8px)
-  }
-}
-
 .section-scene
   position: relative
   background: $color_white
@@ -84,9 +22,14 @@ $scene_height = 128px
 
   .scene
     position: relative
-    height: $scene_height
     overflow: hidden
     z-index: 1
+
+    &.origin
+      height: 128px
+
+    &.target
+      height: 256px
 
     .layer
       position: relative

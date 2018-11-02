@@ -1,6 +1,7 @@
 .section-scene
   position: relative
   background: $color_white
+  height: 144px
 
   .top-line
     position: absolute
@@ -21,15 +22,13 @@
     z-index: 0
 
   .scene
-    position: relative
+    position: absolute
     overflow: hidden
     z-index: 1
-
-    &.origin
-      height: 128px
-
-    &.target
-      height: 256px
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
 
     .layer
       position: relative

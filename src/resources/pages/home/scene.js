@@ -76,7 +76,11 @@ const createScene = (scene, { sizeRange, blocksPerLayer }) => {
 
   window.addEventListener('resize', throttle(1000, () => {
     // get new viewport size
-    viewport.width = scene.getBoundingClientRect().width
+    const rect = scene.getBoundingClientRect()
+    viewport.width = Math.ceil(rect.width)
+    viewport.height = Math.ceil(rect.height)
+
+    createKeyFrames(viewport.height, SIZES)
   }))
 
   // initial viewport size

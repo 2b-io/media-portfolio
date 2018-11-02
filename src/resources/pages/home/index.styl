@@ -1,44 +1,101 @@
 @require '~style/global'
 @require './scene'
 
-.section-promotion
-  background: $color_white
-  color: $color_black
-  padding-top: 48px
-  padding-bottom: 48px
+.show-off
+   height: auto
+   display: flex
+   justify-content: center
+
+  .circle-container
+    z-index: 0
+    margin: 64px 0
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-column-gap: 32px
+    grid-row-gap: 64px
+    justify-content: center
+    align-items: center
+
+    @media (min-width: 768px)
+      grid-template-columns: repeat(4, 1fr)
+
+    .circle
+      min-width: 0
+      min-height: 0
+      size: 128px
+      border-radius: 50%
+      background: $color_primary
+      display: flex
+      justify-content: center
+      align-items: center
+
+    &.content
+      z-index: 2
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate3d(-50%, -50%, 0)
+      margin: 0
+
+      .circle
+        background: transparent
+
+        .step
+          size: 124px
+          background: $color_white
+          border-radius: 50%
+          text-transform: uppercase
+          text-align: center
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          font-family: 'Roboto Mono', monospace
+
+          .number
+            font-size: 36px
+            line-height: 40px
+            color: $color_primary
+
+          .text
+            font-size: 12px
+            line-height: 16px
+            color: $color_secondary
+
+.section
+  padding-top: 32px
+  padding-bottom: 32px
   text-align: center
 
-  h1
-    font-size: 42px
-    line-height: 64px
-    color: $color_primary
-    font-family: 'Open Sans', sans-serif
+  &.intro
+    font-size: 22px
+    line-height: 40px
 
-  h2
-    font-size 22px
-    line-height: 32px
-    color: $color_secondary
-    font-family: 'Open Sans', sans-serif
 
-  .offer
-    display: inline-block
-    padding: 16px 32px
-    background: $color_primary
+  &.footer
+    background: $color_black
     color: $color_white
-    text-decoration: none
-    text-transform: uppercase
-    font-size: 16px
-
-    &:hover
-      background: monochrome($color_primary)[0]
-
-    &:active
-      background: monochrome($color_primary)[1]
-
-  .note
-    display: block
     font-size: 12px
-    color: $color_secondary
+    line-height: 24px
+
+  &.promotion
+    background: $color_white
+    color: $color_black
+    text-align: center
+
+    .offer
+      display: inline-block
+      padding: 16px 32px
+      background: $color_primary
+      color: $color_white
+      text-decoration: none
+      text-transform: uppercase
+      font-size: 16px
+
+    .note
+      display: block
+      font-size: 12px
+      color: $color_secondary
 
 .container
   margin: 0 auto
@@ -98,10 +155,10 @@
   &:after
     display: block
     content: ''
-    height: 32px
+    height: 16px
 
 .double-break-after
   &:after
     display: block
     content: ''
-    height: 64px
+    height: 32px

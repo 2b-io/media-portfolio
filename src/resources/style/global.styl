@@ -20,15 +20,18 @@ html
   line-height: 24px
   color: $color_black
 
-  *
-    font-family: inherit
-    font-size: inherit
-    line-height: inherit
-    color: inherit
-    font-smoothing: antialiased
-    transform: perspective(1px) translate3d( 0, 0, 0)
-
 html, body
   height: 100%
   overflow-x: hidden;
   overflow-y: auto;
+
+*:not(html)
+  font-family: inherit
+  font-size: inherit
+  line-height: inherit
+  color: inherit
+  font-smoothing: antialiased
+  transform: perspective(1px) translate3d( 0, 0, 0)
+
+/* common style */
+@import './normalize'

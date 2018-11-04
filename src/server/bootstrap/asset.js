@@ -4,7 +4,7 @@ import path from 'path'
 import config from '../infrastructure/config'
 
 export default (app) => {
-  const webpackOutputFile = path.join(config._root, '../../dist/manifest.json')
+  const webpackOutputFile = path.join(config.assetManifest)
 
   const manifest = fs.readJsonSync(webpackOutputFile)
 

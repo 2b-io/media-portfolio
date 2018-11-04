@@ -26,12 +26,8 @@
     "random-int": "1.0.0",
     "stylus": "0.54.5",
     "throttle-debounce": "2.0.1",
-    "typeface-fira-mono": "0.0.54",
-    "typeface-open-sans": "0.0.54",
     "typeface-pt-mono": "0.0.54",
-    "typeface-roboto-mono": "0.0.54",
-    "typeface-space-mono": "0.0.54",
-    "typeface-ubuntu-mono": "0.0.54"
+    "typeface-roboto-mono": "0.0.54"
   },
   "devDependencies": {
     "@babel/cli": "7.1.2",
@@ -65,6 +61,7 @@
     "start": "concurrently --raw \"npm run dev-server\" \"wait-on http://localhost:3008/alive && npm run server\"",
     "server": "run.env nodemon ./src --exec babel-node --watch ./src --watch ./dist/manifest.json",
     "dev-server": "run.env nodemon ./internals/dev-server --exec babel-node --watch ./internals",
-    "webpack": "webpack --config internals/webpack.babel.js"
+    "webpack": "webpack --config internals/webpack.babel.js",
+    "build": "rm -rf ./build && babel ./src -d ./build && cp -r ./src/server/views ./build/server/views"
   }
 }

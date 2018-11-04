@@ -50,7 +50,6 @@
           flex-direction: column
           justify-content: center
           align-items: center
-          font-family: 'Roboto Mono', monospace
 
           .number
             font-size: $font_size_heading
@@ -72,9 +71,9 @@
     line-height: $line_height_large
 
     .conclusion
-      color: $color_primary
-      font-size: $font_size_heading
-      line-height: $line_height_heading
+      color: $color_secondary
+      font-size: $font_size_sub_heading
+      line-height: $line_height_sub_heading
 
   &.pricing
     background: $color_primary
@@ -97,8 +96,7 @@
         font-size: 80px
         line-height: 80px
         height: 80px
-        position: relative
-        font-family: 'Roboto Mono'
+        position: relativeR
 
       .prefix, .postfix
         font-size: $font_size_small
@@ -109,6 +107,10 @@
 
       .postfix
         text-align: left
+
+    .feature-intro
+      font-size: $font_size_sub_heading
+      line-height: $line_height_sub_heading
 
     .feature-list
       display: grid
@@ -141,13 +143,32 @@
 
         .feature-name
           text-transform: uppercase
-          font-family: 'Roboto Mono', monospace
           font-size: $font_size_large
           line-height: $line_height_large
 
         .feature-description
           font-size: $font_size_small
           line-height: $line_height_small
+
+  &.remind
+    font-size: $font_size_large
+    line-height: $line_height_large
+
+    .offer
+      display: inline-block
+      padding: 8px 32px
+      background: $color_primary
+      color: $color_white
+      text-decoration: none
+      text-transform: uppercase
+      font-size: $font_size_large
+      line-height: $line_height_large
+
+    .note
+      display: block
+      font-size: $font_size_small
+      line-height: $line_height_small
+      color: $color_secondary
 
   &.footer
     background: $color_black
@@ -192,9 +213,14 @@
 
   .container
     display: grid
-    grid-template-columns: min-content 1fr
-    grid-gap: 8px
+    grid-template-columns: min-content min-content 1fr
+    grid-gap: 16px
     align-items: center
+
+    .home-link
+      display: flex
+      text-decoration: none
+      text-transform: uppercase
 
     .logo
       size: 24px
@@ -208,7 +234,8 @@
         margin: 4px
 
     .top-nav
-      display: inline-block
+      display: flex
+      margin-left: auto
 
       li
         display: inline-block
@@ -217,8 +244,11 @@
         font-size: $font_size_small
         line-height: $line_height_small
 
-        &:not(:last-child)
-          padding-right: 16px
-
         a
-          text-decoration: none
+          display: inline-block
+          padding: 0 8px
+
+          &.primary
+            background: $color_primary
+            color: $color_white
+            text-decoration: none

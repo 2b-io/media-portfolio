@@ -26,9 +26,12 @@
     "random-int": "1.0.0",
     "stylus": "0.54.5",
     "throttle-debounce": "2.0.1",
+    "typeface-fira-mono": "0.0.54",
     "typeface-open-sans": "0.0.54",
+    "typeface-pt-mono": "0.0.54",
     "typeface-roboto-mono": "0.0.54",
-    "typeface-space-mono": "0.0.54"
+    "typeface-space-mono": "0.0.54",
+    "typeface-ubuntu-mono": "0.0.54"
   },
   "devDependencies": {
     "@babel/cli": "7.1.2",

@@ -24,8 +24,8 @@ const createBlock = (viewport, layer, sizeRange, block) => {
   // randomize things
   const size = SIZES[ randomInt(...sizeRange) ]
   const x = randomInt(8, width - size - 8)
-  const duration = randomInt(4e3, 8e3)
-  const latency = randomInt(4e3)
+  const duration = randomInt(5e3, 10e3)
+  const latency = randomInt(5e3)
 
   // set style
   block.style.left = `${ x }px`
@@ -59,11 +59,11 @@ const createKeyFrames = (height, sizes) => {
   appendingStyle.innerHTML = sizes.map((size) => `
     @keyframes falling-${ height }-${ size } {
       from {
-        transform: translateY(-${ size + size }px);
+        transform: translateY(-${ size + 64 }px);
       }
 
       to {
-        transform: translateY(${ height + size }px);
+        transform: translateY(${ height + 64 }px);
       }
     }
   `).join('\n')

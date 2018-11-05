@@ -11,6 +11,17 @@ services:
       - "3007:3007"
       - "3008:3008"
 
+  media-cms:
+    image: ghost:2.4-alpine
+    container_name: media.cms
+    volumes:
+      - ./content:/var/lib/ghost/content
+    ports:
+      - "2368:2368"
+    environment:
+      NODE_ENV: development
+      url: http://d-14:2368
+
   # nginx:
   #   build: ./docker/nginx
   #   container_name: media.portfolio.nginx

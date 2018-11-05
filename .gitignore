@@ -58,6 +58,7 @@ typings/
 .env
 
 /build
+/content
 /dist
 /local-config
 /docker-compose-ghost.yml

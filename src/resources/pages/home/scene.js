@@ -31,7 +31,7 @@ const createBlock = (viewport, layer, sizeRange, block) => {
   block.style.left = `${ x }px`
   block.style.width = `${ size }px`
   block.style.height = `${ size }px`
-  block.style.transform = `translateY(-${ size + 8 }px)`
+  block.style.transform = `translateY(-${ size + 64 }px)`
 
   // set animation
   block.style.animation = `falling-${ height }-${ size } ${ duration }ms ${ timingFunc } ${ latency }ms`

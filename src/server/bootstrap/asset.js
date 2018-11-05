@@ -9,6 +9,7 @@ export default (app) => {
   const manifest = fs.readJsonSync(webpackOutputFile)
 
   app.use((req, res, next) => {
+    res.locals.__config = config
     res.locals.__asset = (path) => manifest[path]
 
     next()

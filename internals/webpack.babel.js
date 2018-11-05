@@ -20,9 +20,14 @@ export default {
     home: glob.sync(
       path.join(resourceDir, 'pages/home/index.*')
     ),
-    img: glob.sync(
-      path.join(resourceDir, 'img/**/*')
-    )
+    img: [
+      ...glob.sync(
+        path.join(resourceDir, 'img/**/*')
+      ),
+      ...glob.sync(
+        path.join(resourceDir, 'favicon/**/*')
+      )
+    ]
   },
   output: {
     path: outDir,

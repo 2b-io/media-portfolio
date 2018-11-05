@@ -23,9 +23,9 @@ const createBlock = (viewport, layer, sizeRange, block) => {
 
   // randomize things
   const size = SIZES[ randomInt(...sizeRange) ]
-  const x = randomInt(8, width - size - 8)
-  const duration = randomInt(5e3, 10e3)
-  const latency = randomInt(5e3)
+  const x = randomInt(8, width - (size + 8))
+  const duration = randomInt(4e3, 8e3)
+  const latency = randomInt(2e3)
 
   // set style
   block.style.left = `${ x }px`
@@ -109,7 +109,7 @@ const createScene = (scene, { sizeRange, blocksPerLayer }) => {
 window.addEventListener('load', () => {
   createScene(document.getElementById('origin-scene'), {
     sizeRange: [ 2, 5 ],
-    blocksPerLayer: 1
+    blocksPerLayer: 2
   })
   createScene(document.getElementById('target-scene'), {
     sizeRange: [ 1, 3 ],

@@ -59,11 +59,11 @@ const createKeyFrames = (height, sizes) => {
   appendingStyle.innerHTML = sizes.map((size) => `
     @keyframes falling-${ height }-${ size } {
       from {
-        transform: translateY(-${ size + 8 }px);
+        transform: translateY(-${ size + size }px);
       }
 
       to {
-        transform: translateY(${ height + 8 }px);
+        transform: translateY(${ height + size }px);
       }
     }
   `).join('\n')

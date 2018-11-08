@@ -2,12 +2,61 @@
 @require '../header'
 @require '../footer'
 
-.post-header
+.post-list
   border-top: 2px solid $color_primary
   padding-top: 96px
   padding-bottom: 16px
 
+  .container
+    display: grid
+    grid-gap: 16px
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+
+    .post
+      // border: 1px solid $color_background
+      padding: 16px
+
+      .post-title
+        margin-bottom: 16px
+        color: $color_primary
+
+        a
+          text-decoration: none
+
+.post-header
+  padding-top: 64px
+  padding-bottom: 64px
+  text-align: center
+  position: relative
+  overflow: hidden
+
+  .container
+    position: relative
+    z-index: 1
+
+    h1
+      color: $color_white
+
+  .background, .overlay
+    position: absolute
+    z-index: 0
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    overflow: hidden
+
+    img
+      min-width: 100%
+
+  .background
+    filter: blur(2px)
+
+  .overlay
+    background: alpha($color_black, 0.3)
+
 .cms-post-content
+  padding-top: 16px
   padding-bottom: 32px
 
   img
@@ -50,6 +99,14 @@
 
     & > li
       list-style: disc
+      margin-left: 32px
+
+  ol
+    padding-top: 8px
+    padding-bottom: 8px
+
+    & > li
+      list-style: decimal
       margin-left: 32px
 
   a

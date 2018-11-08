@@ -70,7 +70,7 @@ export default {
     const { posts, meta } = await response.json()
 
     return {
-      posts: posts.map(transformImages, truncateHtml),
+      posts: posts.map(transformImages).map(truncateHtml),
       meta
     }
   },
@@ -88,7 +88,7 @@ export default {
     const { posts } = await response.json()
 
     return {
-      post: posts.map(transformImages, truncateHtml).shift()
+      post: posts.map(transformImages).map(truncateHtml).shift()
     }
   }
 }

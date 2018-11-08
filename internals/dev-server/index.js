@@ -1,5 +1,6 @@
 import cors from 'cors'
 import express from 'express'
+import morgan from 'morgan'
 import path from 'path'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
@@ -34,13 +35,14 @@ const compiler = webpack({
 
 app.get('/alive', (req, res, next) => res.sendStatus(200))
 app.use(
+  morgan('dev'),
   cors(),
   webpackDevMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath,
     watchOption: {
       ignored: /node_modules/
     },
-    // logLevel: 'warn'
+    logLevel: 'warn'
   }),
   webpackHotMiddleware(compiler, {
     path: '/__hmr'
@@ -55,6 +57,6 @@ compiler.hooks.emit.tap('done', () => {
   app.listen(port, () => {
     started = true
 
-    console.log(`dev-server started at :${port}`)
+    console.log(`dev-server started at :${ port }`)
   })
 })

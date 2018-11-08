@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title><%= @post.title %> | Media CDN - An Innovative CDN</title>
+    <% include 'partials/meta' %>
+    <% include 'partials/og' %>
+    <% include 'partials/favicon' %>
+    <% include 'partials/inline-css' %>
+    <% if @__asset('posts.css') :%>
+      <link rel="stylesheet" href="<%= @__asset('posts.css') %>">
+    <% end %>
+    <% include 'partials/ga.ect' %>
+  </head>
+  <body>
+    <% include 'partials/header' %>
+    <main class="post">
+      <section class="post-header">
+        <div class="container">
+          <h1><%= @post.title %></h1>
+        </div>
+      </section>
+      <section class="cms-post-content">
+        <div class="container">
+          <%- @post.html %>
+        </div>
+      </sectin>
+    </main>
+    <% include 'partials/footer' %>
+    <script src="<%= @__asset('posts.js') %>"></script>
+  </body>
+</html>

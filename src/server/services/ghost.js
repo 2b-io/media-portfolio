@@ -52,7 +52,7 @@ const transformImages = (post) => {
 
   return {
     ...post,
-    html: dom.html(),
+    html: dom('body').html(),
     featureImage: featureImage
   }
 }

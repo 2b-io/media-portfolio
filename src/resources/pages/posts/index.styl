@@ -24,7 +24,7 @@
 
       .post-excerpt
         padding-top: 16px
-        padding-bottom: 32px
+        padding-bottom: 64px
 
       .post-meta
         font-size: $font_size_small
@@ -59,7 +59,7 @@
       overflow: hidden
 
       img
-        min-width: 100%
+        width: 100%
 
     .background
       filter: blur(2px)
@@ -67,9 +67,17 @@
     .overlay
       background: alpha($color_black, 0.3)
 
-  .cms-post-content
+  .post-meta
+    font-size: $font_size_small
+    line-height: $line_height_small
     padding-top: 16px
-    padding-bottom: 32px
+
+    .post-published-time
+      color: $color_secondary
+
+  .cms-post-content
+    padding-top: 32px
+    padding-bottom: 64px
 
     img
       max-width: 100%

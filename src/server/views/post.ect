@@ -3,13 +3,26 @@
   <head>
     <title><%= @post.title %> | Media CDN - An Innovative CDN</title>
     <% include 'partials/meta' %>
-    <% include 'partials/og' %>
     <% include 'partials/favicon' %>
     <% include 'partials/inline-css' %>
     <% if @__asset('posts.css') :%>
       <link rel="stylesheet" href="<%= @__asset('posts.css') %>">
     <% end %>
     <% include 'partials/ga.ect' %>
+    <meta name="description" content="<%= @post.excerpt %>">
+    <meta property="og:url" content="<%= @URL %>">
+    <meta property="og:title" content="<%= @post.title %> | Media CDN - An Innovative CDN">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="<%= @formatDate(@post.publishedAt, 'isoDateTime') %>">
+    <% for tag in @post.tags :%>
+      <meta property="article:tag" content="<%= tag.name %>">
+    <% end %>
+    <% if @post.featureImage :%>
+      <meta property="og:image" content="<%= @post.featureImage %>">
+      <meta property="og:image:alt" content="<%= @post.title %> | Media CDN - An Innovative CDN" />
+    <% end %>
+    <meta property="og:description" content="<%= @post.excerpt %>">
+    <meta property="og:locale" content="en_US">
   </head>
   <body>
     <% include 'partials/header', { fixed: true } %>
@@ -24,6 +37,14 @@
         </div>
         <div class="container">
           <h1><%= @post.title %></h1>
+        </div>
+      </section>
+      <section class="post-meta">
+        <div class="container">
+          <span class="post-published-time"><%= @formatDate(@post.publishedAt, 'UTC:dd-mm-yyyy') %></span>
+          <% for tag in @post.tags :%>
+            <a class="post-tag" href="/posts/<%= tag.slug %>"><%= tag.name %></a>
+          <% end %>
         </div>
       </section>
       <section class="cms-post-content">

@@ -18,6 +18,7 @@
     "body-parser": "1.18.3",
     "cheerio": "1.0.0-rc.2",
     "cors": "2.8.4",
+    "dateformat": "3.0.3",
     "ect": "0.5.9",
     "express": "4.16.4",
     "express-slash": "2.0.1",

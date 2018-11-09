@@ -1,3 +1,5 @@
+import formatDate from 'dateformat'
+
 import ghost from '../services/ghost'
 
 export default (app) => {
@@ -29,7 +31,8 @@ export default (app) => {
 
     res.render('posts', {
       posts,
-      pagination
+      pagination,
+      formatDate
     })
   })
 
@@ -51,14 +54,18 @@ export default (app) => {
 
     res.render('posts', {
       posts,
-      pagination
+      pagination,
+      formatDate
     })
   })
 
   app.get('/p/:slug', async (req, res, next) => {
     const { slug } = req.params
-    const data = await ghost.getPost(slug)
+    const { post } = await ghost.getPost(slug)
 
-    res.render('post', data)
+    res.render('post', {
+      post,
+      formatDate
+    })
   })
 }

@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header <%= @fixed && 'fixed' %>">
   <div class="container">
     <a class="home-link" href="/?ref=logo">
       <div class="logo">
@@ -14,4 +14,7 @@
       </li>
     </ul>
   </div>
+  <% if @fixed :%>
+    <div id="scroll-indicator" class="scroll-indicator"></div>
+  <% end %>
 </div>

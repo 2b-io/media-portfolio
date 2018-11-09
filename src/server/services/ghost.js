@@ -5,6 +5,18 @@ import truncatise from 'truncatise'
 
 import config from '../infrastructure/config'
 
+const normalize = (post) => {
+  return {
+    _raw: post,
+    title: post.title,
+    excerpt: post.custom_excerpt,
+    slug: post.slug,
+    tags: post.tags,
+    authors: post.authors,
+    publishedAt: Date.parse(post.published_at)
+  }
+}
+
 const generateUrl = (path, params) => {
   return [
     `${ config.ghost.url }${ path }`,
@@ -17,7 +29,7 @@ const generateUrl = (path, params) => {
 }
 
 const transformImages = (post) => {
-  const dom = cheerio.load(post.html)
+  const dom = cheerio.load(post._raw.html)
 
   dom('img').each(function() {
     const img = dom(this)
@@ -31,21 +43,21 @@ const transformImages = (post) => {
     )
   })
 
-  const featureImage = (post.feature_image && post.feature_image.indexOf('/') === 0) ?
-        `${ config.cdn.url }${ post.feature_image }` :
-        post.feature_image
+  const featureImage = (post._raw.feature_image && post._raw.feature_image.indexOf('/') === 0) ?
+        `${ config.cdn.url }${ post._raw.feature_image }` :
+        post._raw.feature_image
 
   return {
     ...post,
     html: dom.html(),
-    feature_image: featureImage
+    featureImage: featureImage
   }
 }
 
 const truncateHtml = (post) => {
   return {
     ...post,
-    truncatedHtml: truncatise(post.html, {
+    truncatedHtml: truncatise(post._raw.html, {
       StripHTML: true,
       TruncateBy: 'words',
       TruncateLength: 30,
@@ -58,7 +70,8 @@ export default {
   async listPosts(page = 1) {
     const url = generateUrl('/posts', {
       limit: 20,
-      page: Number(page)
+      page: Number(page),
+      include: 'authors,tags'
     })
 
     const response = await fetch(url)
@@ -70,13 +83,14 @@ export default {
     const { posts, meta } = await response.json()
 
     return {
-      posts: posts.map(transformImages).map(truncateHtml),
+      posts: posts.map(normalize).map(transformImages).map(truncateHtml),
       meta
     }
   },
   async getPost(slug) {
     const url = generateUrl('/posts', {
-      filter: `slug:${ slug }`
+      filter: `slug:${ slug }`,
+      include: 'authors,tags'
     })
 
     const response = await fetch(url)
@@ -88,7 +102,7 @@ export default {
     const { posts } = await response.json()
 
     return {
-      post: posts.map(transformImages).map(truncateHtml).shift()
+      post: posts.map(normalize).map(transformImages).map(truncateHtml).shift()
     }
   }
 }

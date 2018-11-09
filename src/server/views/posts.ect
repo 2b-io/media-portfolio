@@ -12,22 +12,27 @@
     <% include 'partials/ga.ect' %>
   </head>
   <body>
-    <% include 'partials/header' %>
+    <% include 'partials/header', { fixed: true } %>
     <main class="post-list">
       <div class="container">
         <% for post in @posts :%>
           <div class="post">
-            <h2 class="post-title">
+            <h2 class="post-title alt-font">
               <a href="/p/<%= post.slug %>"><%= post.title %></a>
             </h2>
             <p class="post-truncated-content">
-              <%- post.truncatedHtml %>
+              <%- post.excerpt || post.truncatedHtml %>
             </p>
           </div>
         <% end %>
       </div>
     </main>
     <% include 'partials/footer' %>
+    <script>
+    <!--
+      window.DATA_POSTS = <%- JSON.stringify(@posts) %>;
+    -->
+    </script>
     <script src="<%= @__asset('posts.js') %>"></script>
   </body>
 </html>

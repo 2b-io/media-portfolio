@@ -12,12 +12,12 @@
     <% include 'partials/ga.ect' %>
   </head>
   <body>
-    <% include 'partials/header' %>
-    <main class="post">
-      <section class="post-header">
+    <% include 'partials/header', { fixed: true } %>
+    <main class="single-post">
+      <section class="post-title alt-font">
         <div class="background">
-          <% if @post.feature_image :%>
-            <img src="<%= @post.feature_image %>" alt="<%= @post.title %>">
+          <% if @post.featureImage :%>
+            <img src="<%= @post.featureImage %>" alt="<%= @post.title %>">
           <% end %>
         </div>
         <div class="overlay">
@@ -33,6 +33,11 @@
       </sectin>
     </main>
     <% include 'partials/footer' %>
+    <script>
+    <!--
+      window.DATA_POST = <%- JSON.stringify(@post) %>;
+    -->
+    </script>
     <script src="<%= @__asset('posts.js') %>"></script>
   </body>
 </html>

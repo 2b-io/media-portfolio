@@ -17,11 +17,17 @@
       <div class="container">
         <% for post in @posts :%>
           <div class="post">
+            <div class="post-meta">
+              <span class="post-published-time">15-10-2018</span>
+              <% for tag in post.tags :%>
+                <a class="post-tag" href="/posts/<%= tag.slug %>"><%= tag.name %></a>
+              <% end %>
+            </div>
             <h2 class="post-title alt-font">
               <a href="/p/<%= post.slug %>"><%= post.title %></a>
             </h2>
-            <p class="post-truncated-content">
-              <%- post.excerpt || post.truncatedHtml %>
+            <p class="post-excerpt">
+              <%- post.excerpt %>
             </p>
           </div>
         <% end %>

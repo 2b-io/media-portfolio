@@ -28,7 +28,7 @@
     <% include 'partials/header', { fixed: true } %>
     <main class="single-post">
       <section class="post-title alt-font">
-        <div class="background">
+        <div class="background" style="background: <%= @color %>">
           <% if @post.featureImage :%>
             <img src="<%= @post.featureImage %>" alt="<%= @post.title %>">
           <% end %>

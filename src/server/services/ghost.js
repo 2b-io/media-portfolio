@@ -13,10 +13,16 @@ const normalize = (post) => {
     tags: post.tags,
     authors: post.authors,
     publishedAt: Date.parse(post.published_at),
-    tags: post.tags.map((tag) => ({
-      name: tag.name,
-      slug: tag.slug
-    }))
+    tags: post.tags
+      .map(
+        (tag) => ({
+          name: tag.name,
+          slug: tag.slug
+        })
+      )
+      .sort(
+        (prev, next) => prev.name.localeCompare(next.name)
+      )
   }
 }
 
@@ -47,7 +53,7 @@ const transformImages = (post) => {
   })
 
   const featureImage = (post._raw.feature_image && post._raw.feature_image.indexOf('/') === 0) ?
-        `${ config.cdn.url }${ post._raw.feature_image }` :
+        `${ config.cdnServer }${ post._raw.feature_image }` :
         post._raw.feature_image
 
   return {
@@ -90,11 +96,14 @@ export default {
       throw response.statusText
     }
 
-    const { posts, meta } = await response.json()
+    const { meta, posts } = await response.json()
 
     return {
-      posts: posts.map(normalize).map(transformImages).map(excerpt),
-      meta
+      meta,
+      posts: posts
+        .map(normalize)
+        .map(transformImages)
+        .map(excerpt)
     }
   },
   async getPost(slug) {
@@ -112,7 +121,11 @@ export default {
     const { posts } = await response.json()
 
     return {
-      post: posts.map(normalize).map(transformImages).map(excerpt).shift()
+      post: posts
+        .map(normalize)
+        .map(transformImages)
+        .map(excerpt)
+        .shift()
     }
   }
 }

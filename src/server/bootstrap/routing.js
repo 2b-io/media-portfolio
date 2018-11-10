@@ -1,4 +1,5 @@
 import formatDate from 'dateformat'
+import randomColor from 'randomcolor'
 
 import ghost from '../services/ghost'
 
@@ -65,7 +66,8 @@ export default (app) => {
 
     res.render('post', {
       post,
-      formatDate
+      formatDate,
+      color: randomColor()
     })
   })
 }

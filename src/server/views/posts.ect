@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Posts | Media CDN - An Innovative CDN</title>
+    <% include 'partials/meta.ect' %>
+    <% include 'partials/favicon.ect' %>
+    <% include 'partials/inline-css.ect' %>
+    <% if @__asset('posts.css') :%>
+      <link rel="stylesheet" href="<%= @__asset('posts.css') %>">
+    <% end %>
+    <% include 'partials/ga.ect' %>
+    <meta name="description" content="The content delivery network that optimizes content for the digital era.">
+    <meta property="og:title" content="Posts | Media CDN - An Innovative CDN">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= @URL %>">
+    <meta property="og:image" content="<%= @__asset('img/favicon-96x96.png') %>">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="96">
+    <meta property="og:image:height" content="96">
+    <meta property="og:image:alt" content="Media CDN - An Innovative CDN" />
+    <meta property="og:description" content="The content delivery network that optimizes content for the digital era.">
+    <meta property="og:locale" content="en_US">
+  </head>
+  <body>
+    <div class="page-container fixed">
+      <% include 'partials/header', { fixed: true } %>
+      <main class="post-list">
+        <div class="container">
+          <% for post in @posts :%>
+            <div class="post">
+              <div class="post-meta">
+                <span class="post-published-time"><%= @formatDate(post.publishedAt, 'UTC:dd-mm-yyyy') %></span>
+                <% for tag in post.tags :%>
+                  <a class="post-tag" href="/posts/<%= tag.slug %>"><%= tag.name %></a>
+                <% end %>
+              </div>
+              <h2 class="post-title alt-font">
+                <a href="/<%= post.slug %>"><%= post.title %></a>
+              </h2>
+              <p class="post-excerpt">
+                <%- post.excerpt %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      </main>
+    </div>
+    <% include 'partials/footer' %>
+    <script>
+    <!--
+      window.DATA_POSTS = <%- JSON.stringify(@posts) %>;
+    -->
+    </script>
+    <script src="<%= @__asset('posts.js') %>"></script>
+  </body>
+</html>

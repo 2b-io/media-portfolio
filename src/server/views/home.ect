@@ -2,188 +2,179 @@
 <html lang="en">
   <head>
     <title>Media CDN - An Innovative CDN</title>
-    <% include 'partials/meta.ect' %>
-    <% include 'partials/og.ect' %>
-    <% include 'partials/favicon.ect' %>
-    <% include 'partials/inline-css.ect' %>
+    <% include 'partials/meta' %>
+    <% include 'partials/favicon' %>
+    <% include 'partials/inline-css' %>
     <% if @__asset('home.css') :%>
       <link rel="stylesheet" href="<%= @__asset('home.css') %>">
     <% end %>
     <% include 'partials/ga.ect' %>
+    <meta name="description" content="The content delivery network that optimizes content for the digital era.">
+    <meta property="og:url" content="<%= @URL %>">
+    <meta property="og:title" content="Media CDN - An Innovative CDN">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="<%= @__asset('img/favicon-96x96.png') %>">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="96">
+    <meta property="og:image:height" content="96">
+    <meta property="og:image:alt" content="Media CDN - An Innovative CDN" />
+    <meta property="og:description" content="The content delivery network that optimizes content for the digital era.">
+    <meta property="og:locale" content="en_US">
   </head>
   <body>
-    <div class="header">
-      <div class="container">
-        <a class="home-link" href="/?ref=logo">
-          <div class="logo">
+    <div class="page-container">
+      <% include 'partials/header' %>
+      <main>
+        <div class="section-scene">
+          <div class="top-line"></div>
+          <div class="bottom-line"></div>
+          <div id="origin-scene" class="origin scene">
+            <div data-depth="0.1" class="layer"></div>
+            <div data-depth="0.2" class="layer"></div>
+            <div data-depth="0.4" class="layer"></div>
+            <div data-depth="0.8" class="layer"></div>
           </div>
-        </a>
-        <a class="home-link no-break alt-font" href="/?ref=media-cdn">MEDIA CDN</a>
-        <ul class="top-nav">
-          <li>
-            <a href="#features">Features</a>
-          </li>
-          <li>
-            <a class="primary" href="https://app.media-cdn.io" rel="nofollow">Sign In</a>
-          </li>
-        </ul>
-      </div>
+        </div>
+        <div class="section promotion">
+          <div class="container">
+            <h1 class="alt-font break-after">An <span class="no-break">Innovative CDN</span></h1>
+            <h2 class="double-break-after">The content delivery network that optimizes content for the digital era</h2>
+            <a class="offer alt-font" href="https://app.media-cdn.io/register" rel="nofollow">
+              <span>Start free trial</span>
+            </a>
+            <span class="note">No credit card required</span>
+          </div>
+        </div>
+        <div class="section-scene show-off alt-font">
+          <div class="top-line"></div>
+          <div class="bottom-line"></div>
+          <div id="target-scene" class="target scene">
+            <div data-depth="0.1" class="layer"></div>
+            <div data-depth="0.2" class="layer"></div>
+            <div data-depth="0.4" class="layer"></div>
+            <div data-depth="0.8" class="layer"></div>
+          </div>
+          <div class="circle-container">
+            <div class="circle">
+            </div>
+            <div class="circle">
+            </div>
+            <div class="circle">
+            </div>
+            <div class="circle">
+            </div>
+          </div>
+          <div class="circle-container content">
+            <div class="circle">
+              <div class="step">
+                <span class="text">trusted by</span>
+                <span class="number">153</span>
+                <span class="text">customers</span>
+              </div>
+            </div>
+            <div class="circle">
+              <div class="step">
+                <span class="text">transfers</span>
+                <span class="number">5.3TB</span>
+                <span class="text">per month</span>
+              </div>
+            </div>
+            <div class="circle">
+              <div class="step">
+                <span class="text">decreases</span>
+                <span class="number">29%</span>
+                <span class="text">total cost</span>
+              </div>
+            </div>
+            <div class="circle">
+              <div class="step">
+                <span class="text">increases</span>
+                <span class="number">57%</span>
+                <span class="text">load speed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section intro">
+          <div class="container">
+            <p class="break-after"><span class="upper-case no-break alt-font">MEDIA CDN</span> is a <b>Content Delivery Network (CDN)</b> that delivers optimized content generated from <span class="no-break">origin ones.</span></p>
+            <p class="break-after">You can optimize your cost. The total cost reduces.</p>
+            <p class="break-after">Users can load your services faster. The conversion rate increases.</p>
+            <p class="conclusion">Everyone's happy!</p>
+          </div>
+        </div>
+        <div class="section pricing" id="features">
+          <div class="container">
+            <div class="purpose break-after">Supercharge your services</div>
+            <div class="price">
+              <span class="prefix no-break">from</span>
+              <span class="value alt-font">$0.2</span>
+              <span class="postfix no-break">per GB</span>
+              <div class="beta-price">
+                <span class="free">FREE</span>
+                <span class="beta">within beta</span>
+              </div>
+            </div>
+            <div class="feature-intro double-break-after">Everything you need for efficient content delivery</div>
+            <div class="feature-list">
+              <div class="feature">
+                <div class="feature-illu">
+                  <img src="<%= @__asset('img/content_optimization.svg') %>" alt="Content Optimization">
+                </div>
+                <div class="feature-name alt-font">
+                  Content Optimization
+                </div>
+                <div class="feature-description">
+                  On-fly content optimization with minimal configuration. Dynamic file compression, image compression &amp; resizing, code minifying and more.
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-illu">
+                  <img src="<%= @__asset('img/full_control.svg') %>" alt="Full Control">
+                </div>
+                <div class="feature-name alt-font">
+                  Full Control
+                </div>
+                <div class="feature-description">
+                  Easy pay-as-you-go pricing with full control over your usage using our user-friendly dashboard.
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-illu">
+                  <img src="<%= @__asset('img/global_network.svg') %>" alt="Global Network">
+                </div>
+                <div class="feature-name alt-font">
+                  Global Network
+                </div>
+                <div class="feature-description">
+                  Possibility to utilize infrastructure from various other CDNs.
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-illu">
+                  <img src="<%= @__asset('img/secure.svg') %>" alt="Secure">
+                </div>
+                <div class="feature-name">
+                  Reliability &amp; Security
+                </div>
+                <div class="feature-description">
+                  Self-healing network with HTTP/2, <span class="no-break">TLS 1.3</span>, DDoS protection and more.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section remind">
+          <div class="container">
+            <h2 class="break-after">Users deserve faster services!</h2>
+            <p class="double-break-after">Speed up your <i>online services, games, advertisements, CMS, websites</i> and many more.</p>
+            <a class="offer alt-font" href="https://app.media-cdn.io/register" rel="nofollow">Get Started</a>
+            <span class="note">No credit card required</span>
+          </div>
+        </div>
+      </main>
     </div>
-    <div class="section-scene">
-      <div class="top-line"></div>
-      <div class="bottom-line"></div>
-      <div id="origin-scene" class="origin scene">
-        <div data-depth="0.1" class="layer"></div>
-        <div data-depth="0.2" class="layer"></div>
-        <div data-depth="0.4" class="layer"></div>
-        <div data-depth="0.8" class="layer"></div>
-      </div>
-      <!-- <div class="intro">
-        <h1>A Simple, Fast and Reliable CDN</h1>
-      </div> -->
-    </div>
-    <div class="section promotion">
-      <div class="container">
-        <h1 class="alt-font break-after">An <span class="no-break">Innovative CDN</span></h1>
-        <h2 class="double-break-after">The content delivery network that optimizes content for the digital era</h2>
-        <a class="offer alt-font" href="https://app.media-cdn.io/register" rel="nofollow">
-          <span>Start free trial</span>
-        </a>
-        <span class="note">No credit card required</span>
-      </div>
-    </div>
-    <div class="section-scene show-off alt-font">
-      <div class="top-line"></div>
-      <div class="bottom-line"></div>
-      <div id="target-scene" class="target scene">
-        <div data-depth="0.1" class="layer"></div>
-        <div data-depth="0.2" class="layer"></div>
-        <div data-depth="0.4" class="layer"></div>
-        <div data-depth="0.8" class="layer"></div>
-      </div>
-      <div class="circle-container">
-        <div class="circle">
-        </div>
-        <div class="circle">
-        </div>
-        <div class="circle">
-        </div>
-        <div class="circle">
-        </div>
-      </div>
-      <div class="circle-container content">
-        <div class="circle">
-          <div class="step">
-            <span class="text">trusted by</span>
-            <span class="number">153</span>
-            <span class="text">customers</span>
-          </div>
-        </div>
-        <div class="circle">
-          <div class="step">
-            <span class="text">transfers</span>
-            <span class="number">5.3TB</span>
-            <span class="text">per month</span>
-          </div>
-        </div>
-        <div class="circle">
-          <div class="step">
-            <span class="text">decreases</span>
-            <span class="number">29%</span>
-            <span class="text">total cost</span>
-          </div>
-        </div>
-        <div class="circle">
-          <div class="step">
-            <span class="text">increases</span>
-            <span class="number">57%</span>
-            <span class="text">load speed</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section intro">
-      <div class="container">
-        <p class="break-after"><span class="upper-case no-break alt-font">MEDIA CDN</span> is a <b>Content Delivery Network (CDN)</b> that delivers optimized content generated from <span class="no-break">origin ones.</span></p>
-        <p class="break-after">You can optimize your cost. The total cost reduces.</p>
-        <p class="break-after">Users can load your services faster. The conversion rate increases.</p>
-        <p class="conclusion">Everyone's happy!</p>
-      </div>
-    </div>
-    <div class="section pricing" id="features">
-      <div class="container">
-        <div class="purpose break-after">Speed up your services</div>
-        <div class="price">
-          <span class="prefix no-break">from</span>
-          <span class="value alt-font">$0.2</span>
-          <span class="postfix no-break">per GB</span>
-          <div class="beta-price">
-            <span class="free">FREE</span>
-            <span class="beta">within beta</span>
-          </div>
-        </div>
-        <div class="feature-intro double-break-after">Everything you need for efficient content delivery</div>
-        <div class="feature-list">
-          <div class="feature">
-            <div class="feature-illu">
-              <img src="<%= @__asset('img/content_optimization.svg') %>" alt="Content Optimization">
-            </div>
-            <div class="feature-name alt-font">
-              Content Optimization
-            </div>
-            <div class="feature-description">
-              On-fly content optimization with minimal configuration. Dynamic file compression, image compression &amp; resizing, code minifying and more.
-            </div>
-          </div>
-          <div class="feature">
-            <div class="feature-illu">
-              <img src="<%= @__asset('img/full_control.svg') %>" alt="Full Control">
-            </div>
-            <div class="feature-name alt-font">
-              Full Control
-            </div>
-            <div class="feature-description">
-              Easy pay-as-you-go pricing with full control over your usage using our user-friendly dashboard.
-            </div>
-          </div>
-          <div class="feature">
-            <div class="feature-illu">
-              <img src="<%= @__asset('img/global_network.svg') %>" alt="Global Network">
-            </div>
-            <div class="feature-name alt-font">
-              Global Network
-            </div>
-            <div class="feature-description">
-              Possibility to utilize infrastructure from various other CDNs.
-            </div>
-          </div>
-          <div class="feature">
-            <div class="feature-illu">
-              <img src="<%= @__asset('img/secure.svg') %>" alt="Secure">
-            </div>
-            <div class="feature-name">
-              Reliability &amp; Security
-            </div>
-            <div class="feature-description">
-              Self-healing network with HTTP/2, <span class="no-break">TLS 1.3</span>, DDoS protection and more.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="section remind">
-      <div class="container">
-        <h2 class="break-after">Users deserve faster services!</h2>
-        <p class="double-break-after">Speed up your <i>online services, games, advertisements, CMS, websites</i> and many more.</p>
-        <a class="offer alt-font" href="https://app.media-cdn.io/register" rel="nofollow">Get Started</a>
-        <span class="note">No credit card required</span>
-      </div>
-    </div>
-    <div class="section footer alt-font">
-      <div class="container">
-        <div>&copy; <%= new Date().getFullYear() %> Media Network</div>
-      </div>
-    </div>
+    <% include 'partials/footer' %>
     <script src="<%= @__asset('home.js') %>"></script>
   </body>
 </html>

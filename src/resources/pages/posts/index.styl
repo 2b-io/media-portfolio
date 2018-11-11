@@ -1,0 +1,153 @@
+@require '~style/index'
+@require '../header'
+@require '../footer'
+
+.post-list
+  padding-top: 64px
+
+  .container
+    // display: grid
+    // grid-gap: 16px
+    // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+
+    .post
+      margin-top: 0
+
+      .post-title
+        color: $color_primary
+
+        a
+          text-decoration: none
+
+      .post-excerpt
+        padding-top: 16px
+        padding-bottom: 64px
+
+      .post-meta
+        font-size: $font_size_small
+        line-height: $line_height_small
+        white-space: nowrap
+        text-transform: uppercase
+
+        .post-published-time
+          color: $color_secondary
+
+.single-post
+  .post-title
+    padding-top: 64px
+    padding-bottom: 64px
+    text-align: center
+    position: relative
+    overflow: hidden
+
+    .container
+      position: relative
+      z-index: 1
+
+      h1
+        color: $color_white
+
+    .background, .overlay
+      position: absolute
+      z-index: 0
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      overflow: hidden
+
+      img
+        width: 100%
+
+    .background
+      filter: blur(2px)
+      display: flex
+      align-items: center
+
+    .overlay
+      background: alpha($color_black, 0.3)
+
+  .post-meta
+    font-size: $font_size_small
+    line-height: $line_height_small
+    padding-top: 16px
+    text-transform: uppercase
+
+    .post-published-time
+      color: $color_secondary
+
+  .cms-post-content
+    padding-top: 32px
+    padding-bottom: 64px
+
+    img
+      max-width: 100%
+      display: block
+      margin: 0 auto
+
+    p
+      padding-top: 8px
+      padding-bottom: 8px
+
+    pre
+      padding: 8px
+      background: $color_background
+      overflow: auto
+      margin-top: 16px
+      margin-bottom: 16px
+
+    code
+      background: $color_background
+      padding-left: 4px
+      padding-right: 4px
+      white-space: pre-wrap
+      display: inline-block
+
+    h1, h2, h3, h4, h5
+      margin-top: 32px
+      margin-bottom: 16px
+      color: $color_primary
+
+    h1
+      font-size: $font_size_sub_heading
+      line-height: $line_height_sub_heading
+
+    h2
+      font-size: $font_size_large
+      line-height: $line_height_large
+
+    ul
+      padding-top: 8px
+
+      & > li
+        list-style: disc
+        margin-left: 32px
+        padding-bottom: 8px
+
+    ol
+      padding-top: 8px
+
+      & > li
+        list-style: decimal
+        margin-left: 32px
+        padding-bottom: 8px
+
+    a
+      color: $color_secondary
+
+    blockquote
+      padding-top: 8px
+      padding-bottom: 8px
+      padding-left: 16px
+      margin-top: 16px
+      margin-bottom: 16px
+      border-left: 2px solid $color_background
+
+    .kg-card
+      border: 1px solid $color_background
+      padding: 8px
+      margin-top: 16px
+      margin-bottom: 16px
+
+      figcaption
+        padding-top: 16px

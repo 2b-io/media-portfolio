@@ -20,6 +20,9 @@ export default {
     home: glob.sync(
       path.join(resourceDir, 'pages/home/index.*')
     ),
+    posts: glob.sync(
+      path.join(resourceDir, 'pages/posts/index.*')
+    ),
     img: [
       ...glob.sync(
         path.join(resourceDir, 'img/**/*')

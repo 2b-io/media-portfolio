@@ -1,4 +1,6 @@
-@require '~style/global'
+@require '~style/index'
+@require '../header'
+@require '../footer'
 @require './scene'
 
 .show-off
@@ -85,7 +87,7 @@
       text-transform: uppercase
 
     .price
-      display: relative
+      position: relative
       display: grid
       width: min-content
       margin: 0 auto 96px auto
@@ -114,14 +116,15 @@
         display: flex
         justify-content: center
         align-items: center
-        top: -16px
-        left: -16px
-        right: -16px
-        bottom: -16px
+        top: -8px
+        left: -8px
+        right: -8px
+        bottom: -8px
         background: alpha($color_black, 0.8)
         color: $color_white
         transform: rotate(-5deg)
         text-transform: uppercase
+        outline: 1px solid transparent
 
         .free
           font-size: 80px
@@ -196,14 +199,6 @@
       line-height: $line_height_small
       color: $color_secondary
 
-  &.footer
-    background: $color_black
-    color: $color_white
-    font-size: $font_size_small
-    line-height: $line_height_small
-    padding-top: 8px
-    padding-bottom: 8px
-
   &.promotion
     background: $color_white
     color: $color_black
@@ -224,57 +219,3 @@
       font-size: $font_size_small
       line-height: $line_height_small
       color: $color_secondary
-
-.container
-  margin: 0 auto
-  max-width: 960px
-  padding-left: 16px
-  padding-right: 16px
-
-.header
-  background: $color_white
-  color: $color_primary
-  padding: 16px 0
-  text-align: right
-
-  .container
-    display: grid
-    grid-template-columns: min-content min-content 1fr
-    grid-gap: 16px
-    align-items: center
-
-    .home-link
-      display: flex
-      text-decoration: none
-      text-transform: uppercase
-
-    .logo
-      size: 24px
-      background: $color_primary
-
-      &:after
-        display: block
-        content: ''
-        background: $color_white
-        size: 16px
-        margin: 4px
-
-    .top-nav
-      display: flex
-      margin-left: auto
-
-      li
-        display: inline-block
-        line-height: 40px
-        text-transform: uppercase
-        font-size: $font_size_small
-        line-height: $line_height_small
-
-        a
-          display: inline-block
-          padding: 0 8px
-
-          &.primary
-            background: $color_primary
-            color: $color_white
-            text-decoration: none

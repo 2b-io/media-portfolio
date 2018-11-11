@@ -25,34 +25,36 @@
     <meta property="og:locale" content="en_US">
   </head>
   <body>
-    <% include 'partials/header', { fixed: true } %>
-    <main class="single-post">
-      <section class="post-title alt-font">
-        <div class="background" style="background: <%= @color %>">
-          <% if @post.featureImage :%>
-            <img src="<%= @post.featureImage %>" alt="<%= @post.title %>">
-          <% end %>
-        </div>
-        <div class="overlay">
-        </div>
-        <div class="container">
-          <h1><%= @post.title %></h1>
-        </div>
-      </section>
-      <section class="post-meta">
-        <div class="container">
-          <span class="post-published-time"><%= @formatDate(@post.publishedAt, 'UTC:dd-mm-yyyy') %></span>
-          <% for tag in @post.tags :%>
-            <a class="post-tag" href="/posts/<%= tag.slug %>"><%= tag.name %></a>
-          <% end %>
-        </div>
-      </section>
-      <section class="cms-post-content">
-        <div class="container">
-          <%- @post.html %>
-        </div>
-      </sectin>
-    </main>
+    <div class="page-container fixed">
+      <% include 'partials/header', { fixed: true } %>
+      <main class="single-post">
+        <section class="post-title alt-font">
+          <div class="background" style="background: <%= @color %>">
+            <% if @post.featureImage :%>
+              <img src="<%= @post.featureImage %>" alt="<%= @post.title %>">
+            <% end %>
+          </div>
+          <div class="overlay">
+          </div>
+          <div class="container">
+            <h1><%= @post.title %></h1>
+          </div>
+        </section>
+        <section class="post-meta">
+          <div class="container">
+            <span class="post-published-time"><%= @formatDate(@post.publishedAt, 'UTC:dd-mm-yyyy') %></span>
+            <% for tag in @post.tags :%>
+              <a class="post-tag" href="/posts/<%= tag.slug %>"><%= tag.name %></a>
+            <% end %>
+          </div>
+        </section>
+        <section class="cms-post-content">
+          <div class="container">
+            <%- @post.html %>
+          </div>
+        </sectin>
+      </main>
+    </div>
     <% include 'partials/footer' %>
     <script>
     <!--

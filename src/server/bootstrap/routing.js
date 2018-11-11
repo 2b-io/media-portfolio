@@ -60,7 +60,7 @@ export default (app) => {
     })
   })
 
-  app.get('/p/:slug', async (req, res, next) => {
+  app.get('/:slug', async (req, res, next) => {
     const { slug } = req.params
     const { post } = await ghost.getPost(slug)
 
@@ -69,5 +69,15 @@ export default (app) => {
       formatDate,
       color: randomColor()
     })
+  })
+
+  app.get((req, res, next) => {
+    // TODO show 404 page
+    res.redirect('/')
+  })
+
+  app.use((error, req, res, next) => {
+    // TODO show 500 page
+    res.redirect('/')
   })
 }

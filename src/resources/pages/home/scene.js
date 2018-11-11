@@ -74,14 +74,17 @@ const createKeyFrames = (height, sizes) => {
 const createScene = (scene, { sizeRange, blocksPerLayer }) => {
   const viewport = {}
 
-  window.addEventListener('resize', throttle(1000, () => {
+  const throttled = throttle(1000, () => {
     // get new viewport size
     const rect = scene.getBoundingClientRect()
     viewport.width = Math.ceil(rect.width)
     viewport.height = Math.ceil(rect.height)
 
     createKeyFrames(viewport.height, SIZES)
-  }))
+  })
+
+  window.addEventListener('resize', throttled)
+  setInterval(throttled, 30e3)
 
   // initial viewport size
   const rect = scene.getBoundingClientRect()

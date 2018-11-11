@@ -2,9 +2,6 @@
 @require '../header'
 @require '../footer'
 
-.single-post, .post-list
-  margin-top: 56px
-
 .post-list
   padding-top: 64px
 
@@ -85,6 +82,8 @@
 
     img
       max-width: 100%
+      display: block
+      margin: 0 auto
 
     p
       padding-top: 8px
@@ -101,7 +100,7 @@
       background: $color_background
       padding-left: 4px
       padding-right: 4px
-      white-space: nowrap
+      white-space: pre-wrap
       display: inline-block
 
     h1, h2, h3, h4, h5

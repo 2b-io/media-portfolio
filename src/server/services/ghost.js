@@ -84,7 +84,7 @@ export default {
     }
 
     const url = generateUrl('/posts', {
-      limit: 20,
+      limit: 'all', //20
       page: Number(page),
       include: 'authors,tags',
       ...options

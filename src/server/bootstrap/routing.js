@@ -37,11 +37,11 @@ export default (app) => {
     })
   })
 
-  app.get('/posts/:tag/:page([0-9]+)?', async (req, res, next) => {
+  app.get('/tags/:tag/:page([0-9]+)?', async (req, res, next) => {
     const { page, tag } = req.params
 
     if (1 === Number(page)) {
-      return res.status(301).redirect(`/posts/${ tag }`)
+      return res.status(301).redirect(`/tags/${ tag }`)
     }
 
     const {
@@ -50,7 +50,7 @@ export default (app) => {
     } = await ghost.listPosts(page, tag)
 
     if (pagination.page > pagination.pages) {
-      return res.redirect(`/posts/${ tag }`)
+      return res.redirect(`/tags/${ tag }`)
     }
 
     res.render('posts', {
@@ -71,7 +71,7 @@ export default (app) => {
     })
   })
 
-  app.get((req, res, next) => {
+  app.use((req, res, next) => {
     // TODO show 404 page
     res.redirect('/')
   })

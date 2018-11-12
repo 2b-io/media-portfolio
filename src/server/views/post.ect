@@ -44,7 +44,7 @@
           <div class="container">
             <span class="post-published-time"><%= @formatDate(@post.publishedAt, 'UTC:dd-mm-yyyy') %></span>
             <% for tag in @post.tags :%>
-              <a class="post-tag" href="/posts/<%= tag.slug %>"><%= tag.name %></a>
+              <a class="post-tag" href="/tags/<%= tag.slug %>"><%= tag.name %></a>
             <% end %>
           </div>
         </section>

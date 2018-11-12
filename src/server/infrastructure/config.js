@@ -5,6 +5,7 @@ const rootDir = path.join(__dirname, '..')
 export default {
   _root: rootDir,
   env: process.env.NODE_ENV,
+  devMode: process.env.NODE_ENV !== 'production',
   port: process.env.PORT,
   cdnServer: process.env.CDN_SERVER,
   assetManifest: path.resolve(rootDir, process.env.ASSET_MANIFEST),

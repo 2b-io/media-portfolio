@@ -76,6 +76,23 @@ const excerpt = (post) => {
 }
 
 export default {
+  async listTags() {
+    const url = generateUrl('/tags', {
+      limit: 'all'
+    })
+
+    const response = await fetch(url)
+
+    if (!(200 <= response.status && response.status <= 299)) {
+      throw response.statusText
+    }
+
+    const { tags } = await response.json()
+
+    return {
+      tags
+    }
+  },
   async listPosts(page = 1, tag = null) {
     const options = {}
 

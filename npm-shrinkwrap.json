@@ -2616,6 +2616,13 @@
       "integrity": "sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==",
       "requires": {
         "ms": "2.0.0"
+      },
+      "dependencies": {
+        "ms": {
+          "version": "2.0.0",
+          "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
+          "integrity": "sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g="
+        }
       }
     },
     "decamelize": {
@@ -5050,6 +5057,14 @@
       "dev": true,
       "requires": {
         "pify": "3.0.0"
+      },
+      "dependencies": {
+        "pify": {
+          "version": "3.0.0",
+          "resolved": "https://registry.npmjs.org/pify/-/pify-3.0.0.tgz",
+          "integrity": "sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=",
+          "dev": true
+        }
       }
     },
     "map-age-cleaner": {
@@ -5337,9 +5352,9 @@
       }
     },
     "ms": {
-      "version": "2.0.0",
-      "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
-      "integrity": "sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g="
+      "version": "2.1.1",
+      "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.1.tgz",
+      "integrity": "sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg=="
     },
     "nan": {
       "version": "2.11.1",
@@ -5893,12 +5908,6 @@
       "version": "2.1.0",
       "resolved": "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz",
       "integrity": "sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns="
-    },
-    "pify": {
-      "version": "3.0.0",
-      "resolved": "https://registry.npmjs.org/pify/-/pify-3.0.0.tgz",
-      "integrity": "sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=",
-      "dev": true
     },
     "pirates": {
       "version": "4.0.0",
@@ -7349,6 +7358,14 @@
         "normalize-package-data": "2.4.0",
         "parse-json": "4.0.0",
         "pify": "3.0.0"
+      },
+      "dependencies": {
+        "pify": {
+          "version": "3.0.0",
+          "resolved": "https://registry.npmjs.org/pify/-/pify-3.0.0.tgz",
+          "integrity": "sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=",
+          "dev": true
+        }
       }
     },
     "readable-stream": {
@@ -7724,7 +7741,19 @@
         "on-finished": "2.3.0",
         "range-parser": "1.2.0",
         "statuses": "1.4.0"
+      },
+      "dependencies": {
+        "ms": {
+          "version": "2.0.0",
+          "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
+          "integrity": "sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g="
+        }
       }
+    },
+    "serialize-error": {
+      "version": "3.0.0",
+      "resolved": "https://registry.npmjs.org/serialize-error/-/serialize-error-3.0.0.tgz",
+      "integrity": "sha512-+y3nkkG/go1Vdw+2f/+XUXM1DXX1XcxTl99FfiD/OEPUNw4uo0i6FKABfTAN5ZcgGtjTRZcEbxcE/jtXbEY19A=="
     },
     "serialize-javascript": {
       "version": "1.5.0",
@@ -7829,6 +7858,16 @@
           "integrity": "sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==",
           "dev": true
         }
+      }
+    },
+    "sitemap": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/sitemap/-/sitemap-2.1.0.tgz",
+      "integrity": "sha512-AkfA7RDVCITQo+j5CpXsMJlZ/8ENO2NtgMHYIh+YMvex2Hao/oe3MQgNa03p0aWY6srCfUA1Q02OgiWCAiuccA==",
+      "requires": {
+        "lodash": "4.17.11",
+        "url-join": "4.0.0",
+        "xmlbuilder": "10.1.1"
       }
     },
     "slash": {
@@ -8908,6 +8947,11 @@
         }
       }
     },
+    "url-join": {
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/url-join/-/url-join-4.0.0.tgz",
+      "integrity": "sha1-TTNA6AfTdzvamZH4MFrNzCpmXSo="
+    },
     "url-parse-lax": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/url-parse-lax/-/url-parse-lax-1.0.0.tgz",
@@ -9374,6 +9418,11 @@
       "resolved": "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-3.0.0.tgz",
       "integrity": "sha1-SWsswQnsqNus/i3HK2A8F8WHCtQ=",
       "dev": true
+    },
+    "xmlbuilder": {
+      "version": "10.1.1",
+      "resolved": "https://registry.npmjs.org/xmlbuilder/-/xmlbuilder-10.1.1.tgz",
+      "integrity": "sha512-OyzrcFLL/nb6fMGHbiRDuPup9ljBycsdCypwuyg5AAHvyWzGfChJpCXMG88AGTIMFhGZ9RccFN1e6lhg3hkwKg=="
     },
     "xregexp": {
       "version": "4.0.0",

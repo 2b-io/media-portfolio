@@ -1,74 +1,101 @@
 import formatDate from 'dateformat'
 import randomColor from 'randomcolor'
+import serializeError from 'serialize-error'
 
+import config from '../infrastructure/config'
 import ghost from '../services/ghost'
+import sitemap from '../services/sitemap'
+
+const safe = (middleware) => async (req, res, next) => {
+  try {
+    await middleware(req, res, next)
+  } catch (e) {
+    next(e)
+  }
+}
 
 export default (app) => {
   app.use((req, res, next) => {
-    res.locals.URL = `${ req.protocol }://${ req.get('host') }${ req.originalUrl }`
+    res.locals.hostname = `${ req.protocol }://${ req.get('host') }`
+    res.locals.URL = `${ res.locals.hostname }${ req.originalUrl }`
 
     next()
   })
 
+  app.get('/sitemap.xml', safe(
+    async (req, res, next) => {
+      const { xml } = await sitemap.generate(res.locals.hostname)
+
+      res.header('Content-Type', 'application/xml')
+      res.send(xml)
+    }
+  ))
+
+  app.get('/posts/:page([0-9]+)?', safe(
+    async (req, res, next) => {
+      const { page } = req.params
+
+      if (1 === Number(page)) {
+        return res.status(301).redirect('/posts')
+      }
+
+      const {
+        posts,
+        meta: { pagination }
+      } = await ghost.listPosts(page)
+
+      if (pagination.page > pagination.pages) {
+        return res.redirect('/posts')
+      }
+
+      res.render('posts', {
+        posts,
+        pagination,
+        formatDate
+      })
+    })
+  )
+
+  app.get('/tags/:tag/:page([0-9]+)?', safe(
+    async (req, res, next) => {
+      const { page, tag } = req.params
+
+      if (1 === Number(page)) {
+        return res.status(301).redirect(`/tags/${ tag }`)
+      }
+
+      const {
+        posts,
+        meta: { pagination }
+      } = await ghost.listPosts(page, tag)
+
+      if (pagination.page > pagination.pages) {
+        return res.redirect(`/tags/${ tag }`)
+      }
+
+      res.render('posts', {
+        posts,
+        pagination,
+        formatDate
+      })
+    })
+  )
+
+  app.get('/:slug([a-z\-0-9]+)', safe(
+    async (req, res, next) => {
+      const { slug } = req.params
+      const { post } = await ghost.getPost(slug)
+
+      res.render('post', {
+        post,
+        formatDate,
+        color: randomColor()
+      })
+    })
+  )
+
   app.get('/', (req, res, next) => {
     res.render('home')
-  })
-
-  app.get('/posts/:page([0-9]+)?', async (req, res, next) => {
-    const { page } = req.params
-
-    if (1 === Number(page)) {
-      return res.status(301).redirect('/posts')
-    }
-
-    const {
-      posts,
-      meta: { pagination }
-    } = await ghost.listPosts(page)
-
-    if (pagination.page > pagination.pages) {
-      return res.redirect('/posts')
-    }
-
-    res.render('posts', {
-      posts,
-      pagination,
-      formatDate
-    })
-  })
-
-  app.get('/tags/:tag/:page([0-9]+)?', async (req, res, next) => {
-    const { page, tag } = req.params
-
-    if (1 === Number(page)) {
-      return res.status(301).redirect(`/tags/${ tag }`)
-    }
-
-    const {
-      posts,
-      meta: { pagination }
-    } = await ghost.listPosts(page, tag)
-
-    if (pagination.page > pagination.pages) {
-      return res.redirect(`/tags/${ tag }`)
-    }
-
-    res.render('posts', {
-      posts,
-      pagination,
-      formatDate
-    })
-  })
-
-  app.get('/:slug', async (req, res, next) => {
-    const { slug } = req.params
-    const { post } = await ghost.getPost(slug)
-
-    res.render('post', {
-      post,
-      formatDate,
-      color: randomColor()
-    })
   })
 
   app.use((req, res, next) => {
@@ -77,7 +104,15 @@ export default (app) => {
   })
 
   app.use((error, req, res, next) => {
-    // TODO show 500 page
-    res.redirect('/')
+    console.error(error)
+
+    if (config.config) {
+      res.json({
+        error: serializeError(error)
+      })
+    } else {
+      // TODO show 500 page
+      res.redirect('/')
+    }
   })
 }

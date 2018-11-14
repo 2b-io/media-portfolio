@@ -11,16 +11,16 @@ services:
       - "3007:3007"
       - "3008:3008"
 
-  media-cms:
-    image: ghost:2.4-alpine
-    container_name: media.cms
-    volumes:
-      - ./content:/var/lib/ghost/content
-    ports:
-      - "2368:2368"
-    environment:
-      NODE_ENV: development
-      url: http://d-14:2368
+  # media-cms:
+  #   image: ghost:2.4-alpine
+  #   container_name: media.cms
+  #   volumes:
+  #     - ./content:/var/lib/ghost/content
+  #   ports:
+  #     - "2368:2368"
+  #   environment:
+  #     NODE_ENV: development
+  #     url: http://d-14:2368
 
   # nginx:
   #   build: ./docker/nginx
@@ -29,16 +29,3 @@ services:
   #     - .:/usr/src
   #   ports:
   #     - "3007:80"
-
-  # ghost:
-  #   image: ghost:1-alpine
-  #   container_name: media.portfolio.ghost
-  #   ports:
-  #     - 80:2368
-  #   environment:
-  #     url: http://localhost
-  #     database__client: mysql
-  #     database__connection__host:
-  #     database__connection__user: root
-  #     database__connection__password: admin
-  #     database__connection__database: ghost

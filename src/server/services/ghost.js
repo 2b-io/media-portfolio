@@ -1,6 +1,7 @@
 import cheerio from 'cheerio'
 import fetch from 'node-fetch'
 import querystring from 'querystring'
+import readingTime from 'reading-time'
 import truncatise from 'truncatise'
 
 import config from '../infrastructure/config'
@@ -85,6 +86,15 @@ const excerpt = (post) => {
   }
 }
 
+const estimateReadingTime = (post) => {
+  const { minutes } = readingTime(post.html)
+
+  return {
+    ...post,
+    readingTime: Math.ceil(minutes)
+  }
+}
+
 export default {
   async listTags() {
     const url = generateUrl('/tags', {
@@ -149,6 +159,7 @@ export default {
         .map(normalizePost)
         .map(transformImages)
         .map(excerpt)
+        .map(estimateReadingTime)
     }
   },
   async getPost(slug) {
@@ -170,6 +181,7 @@ export default {
         .map(normalizePost)
         .map(transformImages)
         .map(excerpt)
+        .map(estimateReadingTime)
         .shift()
     }
   }

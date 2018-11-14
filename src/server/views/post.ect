@@ -31,7 +31,14 @@
         <section class="post-title alt-font">
           <div class="background" style="background: <%= @color %>">
             <% if @post.featureImage :%>
-              <img src="<%= @post.featureImage %>" alt="<%= @post.title %>">
+              <img alt="<%= @post.title %>"
+                src="<%= @post.featureImage %>"
+                sizes="100vw"
+                srcset="
+                  <%= @post.featureImage %> 1920w,
+                  <%= @post.featureImage %>?w=1440 1440w,
+                  <%= @post.featureImage %>?w=1024 1024w,
+                  <%= @post.featureImage %>?w=600 600w">
             <% end %>
           </div>
           <div class="overlay">

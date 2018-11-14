@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Posts | Media CDN - An Innovative CDN</title>
     <% include 'partials/meta.ect' %>
     <% include 'partials/favicon.ect' %>
     <% include 'partials/inline-css.ect' %>
@@ -9,17 +8,32 @@
       <link rel="stylesheet" href="<%= @__asset('posts.css') %>">
     <% end %>
     <% include 'partials/ga.ect' %>
-    <meta name="description" content="The content delivery network that optimizes content for the digital era.">
-    <meta property="og:title" content="Posts | Media CDN - An Innovative CDN">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="<%= @URL %>">
-    <meta property="og:image" content="<%= @__asset('img/favicon-96x96.png') %>">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="96">
-    <meta property="og:image:height" content="96">
-    <meta property="og:image:alt" content="Media CDN - An Innovative CDN" />
-    <meta property="og:description" content="The content delivery network that optimizes content for the digital era.">
+
     <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="<%= @URL %>">
+    <meta property="og:type" content="website">
+    <% if @tag :%>
+      <title><%= @tag.name %> | Media CDN - An Innovative CDN</title>
+      <meta property="og:title" content="<%= @tag.name %> | Media CDN - An Innovative CDN">
+
+      <% if @tag.description :%>
+        <meta name="description" content="<%= @tag.description %>">
+      <% end %>
+
+      <% if @tag.featureImage :%>
+        <meta property="og:image" content="<%= @tag.featureImage %>">
+        <meta property="og:image:alt" content="<%= @tag.name %> | Media CDN - An Innovative CDN" />
+      <% end %>
+    <% else :%>
+      <title>Posts | Media CDN - An Innovative CDN</title>
+      <meta name="description" content="The content delivery network that optimizes content for the digital era.">
+      <meta property="og:title" content="Posts | Media CDN - An Innovative CDN">
+      <meta property="og:image" content="<%= @__asset('img/favicon-96x96.png') %>">
+      <meta property="og:image:type" content="image/png">
+      <meta property="og:image:width" content="96">
+      <meta property="og:image:height" content="96">
+      <meta property="og:image:alt" content="Media CDN - An Innovative CDN" />
+    <% end %>
   </head>
   <body>
     <div class="page-container fixed">

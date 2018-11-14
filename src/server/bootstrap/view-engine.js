@@ -28,8 +28,6 @@ export default (app) => {
         sortClassName: true
       })
 
-      console.log(`MINIFIED HTML... ${ html.length } -> ${ minified.length }`)
-
       cb(null, minified)
     })
   })

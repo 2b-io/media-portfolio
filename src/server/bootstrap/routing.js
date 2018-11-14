@@ -56,25 +56,28 @@ export default (app) => {
     })
   )
 
-  app.get('/tags/:tag/:page([0-9]+)?', safe(
+  app.get('/tags/:slug/:page([0-9]+)?', safe(
     async (req, res, next) => {
-      const { page, tag } = req.params
+      const { page, slug } = req.params
 
       if (1 === Number(page)) {
-        return res.status(301).redirect(`/tags/${ tag }`)
+        return res.status(301).redirect(`/tags/${ slug }`)
       }
+
+      const { tag } = await ghost.getTag(slug)
 
       const {
         posts,
         meta: { pagination }
-      } = await ghost.listPosts(page, tag)
+      } = await ghost.listPosts(page, slug)
 
       if (pagination.page > pagination.pages) {
-        return res.redirect(`/tags/${ tag }`)
+        return res.redirect(`/tags/${ slug }`)
       }
 
       res.render('posts', {
         posts,
+        tag,
         pagination,
         formatDate
       })

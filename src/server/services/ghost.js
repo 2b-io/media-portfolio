@@ -5,7 +5,7 @@ import truncatise from 'truncatise'
 
 import config from '../infrastructure/config'
 
-const normalize = (post) => {
+const normalizePost = (post) => {
   return {
     _raw: post,
     title: post.title,
@@ -23,6 +23,16 @@ const normalize = (post) => {
       .sort(
         (prev, next) => prev.name.localeCompare(next.name)
       )
+  }
+}
+
+const normalizeTag = (tag) => {
+  return {
+    _raw: tag,
+    slug: tag.slug,
+    name: tag.name,
+    description: tag.description,
+    featureImage: tag.feature_image
   }
 }
 
@@ -90,14 +100,32 @@ export default {
     const { tags } = await response.json()
 
     return {
-      tags
+      tags: tags
+        .map(normalizeTag)
     }
   },
-  async listPosts(page = 1, tag = null) {
+  async getTag(slug) {
+    const url = generateUrl(`/tags/slug/${ slug }`)
+
+    const response = await fetch(url)
+
+    if (!(200 <= response.status && response.status <= 299)) {
+      throw response.statusText
+    }
+
+    const { tags } = await response.json()
+
+    return {
+      tag: tags
+        .map(normalizeTag)
+        .shift()
+    }
+  },
+  async listPosts(page = 1, slug = null) {
     const options = {}
 
-    if (tag) {
-      options.filter = `tags:[${ tag }]`
+    if (slug) {
+      options.filter = `tags:[${ slug }]`
     }
 
     const url = generateUrl('/posts', {
@@ -118,7 +146,7 @@ export default {
     return {
       meta,
       posts: posts
-        .map(normalize)
+        .map(normalizePost)
         .map(transformImages)
         .map(excerpt)
     }
@@ -139,7 +167,7 @@ export default {
 
     return {
       post: posts
-        .map(normalize)
+        .map(normalizePost)
         .map(transformImages)
         .map(excerpt)
         .shift()

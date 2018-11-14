@@ -14,7 +14,7 @@ const updateScrollIndicator = () => {
   }
 }
 
-const throttledUpdateScrollIndicator = throttle(200, updateScrollIndicator)
+const throttledUpdateScrollIndicator = throttle(50, updateScrollIndicator)
 
 window.addEventListener('load', throttledUpdateScrollIndicator)
 window.addEventListener('scroll', throttledUpdateScrollIndicator)
